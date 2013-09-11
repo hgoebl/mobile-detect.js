@@ -1,5 +1,5 @@
 {
-    "name": "mobile-detect.js",
+    "name": "mobile-detect",
     "version": "0.0.1",
     "description": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
     "main": "mobile-detect.js",

@@ -114,9 +114,11 @@ MIT-License (see LICENSE file).
 # Contributing
 
 Your contribution is welcome.
-If you want new devices to be supported, please contribute to [Mobile-Detect] instead.
+If you want new devices to be supported, please contribute to
+[Mobile-Detect](https://github.com/serbanghita/Mobile-Detect) instead.
 
-To run generate-script it is necessary to have [Mobile-Detect] as a sibling directory to mobile-detect.js/.
+To run generate-script it is necessary to have [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
+as a sibling directory to mobile-detect.js/.
 (I tried to use `git subtree` but had some problems on Mac OS X - probably my fault...)
 
   * fork or clone serbanghita/Mobile-Detect
@@ -143,7 +145,7 @@ Open `tests/SpecRunner.html` in different browsers.
 
 # Donations
 
-If you want, you can donate to [Mobile-Detect].
+If you want, you can donate to [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect).
 
 
 # TODO

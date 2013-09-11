@@ -1,0 +1,11 @@
+{
+    "name": "mobile-detect.js",
+    "version": "0.0.1",
+    "main": "mobile-detect.js",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "tests",
+        "generate"
+    ]
+}

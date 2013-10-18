@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Mobile-detect.js : Device detection (phone, tablet, desktop, mobile grade, os, versions)" />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Mobile-detect.js by hgoebl</title>
+    <title>Mobile-detect.js</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>Mobile-detect.js</h1>
-        <h2>Device detection (phone, tablet, desktop, mobile grade, os, versions)</h2>
-        <a href="https://github.com/hgoebl/mobile-detect.js" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hgoebl/mobile-detect.js">View on GitHub</a>
+
+          <h1 id="project_title">Mobile-detect.js</h1>
+          <h2 id="project_tagline">Device detection (phone, tablet, desktop, mobile grade, os, versions)</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hgoebl/mobile-detect.js/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hgoebl/mobile-detect.js/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a name="mobile-detectjs" class="anchor" href="#mobile-detectjs"><span class="octicon octicon-link"></span></a>mobile-detect.js</h1>
 
 <p>A loose port of <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> to JavaScript.</p>
@@ -48,26 +51,32 @@ You can find out information about the device rendering your web page:</p>
 <h2>
 <a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
 
-<pre><code>&lt;script src="mobile-detect.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-    var md = new MobileDetect(window.navigator.userAgent);
-    // ... see below
-&lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"mobile-detect.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
+        <span class="c1">// ... see below</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <h2>
 <a name="nodejs--express" class="anchor" href="#nodejs--express"><span class="octicon octicon-link"></span></a>Node.js / Express</h2>
 
-<pre><code>var MobileDetect = require('mobile-detect'),
-    md = new MobileDetect(req.headers['user-agent']);
-// ... see below
-</code></pre>
+<div class="highlight highlight-js"><pre>    <span class="kd">var</span> <span class="nx">MobileDetect</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mobile-detect'</span><span class="p">),</span>
+        <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'user-agent'</span><span class="p">]);</span>
+    <span class="c1">// ... see below</span>
+</pre></div>
 
 <h2>
 <a name="general" class="anchor" href="#general"><span class="octicon octicon-link"></span></a>General</h2>
 
-<div class="highlight highlight-js"><pre><span class="c1">// more typically we would instantiate with `window.navigator.userAgent` as user-agent</span>
-<span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="s1">'Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'</span><span class="p">);</span>
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span>
+    <span class="s1">'Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i'</span> <span class="o">+</span>
+    <span class="s1">' Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko)'</span> <span class="o">+</span>
+    <span class="s1">' Version/4.0 Mobile Safari/534.30'</span><span class="p">);</span>
+
+<span class="c1">// more typically we would instantiate with 'window.navigator.userAgent'</span>
+<span class="c1">// as user-agent; this string literal is only for better understanding</span>
+
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">mobile</span><span class="p">());</span>     <span class="c1">// 'Sony'</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">phone</span><span class="p">());</span>      <span class="c1">// 'Sony'</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">tablet</span><span class="p">());</span>     <span class="c1">// null</span>
@@ -81,7 +90,9 @@ You can find out information about the device rendering your web page:</p>
 <h2>
 <a name="more-info-" class="anchor" href="#more-info-"><span class="octicon octicon-link"></span></a>More Info ...</h2>
 
-<p>Open generated JSDoc in <code>doc/index.html</code></p>
+<p>There is some documentation generated by JSDoc:</p>
+
+<p><a href="http://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html">http://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html</a></p>
 
 <h2>
 <a name="side-effects" class="anchor" href="#side-effects"><span class="octicon octicon-link"></span></a>Side Effects</h2>
@@ -100,9 +111,9 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 <a name="size-bytes" class="anchor" href="#size-bytes"><span class="octicon octicon-link"></span></a>Size (bytes)</h2>
 
 <ul>
-<li>development: 30025</li>
-<li>minified: 18045</li>
-<li>minified + gzipped: 7149</li>
+<li>development: 34300</li>
+<li>minified: 20595</li>
+<li>minified + gzipped: 8262 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
 </ul><h1>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
@@ -116,8 +127,6 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 
 <h2>
 <a name="nodejs--npm" class="anchor" href="#nodejs--npm"><span class="octicon octicon-link"></span></a>Node.js / npm</h2>
-
-<p><strong>TODO</strong> is not working yet, since project is not tagged w/ a version and not published to npmjs.org!</p>
 
 <pre><code>$ npm install mobile-detect --save
 </code></pre>
@@ -209,27 +218,20 @@ $ grunt jasmine_node
 <ul>
 <li>Extend RegEx patterns so that test passes</li>
 <li>update mobilegrade() function to PHP-version</li>
-<li>Provide gh_pages w/ JSDoc and a live example</li>
+<li>Provide a live example on gh-pages</li>
 </ul>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/hgoebl/mobile-detect.js/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/hgoebl/mobile-detect.js/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/hgoebl/mobile-detect.js"></a> is maintained by <a href="https://github.com/hgoebl">hgoebl</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-  
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mobile-detect.js maintained by <a href="https://github.com/hgoebl">hgoebl</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>

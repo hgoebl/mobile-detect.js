@@ -17,19 +17,19 @@ You can find out information about the device rendering your web page:
 ## Browser
 
 ```html
-    <script src="mobile-detect.js"></script>
-    <script>
-        var md = new MobileDetect(window.navigator.userAgent);
-        // ... see below
-    </script>
+<script src="mobile-detect.js"></script>
+<script>
+    var md = new MobileDetect(window.navigator.userAgent);
+    // ... see below
+</script>
 ```
 
 ## Node.js / Express
 
 ```js
-    var MobileDetect = require('mobile-detect'),
-        md = new MobileDetect(req.headers['user-agent']);
-    // ... see below
+var MobileDetect = require('mobile-detect'),
+    md = new MobileDetect(req.headers['user-agent']);
+// ... see below
 ```
 
 ## General
@@ -79,8 +79,6 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 # Installation
 
 ## Bower
-
-**TODO** is not working yet, since project is not tagged w/ a version!
 
     $ bower install hgoebl/mobile-detect.js --save
 

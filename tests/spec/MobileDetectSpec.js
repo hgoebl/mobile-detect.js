@@ -12,7 +12,8 @@ beforeEach(function () {
         toBeMobile: function (expected) {
             var md = this.actual;
             this.message = function () {
-                return "Expected device" + (expected ? " " : " not ") + "to be mobile (" + md.ua + ")";
+                var additionalInfo = md.nr ? 'nr=' + md.nr + ', ' : '';
+                return "Expected device" + (expected ? " " : " not ") + "to be mobile (" + additionalInfo + md.ua + ")";
             };
             return (md.mobile() !== null) === expected;
         },
@@ -77,40 +78,34 @@ describe("MobileDetect (1 example)", function() {
 
 });
 
-describe("Feeding w/ many different userAgent examples", function () {
+describe("Feeding w/ ualist", function () {
 
-    describe("should detect and classify mobile devices", function () {
-        var vendor;
+    function makeVendorHandler(vendorName) {
+        return function () {
+            var vendor = mobilePerVendor[vendorName];
 
-        function makeVendorHandler(vendorName) {
-            return function () {
-                var vendor = mobilePerVendor[vendorName], ua;
+            vendor.forEach(function (uaProps) {
+                testUserAgent(uaProps);
+            });
+        };
+    }
 
-                for (ua in vendor) {
-                    if (vendor.hasOwnProperty(ua) && typeof vendor[ua] === 'object') {
-                        testUserAgent(vendor, ua);
-                    }
-                }
-            };
+    function testUserAgent(uaProps) {
+        var aut = new MobileDetect(uaProps.user_agent);
+        aut.nr = uaProps.nr;
+
+        if ('mobile' in uaProps) {
+            expect(aut).toBeMobile(uaProps.mobile);
         }
-
-        function testUserAgent(vendor, ua) {
-            var aut, uaProps = vendor[ua];
-
-            if ('isMobile' in uaProps) {
-                aut = new MobileDetect(ua);
-                expect(aut).toBeMobile(uaProps.isMobile);
-            }
-            if ('isTablet' in uaProps) {
-                aut = new MobileDetect(ua);
-                expect(aut).toBeTablet(uaProps.isTablet);
-            }
+        if ('tablet' in uaProps) {
+            expect(aut).toBeTablet(uaProps.tablet);
         }
+    }
 
-        for (vendor in mobilePerVendor) {
-            if (Object.prototype.hasOwnProperty.call(mobilePerVendor, vendor)) {
-                it("should know devices from vendor " + vendor, makeVendorHandler(vendor));
-            }
+    var vendor;
+    for (vendor in mobilePerVendor) {
+        if (Object.prototype.hasOwnProperty.call(mobilePerVendor, vendor)) {
+            it("should detect devices from vendor " + vendor, makeVendorHandler(vendor));
         }
-    });
+    }
 });

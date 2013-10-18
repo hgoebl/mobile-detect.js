@@ -6,11 +6,11 @@ class Mobile_Detect_Exporter extends Mobile_Detect {
     public function export()
     {
         $detect_data = array(
-            'phones' => $this->getPhoneDevices(),
-            'tablets' => $this->getTabletDevices(),
-            'oss' => $this->getOperatingSystems(),
+            'phones' => parent::$phoneDevices,
+            'tablets' => parent::$tabletDevices,
+            'oss' => parent::$operatingSystems,
             'uas' => parent::$browsers,
-            'props' => $this->getProperties(),
+            'props' => parent::$properties,
             'utils' => parent::$utilities
         );
         print json_encode($detect_data, JSON_PRETTY_PRINT);

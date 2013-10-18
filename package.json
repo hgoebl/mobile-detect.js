@@ -1,6 +1,6 @@
 {
     "name": "mobile-detect",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
     "main": "mobile-detect.js",
     "scripts": {
@@ -10,7 +10,7 @@
         "type": "git",
         "url": "github.com/hgoebl/mobile-detect.js"
     },
-    "homepage": "https://github.com/hgoebl/mobile-detect.js",
+    "homepage": "http://hgoebl.github.io/mobile-detect.js/",
     "keywords": [
         "useragent",
         "mobile",
@@ -41,6 +41,8 @@
         "grunt-jsdoc": "~0.4.0",
         "grunt-exec": "~0.4.2",
         "uglify-js": "1.3.4",
-        "jshint": "0.9.1"
+        "jshint": "0.9.1",
+        "mote": "0.2.0",
+        "wordwrap": "0.0.2"
     }
 }

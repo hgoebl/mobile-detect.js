@@ -117,13 +117,19 @@
     /**
      * Constructor for MobileDetect object.
      * <br>
-     * Such an object will keep a reference to the given user-agent string and cache most of the detect queries.
+     * Such an object will keep a reference to the given user-agent string and cache most of the detect queries.<br>
+     * <div style="background-color: #d9edf7; border: 1px solid #bce8f1; color: #3a87ad; padding: 14px; border-radius: 2px; margin-top: 20px">
+     *     <strong>Find information how to download and install:</strong>
+     *     <a href="https://github.com/hgoebl/mobile-detect.js/">github.com/hgoebl/mobile-detect.js/</a>
+     * </div>
+     *
      * @example <pre>
      *     var md = new MobileDetect(window.navigator.userAgent);
      *     if (md.mobile()) {
      *         location.href = (md.mobileGrade() === 'A') ? '/mobile/' : '/lynx/';
      *     }
      * </pre>
+     *
      * @param {string} userAgent typically taken from window.navigator.userAgent or http_header['User-Agent']
      * @constructor
      * @global
@@ -139,9 +145,12 @@
         /**
          * Returns the detected phone or tablet type or <tt>null</tt> if it is not a mobile device.
          * <br>
-         * Shortcut for <tt>md.phone() || md.tablet()</tt>
+         * Shortcut for <tt>md.phone() || md.tablet()</tt><br>
+         * For a list of possible return values see {@link MobileDetect#phone} and {@link MobileDetect#tablet}.
+         * <br>
+         * In most cases you will use the return value just as a boolean.
          *
-         * @returns {String}
+         * @returns {String} the key for the phone family or tablet family, e.g. "Nexus".
          * @function MobileDetect#mobile
          */
         mobile: function () {
@@ -150,8 +159,13 @@
 
         /**
          * Returns the detected phone type/family string or <tt>null</tt>.
+         * <br>
+         * The returned tablet (family or producer) is one of following keys:<br>
+         * <br><tt>{{{keys.phones}}}</tt><br>
+         * <br>
+         * In most cases you will use the return value just as a boolean.
          *
-         * @returns {String}
+         * @returns {String} the key of the phone family or producer, e.g. "iPhone"
          * @function MobileDetect#phone
          */
         phone: function () {
@@ -163,9 +177,14 @@
 
         /**
          * Returns the detected tablet type/family string or <tt>null</tt>.
+         * <br>
+         * The returned tablet (family or producer) is one of following keys:<br>
+         * <br><tt>{{{keys.tablets}}}</tt><br>
+         * <br>
+         * In most cases you will use the return value just as a boolean.
          *
+         * @returns {String} the key of the tablet family or producer, e.g. "SamsungTablet"
          * @function MobileDetect#tablet
-         * @returns {String}
          */
         tablet: function () {
             if (this._cache.tablet === undefined) {
@@ -176,8 +195,11 @@
 
         /**
          * Returns the detected user-agent string or <tt>null</tt>.
+         * <br>
+         * The returned user-agent is one of following keys:<br>
+         * <br><tt>{{{keys.uas}}}</tt><br>
          *
-         * @returns {String}
+         * @returns {String} the key for the detected user-agent or <tt>null</tt>
          * @function MobileDetect#userAgent
          */
         userAgent: function () {
@@ -189,8 +211,11 @@
 
         /**
          * Returns the detected operating system string or <tt>null</tt>.
+         * <br>
+         * The operating system is one of following keys:<br>
+         * <br><tt>{{{keys.oss}}}</tt><br>
          *
-         * @returns {String}
+         * @returns {String} the key for the detected operating system.
          * @function MobileDetect#os
          */
         os: function () {
@@ -205,19 +230,29 @@
          * <br>
          * Will return a float number. (eg. 2_0 will return 2.0, 4.3.1 will return 4.31)
          *
-         * @param {String} testKey
-         * @returns {Number} the version as float
+         * @param {String} key a key defining a thing which has a version.<br>
+         *        You can use one of following keys:<br>
+         * <br><tt>{{{keys.props}}}</tt><br>
+         *
+         * @returns {Number} the version as float (be careful when comparing this value w/ '==' operator!)
          * @function MobileDetect#version
          */
-        version: function (testKey) {
-            return getVersion(testKey, this.ua);
+        version: function (key) {
+            return getVersion(key, this.ua);
         },
 
         /**
-         * Global test key against userAgent, os, phone, tablet.
+         * Global test key against userAgent, os, phone, tablet and some other properties of userAgent string.
          *
-         * @param {String} key
-         * @returns {boolean}
+         * @param {String} key the key (case-insensitive) of a userAgent, an operating system, phone or
+         *        tablet family.<br>
+         *        For a complete list of possible values, see {@link MobileDetect#userAgent},
+         *        {@link MobileDetect#os}, {@link MobileDetect#phone}, {@link MobileDetect#tablet}.<br>
+         *        Additionally you have following keys:<br>
+         * <br><tt>{{{keys.utils}}}</tt><br>
+         *
+         * @returns {boolean} <tt>true</tt> when the given key is one of the defined keys of userAgent, os, phone,
+         *                    tablet or one of the listed additional keys, otherwise <tt>false</tt>
          * @function MobileDetect#is
          */
         is: function(key) {
@@ -231,8 +266,9 @@
         /**
          * Do a quick test against navigator::userAgent.
          *
-         * @param {String|RegExp} pattern (a string will be converted to a case-insensitive RegExp.
-         * @returns {boolean}
+         * @param {String|RegExp} pattern the pattern, either as String or RegExp
+         *                        (a string will be converted to a case-insensitive RegExp).
+         * @returns {boolean} <tt>true</tt> when the pattern matches, otherwise <tt>false</tt>
          * @function MobileDetect#match
          */
         match: function (pattern) {
@@ -245,7 +281,7 @@
         /**
          * Returns the mobile grade ('A', 'B', 'C').
          *
-         * @returns {string}
+         * @returns {String} one of the mobile grades ('A', 'B', 'C').
          * @function MobileDetect#mobileGrade
          */
         mobileGrade: function () {

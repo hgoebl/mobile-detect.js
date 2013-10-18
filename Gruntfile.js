@@ -69,9 +69,9 @@ module.exports = function (grunt) {
         },
         jsdoc: {
             dist: {
-                src: ['<%= uglify.dist.src %>', 'README.md'],
+                src: ['<%= uglify.dist.src %>'],
                 options: {
-                    destination: 'doc',
+                    destination: '../mobile-detect.js@gh-pages/doc',
                     //template: "default",
                     encoding: "utf8",
                     "private": false,
@@ -100,6 +100,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jasmine-node');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'exec:generate', 'jasmine_node', 'uglify', 'jsdoc']);
-    grunt.registerTask('dev',     ['jshint']);
+    grunt.registerTask('default',  ['jshint', 'exec:generate', 'jasmine_node', 'uglify']);
+    grunt.registerTask('dev',      ['jshint']);
+    grunt.registerTask('gh-pages', ['jshint', 'exec:generate', 'jsdoc']);
 };

@@ -39,7 +39,7 @@
     
         
 <dt>
-    <h4 class="name" id="MobileDetect"><span class="type-signature"></span>new MobileDetect<span class="signature">(userAgent)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MobileDetect"><span class="type-signature"></span>new MobileDetect<span class="signature">(userAgent, <span class="optional">maxPhoneWidth</span>)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -75,7 +75,11 @@ Such an object will keep a reference to the given user-agent string and cache mo
 		<th>Type</th>
 		
 		
+		<th>Argument</th>
 		
+		
+		
+		<th>Default</th>
 		
 		
 		<th class="last">Description</th>
@@ -100,10 +104,66 @@ Such an object will keep a reference to the given user-agent string and cache mo
             </td>
             
             
+                <td class="attributes">
+                
+                    
+                
+                    
+                
+                </td>
             
+            
+            
+                <td class="default">
+                
+                </td>
             
             
             <td class="description last">typically taken from window.navigator.userAgent or http_header['User-Agent']</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxPhoneWidth</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    650
+                
+                </td>
+            
+            
+            <td class="description last"><strong>only for browsers</strong> specify a value for the maximum
+       width (in logical "CSS" pixels) until a device detected as mobile will be handled as phone.
+       This is only used in cases where the device cannot be classified as phone or tablet.<br>
+       See <a href="http://www.html5rocks.com/en/mobile/cross-device/">A non-responsive approach to
+       building cross-device webapps</a>.<br>
+       If you provide a value < 0, then this "fuzzy" check is disabled.</td>
         </tr>
 	
 	
@@ -134,7 +194,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line334">line 334</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line405">line 405</a>
     </li></ul></dd>
     
     
@@ -284,7 +344,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line458">line 458</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line569">line 569</a>
     </li></ul></dd>
     
     
@@ -428,7 +488,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line480">line 480</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line591">line 591</a>
     </li></ul></dd>
     
     
@@ -488,8 +548,15 @@ Such an object will keep a reference to the given user-agent string and cache mo
     <div class="description">
         Returns the detected phone or tablet type or <tt>null</tt> if it is not a mobile device.
 <br>
-Shortcut for <tt>md.phone() || md.tablet()</tt><br>
-For a list of possible return values see <a href="MobileDetect.html#phone">MobileDetect#phone</a> and <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.
+For a list of possible return values see <a href="MobileDetect.html#phone">MobileDetect#phone</a> and <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.<br>
+<br>
+If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
+the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
+is positive, a value of <code>UnknownPhone</code>, <code>UnknownTablet</code> or
+<code>UnknownMobile</code> is returned.<br>
+When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
+When used server-side (node.js), there is no way to tell the difference between <code>UnknownPhone</code>
+and <code>UnknownTablet</code>, so you will only get <code>UnknownMobile</code>.<br>
 <br>
 In most cases you will use the return value just as a boolean.
     </div>
@@ -524,7 +591,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line342">line 342</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line414">line 414</a>
     </li></ul></dd>
     
     
@@ -615,7 +682,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line495">line 495</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line620">line 620</a>
     </li></ul></dd>
     
     
@@ -710,7 +777,7 @@ iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS</tt><br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line421">line 421</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line511">line 511</a>
     </li></ul></dd>
     
     
@@ -774,6 +841,13 @@ The returned tablet (family or producer) is one of following keys:<br>
 <br><tt>iPhone, BlackBerry, HTC, Nexus, Dell, Motorola, Samsung, LG, Sony, Asus,
 Micromax, Palm, Vertu, Pantech, Fly, SimValley, GenericPhone</tt><br>
 <br>
+If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
+the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
+is positive, a value of <code>UnknownPhone</code> or <code>UnknownMobile</code> is returned.<br>
+When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
+When used server-side (node.js), there is no way to tell the difference between <code>UnknownPhone</code>
+and <code>UnknownMobile</code>, so you will only get <code>UnknownMobile</code>.<br>
+<br>
 In most cases you will use the return value just as a boolean.
     </div>
     
@@ -807,7 +881,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line357">line 357</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line437">line 437</a>
     </li></ul></dd>
     
     
@@ -880,6 +954,13 @@ PlaystationTablet, GalapadTablet, MicromaxTablet, KarbonnTablet, AllFineTablet,
 PROSCANTablet, YONESTablet, ChangJiaTablet, GUTablet, PointOfViewTablet,
 OvermaxTablet, HCLTablet, DPSTablet, TelstraTablet, GenericTablet</tt><br>
 <br>
+If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
+the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
+is positive, a value of <code>UnknownTablet</code> or <code>UnknownMobile</code> is returned.<br>
+When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
+When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
+and <code>UnknownMobile</code>, so you will only get <code>UnknownMobile</code>.<br>
+<br>
 In most cases you will use the return value just as a boolean.
     </div>
     
@@ -913,7 +994,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line376">line 376</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line461">line 461</a>
     </li></ul></dd>
     
     
@@ -1008,7 +1089,7 @@ Tizen, UCBrowser, DiigoBrowser, Puffin, Mercury, GenericBrowser</tt><br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line404">line 404</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line494">line 494</a>
     </li></ul></dd>
     
     
@@ -1066,7 +1147,7 @@ Tizen, UCBrowser, DiigoBrowser, Puffin, Mercury, GenericBrowser</tt><br>
     
     
     <div class="description">
-        Check the version of the given property in the User-Agent.
+        Get the version (as Number) of the given property in the User-Agent.
 <br>
 Will return a float number. (eg. 2_0 will return 2.0, 4.3.1 will return 4.31)
     </div>
@@ -1155,7 +1236,7 @@ Windows Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line438">line 438</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line528">line 528</a>
     </li></ul></dd>
     
     
@@ -1180,7 +1261,8 @@ Windows Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
     
             
 <div class="param-desc">
-    the version as float (be careful when comparing this value w/ '==' operator!)
+    the version as float or <tt>NaN</tt> if User-Agent doesn't contain this version.
+         Be careful when comparing this value w/ '==' operator!
 </div>
 
 
@@ -1192,6 +1274,152 @@ Windows Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
 	<dd>
 		
 <span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="versionStr"><span class="type-signature"></span>versionStr<span class="signature">(key)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get the version (as String) of the given property in the User-Agent.
+<br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a key defining a thing which has a version.<br>
+       You can use one of following keys:<br>
+<br><tt>Mobile, Build, Version, VendorID, iPad, iPhone, iPod, Kindle, Chrome, Coast,
+Dolfin, Firefox, Fennec, IE, NetFront, NokiaBrowser, Opera, Opera Mini, Opera
+Mobi, UC Browser, MQQBrowser, MicroMessenger, Safari, Skyfire, Tizen, Webkit,
+Gecko, Trident, Presto, iOS, Android, BlackBerry, BREW, Java, Windows Phone OS,
+Windows Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line549">line 549</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the "raw" version as String or <tt>null</tt> if User-Agent doesn't contain this version.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
 
 
 	</dd>
@@ -1224,7 +1452,7 @@ Windows Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Fri Oct 18 2013 22:22:25 GMT+0200 (MESZ)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Mon Nov 25 2013 20:37:29 GMT+0100 (MEZ)
 </footer>
 
 <script> prettyPrint(); </script>

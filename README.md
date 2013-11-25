@@ -8,7 +8,7 @@ You can find out information about the device rendering your web page:
   * mobile or not
   * if mobile, whether phone or tablet
   * operating system
-  * Mobile Grade (A, B, C)
+  * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
 
@@ -43,14 +43,16 @@ var md = new MobileDetect(
 // more typically we would instantiate with 'window.navigator.userAgent'
 // as user-agent; this string literal is only for better understanding
 
-console.log(md.mobile());     // 'Sony'
-console.log(md.phone());      // 'Sony'
-console.log(md.tablet());     // null
-console.log(md.userAgent());  // 'Safari'
-console.log(md.os());         // 'AndroidOS'
-console.log(md.is('iPhone')); // false
-console.log(md.is('bot'));    // false
-console.log(md.version('Webkit')); // 534.3
+console.log( md.mobile() );          // 'Sony'
+console.log( md.phone() );           // 'Sony'
+console.log( md.tablet() );          // null
+console.log( md.userAgent() );       // 'Safari'
+console.log( md.os() );              // 'AndroidOS'
+console.log( md.is('iPhone') );      // false
+console.log( md.is('bot') );         // false
+console.log( md.version('Webkit') );         // 534.3
+console.log( md.versionStr('Build') );       // '4.1.A.0.562'
+console.log( md.match('playstation|xbox') ); // false
 ```
 
 ## More Info ...
@@ -72,9 +74,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 34300
- * minified: 20595
- * minified + gzipped: 8262 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 48.170
+ * minified: 24.301
+ * minified + gzipped: 10.335 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
@@ -86,18 +88,24 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
     $ npm install mobile-detect --save
 
-# Alternatives
+# Alternatives / Infos
 
 Often device detection is the first solution in your mind. Please consider looking for other solutions
 like media queries and feature detection (e.g. w/ Modernizr). Maybe there are better (simpler, smaller,
-faster) device detection libraries, so here you have a list:
+faster) device detection libraries, so here you have a list (order has no meaning apart from first element):
 
   * [Modernizr](http://modernizr.com/)
     In most cases the better solution: don't use knowledge about device and version, but detect features
     (touch, canvas, ...)
+  * [Mozilla Hacks - User-Agent detection, history and checklist](https://hacks.mozilla.org/2013/09/user-agent-detection-history-and-checklist/)
   * [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
     A lightweight PHP class for detecting mobile devices (including tablets).
     This is the "source" of this JavaScript project and if you use PHP on your server you should use it!
+  * [Detect Mobile Browsers](http://detectmobilebrowsers.com/) Open source mobile phone detection in many languages
+    and for Webservers (Apache, nginx, IIS). mobile-detect.js uses the code of this library as a fallback in case
+    of incomplete detection regular expressions.
+  * [sebarmeli / JS-Redirection-Mobile-Site](https://github.com/sebarmeli/JS-Redirection-Mobile-Site/)
+    JS to handle the redirection to the mobile version of your site
   * [dmolsen/Detector](https://github.com/dmolsen/Detector)
     Detector is a simple, PHP- and JavaScript-based browser- and
     feature-detection library that can adapt to new devices & browsers
@@ -111,6 +119,16 @@ faster) device detection libraries, so here you have a list:
     "the mobile version", "the TV version", etc.
   * [UAParser.js](http://faisalman.github.com/ua-parser-js/)
     Lightweight JavaScript-based User-Agent String Parser
+  * [MobileESP - Easily detect mobile web site visitors](http://blog.mobileesp.com/)
+  * [WURFL](http://wurfl.sourceforge.net/)
+  * [Handset and Tablet Detection](http://www.handsetdetection.com/)
+  * [Search on microjs.com](http://microjs.com/#detect)
+
+## Mobile-Usage Statistics
+
+If you have to provide statistics about how many and which mobile devices are hitting your web-site, you can
+generate statistics (data and views) with [hgoebl/mobile-usage](https://github.com/hgoebl/mobile-usage).
+There are many hooks to customize statistical calculation to your needs.
 
 
 # License
@@ -158,5 +176,5 @@ If you want, you can donate to [Mobile-Detect](https://github.com/serbanghita/Mo
 # TODO
 
   * Extend RegEx patterns so that test passes
-  * update mobilegrade() function to PHP-version
   * Provide a live example on gh-pages
+  * Deploy on <http://cdn.jsdelivr.net/> through <https://github.com/jimaek/jsdelivr>

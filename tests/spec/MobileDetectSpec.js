@@ -4,38 +4,46 @@
 
 // handle stand-alone node tests
 var MobileDetect = MobileDetect || require('../../mobile-detect.js'),
-    mobilePerVendor = mobilePerVendor || require('../data/user-agents.js');
+    mobilePerVendor = mobilePerVendor || require('../data/user-agents.js'),
+    matchers;
+
+function createMatcher(type) {
+    return function (expected) {
+        var md = this.actual;
+        this.message = function () {
+            var additionalInfo = [];
+            if (md.nr) {
+                additionalInfo.push('nr=' + md.nr);
+            }
+            if (!expected) {
+                additionalInfo.push('returned "' + md[type]() + '"');
+            }
+            if (additionalInfo.length) {
+                additionalInfo.push('');
+            }
+            return "Expected device" + (expected ? " " : " not ") + "to be " +
+                type + " (" + additionalInfo.join(', ') + md.ua + ")";
+        };
+        return (md[type]() !== null) === expected;
+    };
+}
+
+matchers = {
+    toBeMobile: createMatcher('mobile'),
+    toBePhone: createMatcher('phone'),
+    toBeTablet: createMatcher('tablet')
+};
 
 beforeEach(function () {
-    this.addMatchers({
-
-        toBeMobile: function (expected) {
-            var md = this.actual;
-            this.message = function () {
-                var additionalInfo = md.nr ? 'nr=' + md.nr + ', ' : '';
-                return "Expected device" + (expected ? " " : " not ") + "to be mobile (" + additionalInfo + md.ua + ")";
-            };
-            return (md.mobile() !== null) === expected;
-        },
-
-        toBeTablet: function (expected) {
-            var md = this.actual;
-            this.message = function () {
-                return "Expected device" + (expected ? " " : " not ") + "to be tablet (" + md.ua + ")";
-            };
-            return (md.tablet() !== null) === expected;
-        }
-
-    });
+    this.addMatchers(matchers);
 });
-
 
 describe("MobileDetect (1 example)", function() {
     var aut;
 
     beforeEach(function() {
         aut = new MobileDetect('Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Build/4.1.A.0.562)' +
-            ' AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30');
+            ' AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30', -1);
     });
 
     it("should detect OS", function() {
@@ -60,7 +68,16 @@ describe("MobileDetect (1 example)", function() {
         expect(aut.version('Android')).toBeCloseTo(4.03, 3);
         expect(aut.version('Build')).toBeCloseTo(4.10562, 7);
         expect(aut.version('Safari')).toBe(4);
+        expect(aut.version('MSIE')).toBeNaN();
         expect(aut.version('MSIE') >= 7.0).toBeFalsy();
+        expect(aut.version('MSIE') < 7.0).toBeFalsy();
+    });
+
+    it("should extract correct version strings", function () {
+        expect(aut.versionStr('Android')).toBe('4.0.3');
+        expect(aut.versionStr('Build')).toBe('4.1.A.0.562');
+        expect(aut.versionStr('Safari')).toBe('4.0');
+        expect(aut.versionStr('MSIE')).toBeNull();
     });
 
     it("should answer generic queries", function () {
@@ -76,6 +93,20 @@ describe("MobileDetect (1 example)", function() {
         expect(aut.match("playstation|nintendo|xbox")).toBe(false);
     });
 
+    it("should run phone size", function () {
+        expect(aut.isPhoneSized(-1)).toBeUndefined();
+        if (typeof window !== 'undefined') {
+            expect(aut.isPhoneSized(320)).toBe(false);
+            expect(aut.isPhoneSized(9999)).toBe(true);
+        }
+    });
+});
+
+describe("Fixing issues", function () {
+    it("should fix issue #1", function () {
+        var aut = new MobileDetect('Mozilla/5.0 (Linux; U; Android 4.1.2; en-us; SPH-L710 Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30', -1);
+        expect(aut).toBeMobile(true);
+    });
 });
 
 describe("Feeding w/ ualist", function () {
@@ -91,7 +122,7 @@ describe("Feeding w/ ualist", function () {
     }
 
     function testUserAgent(uaProps) {
-        var aut = new MobileDetect(uaProps.user_agent);
+        var aut = new MobileDetect(uaProps.user_agent, -1);
         aut.nr = uaProps.nr;
 
         if ('mobile' in uaProps) {
@@ -99,6 +130,9 @@ describe("Feeding w/ ualist", function () {
         }
         if ('tablet' in uaProps) {
             expect(aut).toBeTablet(uaProps.tablet);
+        }
+        if (uaProps.mobile === true && uaProps.tablet !== undefined) {
+            expect(aut).toBePhone(!uaProps.tablet);
         }
     }
 

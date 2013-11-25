@@ -43,7 +43,7 @@ You can find out information about the device rendering your web page:</p>
 <li>mobile or not</li>
 <li>if mobile, whether phone or tablet</li>
 <li>operating system</li>
-<li>Mobile Grade (A, B, C)</li>
+<li><a href="http://jquerymobile.com/gbs/">Mobile Grade (A, B, C)</a></li>
 <li>specific versions (e.g. WebKit)</li>
 </ul><h1>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
@@ -51,19 +51,19 @@ You can find out information about the device rendering your web page:</p>
 <h2>
 <a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
 
-<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"mobile-detect.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
-        <span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
-        <span class="c1">// ... see below</span>
-    <span class="nt">&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"mobile-detect.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
+    <span class="c1">// ... see below</span>
+<span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
 <h2>
 <a name="nodejs--express" class="anchor" href="#nodejs--express"><span class="octicon octicon-link"></span></a>Node.js / Express</h2>
 
-<div class="highlight highlight-js"><pre>    <span class="kd">var</span> <span class="nx">MobileDetect</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mobile-detect'</span><span class="p">),</span>
-        <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'user-agent'</span><span class="p">]);</span>
-    <span class="c1">// ... see below</span>
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">MobileDetect</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mobile-detect'</span><span class="p">),</span>
+    <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'user-agent'</span><span class="p">]);</span>
+<span class="c1">// ... see below</span>
 </pre></div>
 
 <h2>
@@ -77,14 +77,16 @@ You can find out information about the device rendering your web page:</p>
 <span class="c1">// more typically we would instantiate with 'window.navigator.userAgent'</span>
 <span class="c1">// as user-agent; this string literal is only for better understanding</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">mobile</span><span class="p">());</span>     <span class="c1">// 'Sony'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">phone</span><span class="p">());</span>      <span class="c1">// 'Sony'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">tablet</span><span class="p">());</span>     <span class="c1">// null</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">());</span>  <span class="c1">// 'Safari'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">os</span><span class="p">());</span>         <span class="c1">// 'AndroidOS'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'iPhone'</span><span class="p">));</span> <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">));</span>    <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">md</span><span class="p">.</span><span class="nx">version</span><span class="p">(</span><span class="s1">'Webkit'</span><span class="p">));</span> <span class="c1">// 534.3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">mobile</span><span class="p">()</span> <span class="p">);</span>          <span class="c1">// 'Sony'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">phone</span><span class="p">()</span> <span class="p">);</span>           <span class="c1">// 'Sony'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">tablet</span><span class="p">()</span> <span class="p">);</span>          <span class="c1">// null</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">()</span> <span class="p">);</span>       <span class="c1">// 'Safari'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">os</span><span class="p">()</span> <span class="p">);</span>              <span class="c1">// 'AndroidOS'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'iPhone'</span><span class="p">)</span> <span class="p">);</span>      <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">)</span> <span class="p">);</span>         <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">version</span><span class="p">(</span><span class="s1">'Webkit'</span><span class="p">)</span> <span class="p">);</span>         <span class="c1">// 534.3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">versionStr</span><span class="p">(</span><span class="s1">'Build'</span><span class="p">)</span> <span class="p">);</span>       <span class="c1">// '4.1.A.0.562'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="s1">'playstation|xbox'</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// false</span>
 </pre></div>
 
 <h2>
@@ -111,16 +113,14 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 <a name="size-bytes" class="anchor" href="#size-bytes"><span class="octicon octicon-link"></span></a>Size (bytes)</h2>
 
 <ul>
-<li>development: 34300</li>
-<li>minified: 20595</li>
-<li>minified + gzipped: 8262 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
+<li>development: 48.170</li>
+<li>minified: 24.301</li>
+<li>minified + gzipped: 10.335 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
 </ul><h1>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <h2>
 <a name="bower" class="anchor" href="#bower"><span class="octicon octicon-link"></span></a>Bower</h2>
-
-<p><strong>TODO</strong> is not working yet, since project is not tagged w/ a version!</p>
 
 <pre><code>$ bower install hgoebl/mobile-detect.js --save
 </code></pre>
@@ -132,21 +132,29 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 </code></pre>
 
 <h1>
-<a name="alternatives" class="anchor" href="#alternatives"><span class="octicon octicon-link"></span></a>Alternatives</h1>
+<a name="alternatives--infos" class="anchor" href="#alternatives--infos"><span class="octicon octicon-link"></span></a>Alternatives / Infos</h1>
 
 <p>Often device detection is the first solution in your mind. Please consider looking for other solutions
 like media queries and feature detection (e.g. w/ Modernizr). Maybe there are better (simpler, smaller,
-faster) device detection libraries, so here you have a list:</p>
+faster) device detection libraries, so here you have a list (order has no meaning apart from first element):</p>
 
 <ul>
 <li>
 <a href="http://modernizr.com/">Modernizr</a>
 In most cases the better solution: don't use knowledge about device and version, but detect features
 (touch, canvas, ...)</li>
+<li><a href="https://hacks.mozilla.org/2013/09/user-agent-detection-history-and-checklist/">Mozilla Hacks - User-Agent detection, history and checklist</a></li>
 <li>
 <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a>
 A lightweight PHP class for detecting mobile devices (including tablets).
 This is the "source" of this JavaScript project and if you use PHP on your server you should use it!</li>
+<li>
+<a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a> Open source mobile phone detection in many languages
+and for Webservers (Apache, nginx, IIS). mobile-detect.js uses the code of this library as a fallback in case
+of incomplete detection regular expressions.</li>
+<li>
+<a href="https://github.com/sebarmeli/JS-Redirection-Mobile-Site/">sebarmeli / JS-Redirection-Mobile-Site</a>
+JS to handle the redirection to the mobile version of your site</li>
 <li>
 <a href="https://github.com/dmolsen/Detector">dmolsen/Detector</a>
 Detector is a simple, PHP- and JavaScript-based browser- and
@@ -165,7 +173,18 @@ FormFactor helps you customize your web app for different form factors, e.g. whe
 <li>
 <a href="http://faisalman.github.com/ua-parser-js/">UAParser.js</a>
 Lightweight JavaScript-based User-Agent String Parser</li>
-</ul><h1>
+<li><a href="http://blog.mobileesp.com/">MobileESP - Easily detect mobile web site visitors</a></li>
+<li><a href="http://wurfl.sourceforge.net/">WURFL</a></li>
+<li><a href="http://www.handsetdetection.com/">Handset and Tablet Detection</a></li>
+<li><a href="http://microjs.com/#detect">Search on microjs.com</a></li>
+</ul><h2>
+<a name="mobile-usage-statistics" class="anchor" href="#mobile-usage-statistics"><span class="octicon octicon-link"></span></a>Mobile-Usage Statistics</h2>
+
+<p>If you have to provide statistics about how many and which mobile devices are hitting your web-site, you can
+generate statistics (data and views) with <a href="https://github.com/hgoebl/mobile-usage">hgoebl/mobile-usage</a>.
+There are many hooks to customize statistical calculation to your needs.</p>
+
+<h1>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
 
 <p>MIT-License (see LICENSE file).</p>
@@ -217,8 +236,9 @@ $ grunt jasmine_node
 
 <ul>
 <li>Extend RegEx patterns so that test passes</li>
-<li>update mobilegrade() function to PHP-version</li>
 <li>Provide a live example on gh-pages</li>
+<li>Deploy on <a href="http://cdn.jsdelivr.net/">http://cdn.jsdelivr.net/</a> through <a href="https://github.com/jimaek/jsdelivr">https://github.com/jimaek/jsdelivr</a>
+</li>
 </ul>
       </section>
     </div>

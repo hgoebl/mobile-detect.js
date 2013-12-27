@@ -74,8 +74,8 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 48.170
- * minified: 24.301
+ * development: 48.183
+ * minified: 24.304
  * minified + gzipped: 10.335 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation

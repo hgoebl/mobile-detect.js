@@ -107,6 +107,19 @@ describe("Fixing issues", function () {
         var aut = new MobileDetect('Mozilla/5.0 (Linux; U; Android 4.1.2; en-us; SPH-L710 Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30', -1);
         expect(aut).toBeMobile(true);
     });
+    it("should fix issue #2", function () {
+        var aut = new MobileDetect(); // userAgent is undefined
+        expect(aut).toBeMobile(false);
+        expect(aut).toBePhone(false);
+        expect(aut).toBeTablet(false);
+        expect(aut.mobileGrade()).toBe('C');
+        expect(aut.version('MSIE')).toBeNaN();
+        expect(aut.version('MSIE') >= 7.0).toBeFalsy();
+        expect(aut.version('MSIE') < 7.0).toBeFalsy();
+        expect(aut.versionStr('MSIE')).toBeNull();
+        expect(aut.isPhoneSized()).toBeFalsy();
+        expect(aut.match(/xbox/i)).toBeFalsy();
+    });
 });
 
 describe("Feeding w/ ualist", function () {

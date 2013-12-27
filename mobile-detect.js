@@ -403,7 +403,7 @@
      * @global
      */
     function MobileDetect(userAgent, maxPhoneWidth) {
-        this.ua = userAgent;
+        this.ua = userAgent || '';
         this._cache = {};
         this.maxPhoneWidth = maxPhoneWidth || 650;
     }
@@ -539,7 +539,7 @@
          * Windows Phone, Windows CE, Windows NT, Symbian, webOS</tt><br>
          *
          * @returns {Number} the version as float or <tt>NaN</tt> if User-Agent doesn't contain this version.
-         *          Be careful when comparing this value w/ '==' operator!
+         *          Be careful when comparing this value with '==' operator!
          * @function MobileDetect#version
          */
         version: function (key) {

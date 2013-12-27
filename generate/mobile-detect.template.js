@@ -206,7 +206,7 @@
      * @global
      */
     function MobileDetect(userAgent, maxPhoneWidth) {
-        this.ua = userAgent;
+        this.ua = userAgent || '';
         this._cache = {};
         this.maxPhoneWidth = maxPhoneWidth || 650;
     }

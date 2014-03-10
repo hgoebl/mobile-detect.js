@@ -88,6 +88,10 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
     $ npm install mobile-detect --save
 
+## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
+
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/0.1.1/mobile-detect.min.js"></script>
+   
 # Alternatives / Infos
 
 Often device detection is the first solution in your mind. Please consider looking for other solutions
@@ -177,4 +181,3 @@ If you want, you can donate to [Mobile-Detect](https://github.com/serbanghita/Mo
 
   * Extend RegEx patterns so that test passes
   * Provide a live example on gh-pages
-  * Deploy on <http://cdn.jsdelivr.net/> through <https://github.com/jimaek/jsdelivr>

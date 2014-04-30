@@ -74,9 +74,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 48.183
- * minified: 24.304
- * minified + gzipped: 10.335 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 53.412
+ * minified: 28.669
+ * minified + gzipped: 12.224 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
@@ -90,7 +90,7 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
 
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/0.1.1/mobile-detect.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/0.2.0/mobile-detect.min.js"></script>
    
 # Alternatives / Infos
 

@@ -11,6 +11,12 @@ You can find out information about the device rendering your web page:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
+# Live Demo
+
+[@zeno](https://github.com/zeno) created a very nice [live-demo](https://github.com/zeno/mobile-detect-demo).
+See it in action with your device:
+
+**[Demo](http://zeno.github.io/mobile-detect-demo/)**
 
 # Usage
 

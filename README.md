@@ -186,4 +186,3 @@ If you want, you can donate to [Mobile-Detect](https://github.com/serbanghita/Mo
 # TODO
 
   * Extend RegEx patterns so that test passes
-  * Provide a live example on gh-pages

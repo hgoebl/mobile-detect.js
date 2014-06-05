@@ -120,6 +120,12 @@ describe("Fixing issues", function () {
         expect(aut.isPhoneSized()).toBeFalsy();
         expect(aut.match(/xbox/i)).toBeFalsy();
     });
+    it("should fix issue #5", function () {
+        var aut = new MobileDetect('Mozilla/5.0 (Linux; Android 4.4.2; en-us; SAMSUNG SM-T530NU Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Safari/537.36', -1);
+        expect(aut).toBePhone(false);
+        expect(aut).toBeTablet(true);
+        expect(aut).toBeMobile(true);
+    });
 });
 
 describe("Feeding w/ ualist", function () {

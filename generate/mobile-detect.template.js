@@ -147,18 +147,19 @@
         }
         var phone, tablet, phoneSized;
 
-        phone = findMatch(mobileDetectRules.phones, userAgent);
-        if (phone) {
-            cache.mobile = cache.phone = phone;
-            cache.tablet = null;
-            return; // unambiguously identified as phone
-        }
-
+        // first check for stronger tablet rules, then phone (see issue#5)
         tablet = findMatch(mobileDetectRules.tablets, userAgent);
         if (tablet) {
             cache.mobile = cache.tablet = tablet;
             cache.phone = null;
             return; // unambiguously identified as tablet
+        }
+
+        phone = findMatch(mobileDetectRules.phones, userAgent);
+        if (phone) {
+            cache.mobile = cache.phone = phone;
+            cache.tablet = null;
+            return; // unambiguously identified as phone
         }
 
         // our rules haven't found a match -> try more general fallback rules

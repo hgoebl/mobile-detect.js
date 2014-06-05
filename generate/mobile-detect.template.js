@@ -412,14 +412,15 @@
             //     $this-> / t.
             //     self::MOBILE_GRADE_(.) / '$1'
             //     , self::VERSION_TYPE_FLOAT / (nothing)
+            //     isIOS() / os('iOS')
             var t = this,
-                $isMobile = this.mobile() !== null;
+                $isMobile = t.mobile() !== null;
 
             if (
                 // Apple iOS 3.2-5.1 - Tested on the original iPad (4.3 / 5.0), iPad 2 (4.3), iPad 3 (5.1), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), 4 (4.3 / 5.0), and 4S (5.1)
-                t.version('iPad')>=4.3 ||
-                t.version('iPhone')>=3.1 ||
-                t.version('iPod')>=3.1 ||
+                t.os('iOS') && t.version('iPad')>=4.3 ||
+                t.os('iOS') && t.version('iPhone')>=3.1 ||
+                t.os('iOS') && t.version('iPod')>=3.1 ||
 
                 // Android 2.1-2.3 - Tested on the HTC Incredible (2.2), original Droid (2.2), HTC Aria (2.1), Google Nexus S (2.3). Functional on 1.5 & 1.6 but performance may be sluggish, tested on Google G1 (1.5)
                 // Android 3.1 (Honeycomb)  - Tested on the Samsung Galaxy Tab 10.1 and Motorola XOOM
@@ -494,9 +495,9 @@
             }
 
             if (
-                t.version('iPad')<4.3 ||
-                t.version('iPhone')<3.1 ||
-                t.version('iPod')<3.1 ||
+                t.os('iOS') && t.version('iPad')<4.3 ||
+                t.os('iOS') && t.version('iPhone')<3.1 ||
+                t.os('iOS') && t.version('iPod')<3.1 ||
 
                 // Blackberry 5.0: Tested on the Storm 2 9550, Bold 9770
                 t.is('Blackberry') && t.version('BlackBerry')>=5 && t.version('BlackBerry')<6 ||

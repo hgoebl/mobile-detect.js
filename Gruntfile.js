@@ -13,6 +13,9 @@ module.exports = function (grunt) {
         exec: {
             generate: {
                 cmd: 'node generate/generate.js'
+            },
+            gzSize: {
+                cmd: 'cat mobile-detect.min.js | gzip -9f | wc -c'
             }
         },
         jasmine_node: {
@@ -116,7 +119,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
-    grunt.registerTask('default',  ['jshint', 'exec:generate', 'jasmine_node', 'uglify']);
+    grunt.registerTask('default',  ['jshint', 'exec:generate', 'jasmine_node', 'uglify', 'exec:gzSize']);
+    grunt.registerTask('skip-tests',  ['jshint', 'exec:generate', 'uglify', 'exec:gzSize']);
     grunt.registerTask('dev',      ['jshint']);
     grunt.registerTask('gh-pages', ['jshint', 'exec:generate', 'jsdoc']);
     grunt.registerTask('jsdelivr', ['copy:jsdelivr']);

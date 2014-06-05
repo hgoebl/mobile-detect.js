@@ -82,9 +82,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 53.772
- * minified: 28.978
- * minified + gzipped: 12.296 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 53.696
+ * minified: 29.058
+ * minified + gzipped: 12.293 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 

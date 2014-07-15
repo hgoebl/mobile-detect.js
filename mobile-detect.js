@@ -413,6 +413,7 @@
         //     self::MOBILE_GRADE_(.) / '$1'
         //     , self::VERSION_TYPE_FLOAT / (nothing)
         //     isIOS() / os('iOS')
+        //     [reg] / (nothing)   <-- jsdelivr complaining about unescaped unicode character U+00AE
         var $isMobile = t.mobile() !== null;
 
         if (
@@ -430,7 +431,7 @@
             // Windows Phone 7-7.5 - Tested on the HTC Surround (7.0) HTC Trophy (7.5), LG-E900 (7.5), Nokia Lumia 800
             t.version('Windows Phone OS')>=7.0 ||
 
-            // Blackberry 7 - Tested on BlackBerry® Torch 9810
+            // Blackberry 7 - Tested on BlackBerry Torch 9810
             // Blackberry 6.0 - Tested on the Torch 9800 and Style 9670
             t.is('BlackBerry') && t.version('BlackBerry')>=6.0 ||
             // Blackberry Playbook (1.0-2.0) - Tested on PlayBook

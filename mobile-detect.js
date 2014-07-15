@@ -1,5 +1,5 @@
 // THIS FILE IS GENERATED - DO NOT EDIT!
-/*global module:false*/
+/*global module:false, define:false*/
 
 (function (exports, undefined) {
     'use strict';
@@ -793,13 +793,8 @@
     exports(MobileDetect);
 
 })(function (data, undefined) {
-    if (typeof module !== 'undefined' && module.exports) {
 
-        data.isPhoneSized = function () {};
-        module.exports = data;
-
-    } else if (typeof window !== 'undefined') {
-
+    if (typeof window !== 'undefined' && window.screen && window.screen.width) {
         data.isPhoneSized = function (maxPhoneWidth) {
             if (maxPhoneWidth < 0) {
                 return undefined;
@@ -810,8 +805,22 @@
 
             return cssPixelWidth <= maxPhoneWidth;
         };
+    } else {
+        data.isPhoneSized = function () {};
+    }
+
+    if (typeof module !== 'undefined' && module.exports) {
+
+        module.exports = data;
+
+    } else if (typeof define === 'function' && define.amd) {
+
+        define(function () { return data; });
+
+    } else if (typeof window !== 'undefined') {
 
         window.MobileDetect = data;
+
     } else {
         throw new Error('unknown environment'); // please file a bug if you get this error!
     }

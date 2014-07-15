@@ -1,4 +1,5 @@
 /*global module:false*/
+/*global define:false*/
 
 (function (exports, undefined) {
     'use strict';
@@ -547,6 +548,10 @@
 
         data.isPhoneSized = function () {};
         module.exports = data;
+
+    } else if (typeof define === 'function' && define.amd) {
+
+        define(function () { return data; });
 
     } else if (typeof window !== 'undefined') {
 

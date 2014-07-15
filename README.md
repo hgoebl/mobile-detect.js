@@ -11,7 +11,7 @@ You can find out information about the device rendering your web page:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.1**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.3**
 
 # Live Demo
 
@@ -82,9 +82,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 53.696
- * minified: 29.058
- * minified + gzipped: 12.293 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 55137
+ * minified: 30133
+ * minified + gzipped: 12700 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 

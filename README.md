@@ -98,7 +98,7 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
 
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/0.3.0/mobile-detect.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/0.4.0/mobile-detect.min.js"></script>
    
 # Alternatives / Infos
 

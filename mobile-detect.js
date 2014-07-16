@@ -1,7 +1,8 @@
 // THIS FILE IS GENERATED - DO NOT EDIT!
 /*global module:false, define:false*/
 
-(function (exports, undefined) {
+(function (define, undefined) {
+define(function () {
     'use strict';
 
     var mobileDetectRules = {
@@ -797,12 +798,9 @@
         }
     };
 
-    exports(MobileDetect);
-
-})(function (data, undefined) {
-
+    // environment-dependent
     if (typeof window !== 'undefined' && window.screen && window.screen.width) {
-        data.isPhoneSized = function (maxPhoneWidth) {
+        MobileDetect.isPhoneSized = function (maxPhoneWidth) {
             if (maxPhoneWidth < 0) {
                 return undefined;
             }
@@ -813,22 +811,20 @@
             return cssPixelWidth <= maxPhoneWidth;
         };
     } else {
-        data.isPhoneSized = function () {};
+        MobileDetect.isPhoneSized = function () {};
     }
 
-    if (typeof module !== 'undefined' && module.exports) {
-
-        module.exports = data;
-
-    } else if (typeof define === 'function' && define.amd) {
-
-        define(function () { return data; });
-
+    return MobileDetect;
+}); // end of call of define()
+})((function (undefined) {
+    if (typeof define === 'function' && define.amd) {
+        return define;
+    } else if (typeof module !== 'undefined' && module.exports) {
+        return function (factory) { module.exports = factory(); };
     } else if (typeof window !== 'undefined') {
-
-        window.MobileDetect = data;
-
+        return function (factory) { window.MobileDetect = factory(); };
     } else {
-        throw new Error('unknown environment'); // please file a bug if you get this error!
+        // please file a bug if you get this error!
+        throw new Error('unknown environment');
     }
-});
+})());

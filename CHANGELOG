@@ -1,3 +1,8 @@
+v0.4.3:
+  date: (snapshot)
+  changes:
+    - fix issue #15 (detect crazy Microsoft Mobile OS)
+
 v0.4.2:
   date: 2014-10-21
   changes:

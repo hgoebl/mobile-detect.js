@@ -298,6 +298,12 @@ define(function () {
         convertPropsToRegExp(mobileDetectRules.tablets);
         convertPropsToRegExp(mobileDetectRules.uas);
         convertPropsToRegExp(mobileDetectRules.utils);
+
+        // copy some patterns to oss0 which are tested first (see issue#15)
+        mobileDetectRules.oss0 = {
+            WindowsPhoneOS: mobileDetectRules.oss.WindowsPhoneOS,
+            WindowsMobileOS: mobileDetectRules.oss.WindowsMobileOS
+        };
     }());
 
     function convertPropsToRegExp(object) {
@@ -714,7 +720,8 @@ define(function () {
          */
         os: function () {
             if (this._cache.os === undefined) {
-                this._cache.os = findMatch(mobileDetectRules.oss, this.ua);
+                this._cache.os = findMatch(mobileDetectRules.oss0, this.ua) ||
+                                 findMatch(mobileDetectRules.oss, this.ua);
             }
             return this._cache.os;
         },

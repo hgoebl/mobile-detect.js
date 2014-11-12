@@ -126,6 +126,10 @@ describe("Fixing issues", function () {
         expect(aut).toBeTablet(true);
         expect(aut).toBeMobile(true);
     });
+    it("should fix issue #15", function () {
+        var aut = new MobileDetect('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; Microsoft; Virtual) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537', -1);
+        expect(aut.os()).toEqual('WindowsMobileOS');
+    });
 });
 
 describe("Feeding w/ ualist", function () {

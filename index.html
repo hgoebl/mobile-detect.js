@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="mobile-detectjs" class="anchor" href="#mobile-detectjs"><span class="octicon octicon-link"></span></a>mobile-detect.js</h1>
+<a id="mobile-detectjs" class="anchor" href="#mobile-detectjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>mobile-detect.js</h1>
 
 <p>A loose port of <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> to JavaScript.</p>
 
@@ -47,10 +47,10 @@ You can find out information about the device rendering your web page:</p>
 <li>specific versions (e.g. WebKit)</li>
 </ul>
 
-<p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.5</strong></p>
+<p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.11</strong></p>
 
 <h1>
-<a name="live-demo" class="anchor" href="#live-demo"><span class="octicon octicon-link"></span></a>Live Demo</h1>
+<a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Demo</h1>
 
 <p><a href="https://github.com/zeno">@zeno</a> created a very nice <a href="https://github.com/zeno/mobile-detect-demo">live-demo</a>.
 See it in action with your device:</p>
@@ -58,63 +58,60 @@ See it in action with your device:</p>
 <p><strong><a href="http://zeno.github.io/mobile-detect-demo/">Demo</a></strong></p>
 
 <h1>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
 
 <h2>
-<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h2>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"mobile-detect.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
-    <span class="c1">// ... see below</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre></div>
-
-<h2>
-<a name="nodejs--express" class="anchor" href="#nodejs--express"><span class="octicon octicon-link"></span></a>Node.js / Express</h2>
-
-<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">MobileDetect</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mobile-detect'</span><span class="p">),</span>
-    <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'user-agent'</span><span class="p">]);</span>
-<span class="c1">// ... see below</span>
-</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>mobile-detect.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s2">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s2">    <span class="pl-s">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(<span class="pl-s3">window</span>.<span class="pl-s3">navigator</span>.<span class="pl-sc">userAgent</span>);</span>
+<span class="pl-s2">    <span class="pl-c">// ... see below</span></span>
+<span class="pl-s2">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h2>
-<a name="general" class="anchor" href="#general"><span class="octicon octicon-link"></span></a>General</h2>
+<a id="nodejs--express" class="anchor" href="#nodejs--express" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js / Express</h2>
 
-<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MobileDetect</span><span class="p">(</span>
-    <span class="s1">'Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i'</span> <span class="o">+</span>
-    <span class="s1">' Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko)'</span> <span class="o">+</span>
-    <span class="s1">' Version/4.0 Mobile Safari/534.30'</span><span class="p">);</span>
-
-<span class="c1">// more typically we would instantiate with 'window.navigator.userAgent'</span>
-<span class="c1">// as user-agent; this string literal is only for better understanding</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">mobile</span><span class="p">()</span> <span class="p">);</span>          <span class="c1">// 'Sony'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">phone</span><span class="p">()</span> <span class="p">);</span>           <span class="c1">// 'Sony'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">tablet</span><span class="p">()</span> <span class="p">);</span>          <span class="c1">// null</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">()</span> <span class="p">);</span>       <span class="c1">// 'Safari'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">os</span><span class="p">()</span> <span class="p">);</span>              <span class="c1">// 'AndroidOS'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'iPhone'</span><span class="p">)</span> <span class="p">);</span>      <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">)</span> <span class="p">);</span>         <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">version</span><span class="p">(</span><span class="s1">'Webkit'</span><span class="p">)</span> <span class="p">);</span>         <span class="c1">// 534.3</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">versionStr</span><span class="p">(</span><span class="s1">'Build'</span><span class="p">)</span> <span class="p">);</span>       <span class="c1">// '4.1.A.0.562'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">md</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="s1">'playstation|xbox'</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// false</span>
-</pre></div>
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> MobileDetect <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>mobile-detect<span class="pl-pds">'</span></span>),
+    md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(req.<span class="pl-sc">headers</span>[<span class="pl-s1"><span class="pl-pds">'</span>user-agent<span class="pl-pds">'</span></span>]);
+<span class="pl-c">// ... see below</span></pre></div>
 
 <h2>
-<a name="more-info-" class="anchor" href="#more-info-"><span class="octicon octicon-link"></span></a>More Info ...</h2>
+<a id="general" class="anchor" href="#general" aria-hidden="true"><span class="octicon octicon-link"></span></a>General</h2>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(
+    <span class="pl-s1"><span class="pl-pds">'</span>Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
+    <span class="pl-s1"><span class="pl-pds">'</span> Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko)<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
+    <span class="pl-s1"><span class="pl-pds">'</span> Version/4.0 Mobile Safari/534.30<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// more typically we would instantiate with 'window.navigator.userAgent'</span>
+<span class="pl-c">// as user-agent; this string literal is only for better understanding</span>
+
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.mobile() );          <span class="pl-c">// 'Sony'</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.phone() );           <span class="pl-c">// 'Sony'</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.tablet() );          <span class="pl-c">// null</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.<span class="pl-sc">userAgent</span>() );       <span class="pl-c">// 'Safari'</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.os() );              <span class="pl-c">// 'AndroidOS'</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.is(<span class="pl-s1"><span class="pl-pds">'</span>iPhone<span class="pl-pds">'</span></span>) );      <span class="pl-c">// false</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.is(<span class="pl-s1"><span class="pl-pds">'</span>bot<span class="pl-pds">'</span></span>) );         <span class="pl-c">// false</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.<span class="pl-sc">version</span>(<span class="pl-s1"><span class="pl-pds">'</span>Webkit<span class="pl-pds">'</span></span>) );         <span class="pl-c">// 534.3</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.versionStr(<span class="pl-s1"><span class="pl-pds">'</span>Build<span class="pl-pds">'</span></span>) );       <span class="pl-c">// '4.1.A.0.562'</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.<span class="pl-s3">match</span>(<span class="pl-s1"><span class="pl-pds">'</span>playstation|xbox<span class="pl-pds">'</span></span>) ); <span class="pl-c">// false</span></pre></div>
+
+<h2>
+<a id="more-info-" class="anchor" href="#more-info-" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Info ...</h2>
 
 <p>There is some documentation generated by JSDoc:</p>
 
 <p><a href="http://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html">http://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html</a></p>
 
 <h2>
-<a name="side-effects" class="anchor" href="#side-effects"><span class="octicon octicon-link"></span></a>Side Effects</h2>
+<a id="side-effects" class="anchor" href="#side-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Side Effects</h2>
 
 <p>Script creates the global property <code>MobileDetect</code>.</p>
 
 <h2>
-<a name="modernizr-extension" class="anchor" href="#modernizr-extension"><span class="octicon octicon-link"></span></a>Modernizr Extension</h2>
+<a id="modernizr-extension" class="anchor" href="#modernizr-extension" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modernizr Extension</h2>
 
 <p>When using <a href="http://modernizr.com/">Modernizr</a>, you can include <code>mobile-detect-modernizr.js</code>.
 It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>tablet</code> and <code>mobilegradea</code> if applicable.</p>
@@ -122,38 +119,45 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 <p>You can easily extend it, e.g. <code>android</code>, <code>iphone</code>, etc.</p>
 
 <h2>
-<a name="size-bytes" class="anchor" href="#size-bytes"><span class="octicon octicon-link"></span></a>Size (bytes)</h2>
+<a id="size-bytes" class="anchor" href="#size-bytes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Size (bytes)</h2>
 
 <ul>
-<li>development: 57674</li>
-<li>minified: 31918</li>
-<li>minified + gzipped: 13499 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
+<li>development: 59382</li>
+<li>minified: 33281</li>
+<li>minified + gzipped: 13939 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
 </ul>
 
 <h1>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <h2>
-<a name="bower" class="anchor" href="#bower"><span class="octicon octicon-link"></span></a>Bower</h2>
+<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bower</h2>
 
 <pre><code>$ bower install hgoebl/mobile-detect.js --save
 </code></pre>
 
 <h2>
-<a name="nodejs--npm" class="anchor" href="#nodejs--npm"><span class="octicon octicon-link"></span></a>Node.js / npm</h2>
+<a id="nodejs--npm" class="anchor" href="#nodejs--npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js / npm</h2>
 
 <pre><code>$ npm install mobile-detect --save
 </code></pre>
 
 <h2>
-<a name="cdn---jsdelivr" class="anchor" href="#cdn---jsdelivr"><span class="octicon octicon-link"></span></a>CDN - <a href="http://www.jsdelivr.com/#!mobile-detect.js">jsDelivr</a>
+<a id="cdn---jsdelivr" class="anchor" href="#cdn---jsdelivr" aria-hidden="true"><span class="octicon octicon-link"></span></a>CDN - <a href="http://www.jsdelivr.com/#!mobile-detect.js">jsDelivr</a>
 </h2>
 
-<pre><code>&lt;script src="//cdn.jsdelivr.net/mobile-detect.js/0.4.2/mobile-detect.min.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="//cdn.jsdelivr.net/mobile-detect.js/0.4.3/mobile-detect.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a id="cdnjs---cdnjscom" class="anchor" href="#cdnjs---cdnjscom" aria-hidden="true"><span class="octicon octicon-link"></span></a>cdnjs - <a href="https://cdnjs.com/libraries/mobile-detect">cdnjs.com</a>
+</h2>
+
+<pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/0.4.3/mobile-detect.min.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <h1>
-<a name="alternatives--infos" class="anchor" href="#alternatives--infos"><span class="octicon octicon-link"></span></a>Alternatives / Infos</h1>
+<a id="alternatives--infos" class="anchor" href="#alternatives--infos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternatives / Infos</h1>
 
 <p>Often device detection is the first solution in your mind. Please consider looking for other solutions
 like media queries and feature detection (e.g. w/ Modernizr). Maybe there are better (simpler, smaller,
@@ -201,19 +205,19 @@ Lightweight JavaScript-based User-Agent String Parser</li>
 </ul>
 
 <h2>
-<a name="mobile-usage-statistics" class="anchor" href="#mobile-usage-statistics"><span class="octicon octicon-link"></span></a>Mobile-Usage Statistics</h2>
+<a id="mobile-usage-statistics" class="anchor" href="#mobile-usage-statistics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mobile-Usage Statistics</h2>
 
 <p>If you have to provide statistics about how many and which mobile devices are hitting your web-site, you can
 generate statistics (data and views) with <a href="https://github.com/hgoebl/mobile-usage">hgoebl/mobile-usage</a>.
 There are many hooks to customize statistical calculation to your needs.</p>
 
 <h1>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
 <p>MIT-License (see LICENSE file).</p>
 
 <h1>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
 
 <p>Your contribution is welcome.
 If you want new devices to be supported, please contribute to
@@ -236,15 +240,15 @@ as a sibling directory to mobile-detect.js/.
 </ul>
 
 <h2>
-<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
 
 <h3>
-<a name="browser-1" class="anchor" href="#browser-1"><span class="octicon octicon-link"></span></a>Browser</h3>
+<a id="browser-1" class="anchor" href="#browser-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h3>
 
 <p>Open <code>tests/SpecRunner.html</code> in different browsers.</p>
 
 <h3>
-<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h3>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js</h3>
 
 <pre><code>$ npm test
 $ # or
@@ -252,12 +256,12 @@ $ grunt jasmine_node
 </code></pre>
 
 <h1>
-<a name="donations" class="anchor" href="#donations"><span class="octicon octicon-link"></span></a>Donations</h1>
+<a id="donations" class="anchor" href="#donations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donations</h1>
 
 <p>If you want, you can donate to <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a>.</p>
 
 <h1>
-<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h1>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h1>
 
 <ul>
 <li>Extend RegEx patterns so that test passes</li>

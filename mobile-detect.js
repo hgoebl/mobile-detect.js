@@ -256,8 +256,8 @@ define(function () {
         "DesktopMode": "WPDesktop",
         "TV": "SonyDTV|HbbTV",
         "WebKit": "(webkit)[ \/]([\\w.]+)",
-        "Bot": "Googlebot|YandexBot|bingbot|ia_archiver|AhrefsBot|Ezooms|GSLFbot|WBSearchBot|Twitterbot|TweetmemeBot|Twikle|PaperLiBot|Wotbox|UnwindFetchor|facebookexternalhit",
-        "MobileBot": "Googlebot-Mobile|YahooSeeker\/M1A1-R2D2",
+        "Bot": "Googlebot|AdsBot-Google|YandexBot|bingbot|ia_archiver|AhrefsBot|Ezooms|GSLFbot|WBSearchBot|Twitterbot|TweetmemeBot|Twikle|PaperLiBot|Wotbox|UnwindFetchor|facebookexternalhit",
+        "MobileBot": "Googlebot-Mobile|AdsBot-Google-Mobile|YahooSeeker\/M1A1-R2D2",
         "Console": "\\b(Nintendo|Nintendo WiiU|Nintendo 3DS|PLAYSTATION|Xbox)\\b",
         "Watch": "SM-V700"
     }

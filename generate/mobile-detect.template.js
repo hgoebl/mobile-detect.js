@@ -173,7 +173,8 @@ define(function () {
         if (isMobileFallback(userAgent)) {
             phoneSized = MobileDetect.isPhoneSized(maxPhoneWidth);
             if (phoneSized === undefined) {
-                cache.mobile = cache.tablet = cache.phone = FALLBACK_MOBILE;
+                cache.mobile = FALLBACK_MOBILE;
+                cache.tablet = cache.phone = null;
             } else if (phoneSized) {
                 cache.mobile = cache.phone = FALLBACK_PHONE;
                 cache.tablet = null;

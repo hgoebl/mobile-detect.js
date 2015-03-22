@@ -47,7 +47,7 @@ You can find out information about the device rendering your web page:</p>
 <li>specific versions (e.g. WebKit)</li>
 </ul>
 
-<p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.11</strong></p>
+<p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.12</strong></p>
 
 <h1>
 <a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Demo</h1>
@@ -57,46 +57,78 @@ See it in action with your device:</p>
 
 <p><strong><a href="http://zeno.github.io/mobile-detect-demo/">Demo</a></strong></p>
 
+<p>Another Demo/check (though without any styling) can be found <a href="http://hgoebl.github.io/mobile-detect.js/check/">here</a>.</p>
+
+<h1>
+<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Warning</h1>
+
+<p>As mentioned later, "User-Agent" based detection is not a reliable solution in most cases, because:</p>
+
+<ul>
+<li>The rules (regular expressions) are constantly out-dated and incomplete</li>
+<li>You have to update the detection code continuously</li>
+<li>There are other ways to detect how your web application should behave:
+
+<ul>
+<li>feature detection, e.g. <a href="http://modernizr.com/">Modernizr</a>
+</li>
+<li>
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries">Media Queries</a>, examples at <a href="http://mediaqueri.es/">http://mediaqueri.es/</a>
+</li>
+</ul>
+</li>
+<li>Maybe there are some libraries out there (which are probably not free) doing a more reliable job</li>
+</ul>
+
+<p>If you still want to (or have to) use this library, you should always <strong>encapsulate it with your own code</strong>,
+because chances a very high that you have to tweak the behaviour a bit or are not satisfied with the
+result of mobile-detect.js. <strong>Don't spread usage of MobileDetect all over your own code!</strong> As you can see
+in the issues, there are some "bugs", feature-requests, pull-requests where people are not so happy
+how MobileDetect works. But I cannot change its behaviour from version to version, even if this was
+reasonable from new users' point of view. I hope you show understanding.</p>
+
+<p>At least there is a way to monkey-patch the library (see "Extending" below).</p>
+
 <h1>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
 
 <h2>
 <a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h2>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>mobile-detect.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-s2">&lt;<span class="pl-ent">script</span>&gt;</span>
-<span class="pl-s2">    <span class="pl-s">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(<span class="pl-s3">window</span>.<span class="pl-s3">navigator</span>.<span class="pl-sc">userAgent</span>);</span>
-<span class="pl-s2">    <span class="pl-c">// ... see below</span></span>
-<span class="pl-s2">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>mobile-detect.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    <span class="pl-k">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(<span class="pl-c1">window</span>.<span class="pl-c1">navigator</span>.<span class="pl-c1">userAgent</span>);</span>
+<span class="pl-s1">    <span class="pl-c">// ... see below</span></span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h2>
 <a id="nodejs--express" class="anchor" href="#nodejs--express" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js / Express</h2>
 
-<div class="highlight highlight-js"><pre><span class="pl-s">var</span> MobileDetect <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>mobile-detect<span class="pl-pds">'</span></span>),
-    md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(req.<span class="pl-sc">headers</span>[<span class="pl-s1"><span class="pl-pds">'</span>user-agent<span class="pl-pds">'</span></span>]);
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> MobileDetect <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>mobile-detect<span class="pl-pds">'</span></span>),
+    md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(req.<span class="pl-c1">headers</span>[<span class="pl-s"><span class="pl-pds">'</span>user-agent<span class="pl-pds">'</span></span>]);
 <span class="pl-c">// ... see below</span></pre></div>
 
 <h2>
 <a id="general" class="anchor" href="#general" aria-hidden="true"><span class="octicon octicon-link"></span></a>General</h2>
 
-<div class="highlight highlight-js"><pre><span class="pl-s">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(
-    <span class="pl-s1"><span class="pl-pds">'</span>Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
-    <span class="pl-s1"><span class="pl-pds">'</span> Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko)<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
-    <span class="pl-s1"><span class="pl-pds">'</span> Version/4.0 Mobile Safari/534.30<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(
+    <span class="pl-s"><span class="pl-pds">'</span>Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
+    <span class="pl-s"><span class="pl-pds">'</span> Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko)<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
+    <span class="pl-s"><span class="pl-pds">'</span> Version/4.0 Mobile Safari/534.30<span class="pl-pds">'</span></span>);
 
 <span class="pl-c">// more typically we would instantiate with 'window.navigator.userAgent'</span>
 <span class="pl-c">// as user-agent; this string literal is only for better understanding</span>
 
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.mobile() );          <span class="pl-c">// 'Sony'</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.phone() );           <span class="pl-c">// 'Sony'</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.tablet() );          <span class="pl-c">// null</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.<span class="pl-sc">userAgent</span>() );       <span class="pl-c">// 'Safari'</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.os() );              <span class="pl-c">// 'AndroidOS'</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.is(<span class="pl-s1"><span class="pl-pds">'</span>iPhone<span class="pl-pds">'</span></span>) );      <span class="pl-c">// false</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.is(<span class="pl-s1"><span class="pl-pds">'</span>bot<span class="pl-pds">'</span></span>) );         <span class="pl-c">// false</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.<span class="pl-sc">version</span>(<span class="pl-s1"><span class="pl-pds">'</span>Webkit<span class="pl-pds">'</span></span>) );         <span class="pl-c">// 534.3</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.versionStr(<span class="pl-s1"><span class="pl-pds">'</span>Build<span class="pl-pds">'</span></span>) );       <span class="pl-c">// '4.1.A.0.562'</span>
-<span class="pl-en">console</span><span class="pl-s3">.log</span>( md.<span class="pl-s3">match</span>(<span class="pl-s1"><span class="pl-pds">'</span>playstation|xbox<span class="pl-pds">'</span></span>) ); <span class="pl-c">// false</span></pre></div>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.mobile() );          <span class="pl-c">// 'Sony'</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.phone() );           <span class="pl-c">// 'Sony'</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.tablet() );          <span class="pl-c">// null</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.<span class="pl-c1">userAgent</span>() );       <span class="pl-c">// 'Safari'</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.os() );              <span class="pl-c">// 'AndroidOS'</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.is(<span class="pl-s"><span class="pl-pds">'</span>iPhone<span class="pl-pds">'</span></span>) );      <span class="pl-c">// false</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.is(<span class="pl-s"><span class="pl-pds">'</span>bot<span class="pl-pds">'</span></span>) );         <span class="pl-c">// false</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.<span class="pl-c1">version</span>(<span class="pl-s"><span class="pl-pds">'</span>Webkit<span class="pl-pds">'</span></span>) );         <span class="pl-c">// 534.3</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.versionStr(<span class="pl-s"><span class="pl-pds">'</span>Build<span class="pl-pds">'</span></span>) );       <span class="pl-c">// '4.1.A.0.562'</span>
+<span class="pl-en">console</span><span class="pl-c1">.log</span>( md.<span class="pl-c1">match</span>(<span class="pl-s"><span class="pl-pds">'</span>playstation|xbox<span class="pl-pds">'</span></span>) ); <span class="pl-c">// false</span></pre></div>
 
 <h2>
 <a id="more-info-" class="anchor" href="#more-info-" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Info ...</h2>
@@ -122,9 +154,9 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 <a id="size-bytes" class="anchor" href="#size-bytes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Size (bytes)</h2>
 
 <ul>
-<li>development: 59382</li>
-<li>minified: 33281</li>
-<li>minified + gzipped: 13939 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
+<li>development: 62001</li>
+<li>minified: 34907</li>
+<li>minified + gzipped: 14598 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
 </ul>
 
 <h1>
@@ -146,15 +178,23 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 <a id="cdn---jsdelivr" class="anchor" href="#cdn---jsdelivr" aria-hidden="true"><span class="octicon octicon-link"></span></a>CDN - <a href="http://www.jsdelivr.com/#!mobile-detect.js">jsDelivr</a>
 </h2>
 
-<pre><code>&lt;script src="//cdn.jsdelivr.net/mobile-detect.js/0.4.3/mobile-detect.min.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="//cdn.jsdelivr.net/mobile-detect.js/1.0.0/mobile-detect.min.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <h2>
 <a id="cdnjs---cdnjscom" class="anchor" href="#cdnjs---cdnjscom" aria-hidden="true"><span class="octicon octicon-link"></span></a>cdnjs - <a href="https://cdnjs.com/libraries/mobile-detect">cdnjs.com</a>
 </h2>
 
-<pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/0.4.3/mobile-detect.min.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.0.0/mobile-detect.min.js"&gt;&lt;/script&gt;
 </code></pre>
+
+<h1>
+<a id="extendingmodifying-behaviour" class="anchor" href="#extendingmodifying-behaviour" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extending/Modifying Behaviour</h1>
+
+<p>Though it is not recommended to rely on internal methods or structures of MobileDetect, you can alter
+the behaviour by replacing particular internal methods with your own implementations.
+If you feel like this is the only possibility, then go ahead and have a look at the source code and
+examples in tests/spec/MobileDetectSpec.js (search for "Extensibility").</p>
 
 <h1>
 <a id="alternatives--infos" class="anchor" href="#alternatives--infos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternatives / Infos</h1>
@@ -273,7 +313,7 @@ $ grunt jasmine_node
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p class="copyright">mobile-detect.js maintained by <a href="https://github.com/hgoebl">hgoebl</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 

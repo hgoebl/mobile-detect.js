@@ -571,6 +571,12 @@ define(function () {
         return 'C';
     }
 
+    function getDeviceSmallerSide() {
+        return window.screen.width < window.screen.height ?
+            window.screen.width :
+            window.screen.height;
+    }
+
     /**
      * Constructor for MobileDetect object.
      * <br>
@@ -588,11 +594,12 @@ define(function () {
      * </pre>
      *
      * @param {string} userAgent typically taken from window.navigator.userAgent or http_header['User-Agent']
-     * @param {number} [maxPhoneWidth=650] <strong>only for browsers</strong> specify a value for the maximum
-     *        width (in logical "CSS" pixels) until a device detected as mobile will be handled as phone.
+     * @param {number} [maxPhoneWidth=600] <strong>only for browsers</strong> specify a value for the maximum
+     *        width of smallest device side (in logical "CSS" pixels) until a device detected as mobile will be handled
+     *        as phone.
      *        This is only used in cases where the device cannot be classified as phone or tablet.<br>
-     *        See <a href="http://www.html5rocks.com/en/mobile/cross-device/">A non-responsive approach to
-     *        building cross-device webapps</a>.<br>
+     *        See <a href="http://developer.android.com/guide/practices/screens_support.html">Declaring Tablet Layouts
+     *        for Android</a>.<br>
      *        If you provide a value < 0, then this "fuzzy" check is disabled.
      * @constructor
      * @global
@@ -600,7 +607,8 @@ define(function () {
     function MobileDetect(userAgent, maxPhoneWidth) {
         this.ua = userAgent || '';
         this._cache = {};
-        this.maxPhoneWidth = maxPhoneWidth || 650;
+        //600dp is typical 7" tablet minimum width
+        this.maxPhoneWidth = maxPhoneWidth || 600;
     }
 
     MobileDetect.prototype = {
@@ -841,16 +849,9 @@ define(function () {
     };
 
     // environment-dependent
-    if (typeof window !== 'undefined' && window.screen && window.screen.width) {
+    if (typeof window !== 'undefined' && window.screen) {
         MobileDetect.isPhoneSized = function (maxPhoneWidth) {
-            if (maxPhoneWidth < 0) {
-                return undefined;
-            }
-            var physicalPixelWidth = window.screen.width,
-                pixelRatio = window.devicePixelRatio || 1,
-                cssPixelWidth = physicalPixelWidth / pixelRatio;
-
-            return cssPixelWidth <= maxPhoneWidth;
+            return maxPhoneWidth < 0 ? undefined : getDeviceSmallerSide() <= maxPhoneWidth;
         };
     } else {
         MobileDetect.isPhoneSized = function () {};

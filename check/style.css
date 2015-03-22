@@ -1,0 +1,19 @@
+input {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+p {
+    max-width: 600px;
+}
+
+dt {
+    font-family: "Courier New", Courier, monospace;
+}
+dd {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

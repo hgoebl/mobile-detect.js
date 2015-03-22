@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+<head>
+    <meta charset="utf-8" />
+    <title>mobile-detect.js check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.0.0/mobile-detect.min.js"></script>
+    <!--<script src="http://192.168.0.147:5555/mobile-detect.min.js"></script>-->
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl as vm">
+<h1>Mobile-Detect Check (v1.0.0)</h1>
+<p>
+    This is a small demo to check how <a href="http://hgoebl.github.io/mobile-detect.js/">mobile-detect.js</a>
+    behaves with your mobile browser. You can change the User-Agent to a complete other one so you can see
+    how that browser would be detected. Keep in mind that in case of doubt (phone or tablet) the smaller side
+    of the screen will be used to distinguish both device classes.
+</p>
+<h2>Input</h2>
+<label for="userAgent">User-Agent:</label>
+<input id="userAgent" type="text" ng-model="vm.input.userAgent">
+<label for="maxPhoneWidth">maxPhoneWidth (-1 to disable)</label>
+<input id="maxPhoneWidth" type="number" ng-model="vm.input.maxPhoneWidth">
+<h2>Result:</h2>
+<dl>
+    <dt ng-repeat-start="item in vm.outcome">
+        {{item.key}}
+    </dt>
+    <dd ng-repeat-end>
+        {{item.val || '-'}}
+    </dd>
+</dl>
+</body>
+</html>

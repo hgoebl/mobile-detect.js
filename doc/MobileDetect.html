@@ -153,16 +153,17 @@ Such an object will keep a reference to the given user-agent string and cache mo
             
                 <td class="default">
                 
-                    650
+                    600
                 
                 </td>
             
             
             <td class="description last"><strong>only for browsers</strong> specify a value for the maximum
-       width (in logical "CSS" pixels) until a device detected as mobile will be handled as phone.
+       width of smallest device side (in logical "CSS" pixels) until a device detected as mobile will be handled
+       as phone.
        This is only used in cases where the device cannot be classified as phone or tablet.<br>
-       See <a href="http://www.html5rocks.com/en/mobile/cross-device/">A non-responsive approach to
-       building cross-device webapps</a>.<br>
+       See <a href="http://developer.android.com/guide/practices/screens_support.html">Declaring Tablet Layouts
+       for Android</a>.<br>
        If you provide a value < 0, then this "fuzzy" check is disabled.</td>
         </tr>
 	
@@ -194,7 +195,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line599">line 599</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line617">line 617</a>
     </li></ul></dd>
     
     
@@ -313,7 +314,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
        For a complete list of possible values, see <a href="MobileDetect.html#userAgent">MobileDetect#userAgent</a>,
        <a href="MobileDetect.html#os">MobileDetect#os</a>, <a href="MobileDetect.html#phone">MobileDetect#phone</a>, <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.<br>
        Additionally you have following keys:<br>
-<br><tt>DesktopMode, TV, WebKit, Bot, MobileBot, Console, Watch</tt><br></td>
+<br><tt>Bot, MobileBot, DesktopMode, TV, WebKit, Console, Watch</tt><br></td>
         </tr>
 	
 	
@@ -344,7 +345,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line777">line 777</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line809">line 809</a>
     </li></ul></dd>
     
     
@@ -488,7 +489,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line799">line 799</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line831">line 831</a>
     </li></ul></dd>
     
     
@@ -554,9 +555,13 @@ If the device is not detected by the regular expressions from Mobile-Detect, a t
 the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
 is positive, a value of <code>UnknownPhone</code>, <code>UnknownTablet</code> or
 <code>UnknownMobile</code> is returned.<br>
-When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
-When used server-side (node.js), there is no way to tell the difference between <code>UnknownPhone</code>
-and <code>UnknownTablet</code>, so you will only get <code>UnknownMobile</code>.<br>
+When used in browser, the decision whether phone or tablet is made based on <code>screen.width/height</code>.<br>
+<br>
+When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
+and <code>UnknownMobile</code>, so you will get <code>UnknownMobile</code> here.<br>
+Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile</code> only for:
+<a href="MobileDetect.html#mobile">MobileDetect#mobile</a>, not for <a href="MobileDetect.html#phone">MobileDetect#phone</a> and <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.
+In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
 <br>
 In most cases you will use the return value just as a boolean.
     </div>
@@ -591,7 +596,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line608">line 608</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line627">line 627</a>
     </li></ul></dd>
     
     
@@ -682,7 +687,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line828">line 828</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line860">line 860</a>
     </li></ul></dd>
     
     
@@ -777,7 +782,7 @@ iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS</tt><br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line716">line 716</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line749">line 749</a>
     </li></ul></dd>
     
     
@@ -839,15 +844,20 @@ iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS</tt><br>
 <br>
 The returned tablet (family or producer) is one of following keys:<br>
 <br><tt>iPhone, BlackBerry, HTC, Nexus, Dell, Motorola, Samsung, LG, Sony, Asus,
-Micromax, Palm, Vertu, Pantech, Fly, iMobile, SimValley, Wolfgang, Alcatel,
-Nintendo, Amoi, INQ, GenericPhone</tt><br>
+Micromax, Palm, Vertu, Pantech, Fly, Wiko, iMobile, SimValley, Wolfgang,
+Alcatel, Nintendo, Amoi, INQ, GenericPhone</tt><br>
 <br>
 If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
 the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
 is positive, a value of <code>UnknownPhone</code> or <code>UnknownMobile</code> is returned.<br>
-When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
-When used server-side (node.js), there is no way to tell the difference between <code>UnknownPhone</code>
-and <code>UnknownMobile</code>, so you will only get <code>UnknownMobile</code>.<br>
+When used in browser, the decision whether phone or tablet is made based on <code>screen.width/height</code>.<br>
+<br>
+When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
+and <code>UnknownMobile</code>, so you will get <code>null</code> here, while <a href="MobileDetect.html#mobile">MobileDetect#mobile</a>
+will return <code>UnknownMobile</code>.<br>
+Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile</code> only for:
+<a href="MobileDetect.html#mobile">MobileDetect#mobile</a>, not for <a href="MobileDetect.html#phone">MobileDetect#phone</a> and <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.
+In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
 <br>
 In most cases you will use the return value just as a boolean.
     </div>
@@ -882,7 +892,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line631">line 631</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line654">line 654</a>
     </li></ul></dd>
     
     
@@ -961,15 +971,20 @@ VodafoneTablet, EssentielBTablet, RossMoorTablet, iMobileTablet, TolinoTablet,
 AudioSonicTablet, AMPETablet, SkkTablet, TecnoTablet, JXDTablet, iJoyTablet,
 FX2Tablet, XoroTablet, ViewsonicTablet, OdysTablet, CaptivaTablet,
 IconbitTablet, TeclastTablet, JaytechTablet, BlaupunktTablet, DigmaTablet,
-EvolioTablet, LavaTablet, CelkonTablet, MiTablet, NibiruTablet, NexoTablet,
-UbislateTablet, PocketBookTablet, Hudl, TelstraTablet, GenericTablet</tt><br>
+EvolioTablet, LavaTablet, CelkonTablet, WolderTablet, MiTablet, NibiruTablet,
+NexoTablet, UbislateTablet, PocketBookTablet, Hudl, TelstraTablet, GenericTablet</tt><br>
 <br>
 If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
 the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
 is positive, a value of <code>UnknownTablet</code> or <code>UnknownMobile</code> is returned.<br>
-When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
+When used in browser, the decision whether phone or tablet is made based on <code>screen.width/height</code>.<br>
+<br>
 When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
-and <code>UnknownMobile</code>, so you will only get <code>UnknownMobile</code>.<br>
+and <code>UnknownMobile</code>, so you will get <code>null</code> here, while <a href="MobileDetect.html#mobile">MobileDetect#mobile</a>
+will return <code>UnknownMobile</code>.<br>
+Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile</code> only for:
+<a href="MobileDetect.html#mobile">MobileDetect#mobile</a>, not for <a href="MobileDetect.html#phone">MobileDetect#phone</a> and <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.
+In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
 <br>
 In most cases you will use the return value just as a boolean.
     </div>
@@ -1004,7 +1019,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line656">line 656</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line684">line 684</a>
     </li></ul></dd>
     
     
@@ -1100,7 +1115,7 @@ ObigoBrowser, NetFront, GenericBrowser</tt><br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line698">line 698</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line731">line 731</a>
     </li></ul></dd>
     
     
@@ -1248,7 +1263,7 @@ NT, Symbian, webOS</tt><br></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line734">line 734</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line766">line 766</a>
     </li></ul></dd>
     
     
@@ -1396,7 +1411,7 @@ NT, Symbian, webOS</tt><br></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line756">line 756</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line788">line 788</a>
     </li></ul></dd>
     
     
@@ -1465,7 +1480,7 @@ NT, Symbian, webOS</tt><br></td>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Mon Dec 08 2014 21:28:03 GMT+0100 (MEZ)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sun Mar 22 2015 21:14:52 GMT+0100 (MEZ)
 </footer>
 
 <script> prettyPrint(); </script>

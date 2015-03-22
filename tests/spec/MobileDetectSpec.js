@@ -1,5 +1,5 @@
-/*global MobileDetect:true mobilePerVendor:true describe it expect beforeEach*/
-/*jshint node:true browser:true*/
+/*global MobileDetect:true, mobilePerVendor:true, describe:false, it:false, expect:false, beforeEach:false*/
+/*jshint node:true, browser:true*/
 "use strict";
 
 // handle stand-alone node tests
@@ -129,6 +129,76 @@ describe("Fixing issues", function () {
     it("should fix issue #15", function () {
         var aut = new MobileDetect('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; Microsoft; Virtual) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537', -1);
         expect(aut.os()).toEqual('WindowsMobileOS');
+    });
+});
+
+describe("Extensibility", function () {
+    it("should make internal 'prepareDetectionCache' possible to delegate", function () {
+        var aut, UA = 'Mozilla/5.0 (Mobile; iPhone OS 7_0_3',
+            oldPrepareDetectionCache = MobileDetect._impl.prepareDetectionCache;
+
+        aut = new MobileDetect(UA);
+        expect(aut.phone()).toBe('iPhone');
+
+        MobileDetect._impl.prepareDetectionCache = function (cache, userAgent, maxPhoneWidth) {
+            oldPrepareDetectionCache(cache, userAgent, maxPhoneWidth);
+            // ...
+            // there would obviously be some logic at this point
+            // ...
+            cache.phone = 'MySpecialPhone';
+        };
+        aut = new MobileDetect(UA);
+        expect(aut.phone()).toBe('MySpecialPhone');
+
+        // turning back to original implementation
+        MobileDetect._impl.prepareDetectionCache = oldPrepareDetectionCache;
+
+        aut = new MobileDetect(UA);
+        expect(aut.phone()).toBe('iPhone');
+    });
+
+    it("should make internal 'detectOS' possible to delegate", function () {
+        var aut, UA = 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0',
+            oldDetectOS = MobileDetect._impl.detectOS;
+
+        aut = new MobileDetect(UA);
+        expect(aut.os()).toBe(null);
+        expect(aut.is('FirefoxOS')).toBe(false);
+
+        MobileDetect._impl.detectOS = function (ua) {
+            var os = oldDetectOS(ua);
+
+            if (os == null) {
+                if (/.*(Mobile|Tablet).+\sFirefox\/.*/.test(ua)) {
+                    return 'FirefoxOS';
+                }
+            }
+            return os;
+        };
+
+        aut = new MobileDetect(UA);
+        expect(aut.os()).toBe('FirefoxOS');
+        expect(aut.is('FirefoxOS')).toBe(true);
+    });
+
+    it("should be possible to extend the regular expressions", function () {
+        var phones = MobileDetect._impl.mobileDetectRules.phones,
+            UA = 'Mozilla/5.0 (Linux; U; Android 4.0.3; asdfghjkl Build/4.1.A.0.562',
+            pattern, aut;
+
+        // with original patterns it should not be detected as phone
+        aut = new MobileDetect(UA);
+        expect(aut.phone()).toBe(null);
+        expect(aut.os()).toBe('AndroidOS');
+
+        // when we extend the pattern
+        pattern = phones.Sony.source + '|asdfghjkl';
+        phones.Sony = new RegExp(pattern, 'i');
+
+        // then it should be detected as a Sony mobile phone
+        aut = new MobileDetect(UA);
+        expect(aut.phone()).toBe('Sony');
+        expect(aut.os()).toBe('AndroidOS');
     });
 });
 

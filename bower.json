@@ -1,6 +1,6 @@
 {
     "name": "mobile-detect",
-    "version": "0.4.3",
+    "version": "1.0.0",
     "description": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
     "homepage": "http://hgoebl.github.io/mobile-detect.js/",
     "keywords": [

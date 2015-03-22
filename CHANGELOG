@@ -1,3 +1,11 @@
+v1.0.0:
+  date: 2015-03-22
+  changes:
+    - use Mobile-Detect@2.8.12
+    - breaking change: phone() and tablet() won't return 'UnknownMobile' -> have to check mobile() as well (issue #20)
+    - breaking change: fallback detection phone/tablet is now based on smaller screen side (issue #23)
+    - expose internal implementation in case somebody wants to quick fix or monkey-patch the behaviour
+
 v0.4.3:
   date: 2014-12-08
   changes:

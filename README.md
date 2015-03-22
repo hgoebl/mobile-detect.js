@@ -11,7 +11,7 @@ You can find out information about the device rendering your web page:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.11**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.12**
 
 # Live Demo
 
@@ -19,6 +19,28 @@ Current `master` branch is using detection logic from **Mobile-Detect@2.8.11**
 See it in action with your device:
 
 **[Demo](http://zeno.github.io/mobile-detect-demo/)**
+
+Another Demo/check (though without any styling) can be found [here](http://hgoebl.github.io/mobile-detect.js/check/).
+
+# Warning
+
+As mentioned later, "User-Agent" based detection is not a reliable solution in most cases, because:
+
+  * The rules (regular expressions) are constantly out-dated and incomplete
+  * You have to update the detection code continuously
+  * There are other ways to detect how your web application should behave:
+    * feature detection, e.g. [Modernizr](http://modernizr.com/)
+    * [Media Queries](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries), examples at <http://mediaqueri.es/>
+  * Maybe there are some libraries out there (which are probably not free) doing a more reliable job
+
+If you still want to (or have to) use this library, you should always **encapsulate it with your own code**,
+because chances a very high that you have to tweak the behaviour a bit or are not satisfied with the
+result of mobile-detect.js. **Don't spread usage of MobileDetect all over your own code!** As you can see
+in the issues, there are some "bugs", feature-requests, pull-requests where people are not so happy
+how MobileDetect works. But I cannot change its behaviour from version to version, even if this was
+reasonable from new users' point of view. I hope you show understanding.
+
+At least there is a way to monkey-patch the library (see "Extending" below).
 
 # Usage
 
@@ -82,9 +104,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 59382
- * minified: 33281
- * minified + gzipped: 13939 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 62001
+ * minified: 34907
+ * minified + gzipped: 14598 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
@@ -98,12 +120,19 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
 
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/0.4.3/mobile-detect.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.0.0/mobile-detect.min.js"></script>
 
 ## cdnjs - [cdnjs.com](https://cdnjs.com/libraries/mobile-detect)
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/0.4.3/mobile-detect.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.0.0/mobile-detect.min.js"></script>
    
+# Extending/Modifying Behaviour
+
+Though it is not recommended to rely on internal methods or structures of MobileDetect, you can alter
+the behaviour by replacing particular internal methods with your own implementations.
+If you feel like this is the only possibility, then go ahead and have a look at the source code and
+examples in tests/spec/MobileDetectSpec.js (search for "Extensibility").
+
 # Alternatives / Infos
 
 Often device detection is the first solution in your mind. Please consider looking for other solutions

@@ -4,25 +4,40 @@
 define(function () {
     'use strict';
 
-    var mobileDetectRules = {/*rules*/};
+    var impl = {};
+
+    impl.mobileDetectRules = {/*rules*/};
 
     // following patterns come from http://detectmobilebrowsers.com/
-    var detectMobileBrowsers = {
+    impl.detectMobileBrowsers = {
         fullPattern: /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i,
         shortPattern: /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i
     };
 
     var hasOwnProp = Object.prototype.hasOwnProperty,
-        isArray,
-        FALLBACK_PHONE = 'UnknownPhone',
-        FALLBACK_TABLET = 'UnknownTablet',
-        FALLBACK_MOBILE = 'UnknownMobile';
+        isArray;
+
+    impl.FALLBACK_PHONE = 'UnknownPhone';
+    impl.FALLBACK_TABLET = 'UnknownTablet';
+    impl.FALLBACK_MOBILE = 'UnknownMobile';
 
     isArray = ('isArray' in Array) ?
         Array.isArray : function (value) { return Object.prototype.toString.call(value) === '[object Array]'; };
 
+    function equalIC(a, b) {
+        return a != null && b != null && a.toLowerCase() === b.toLowerCase();
+    }
+
+    function convertPropsToRegExp(object) {
+        for (var key in object) {
+            if (hasOwnProp.call(object, key)) {
+                object[key] = new RegExp(object[key], 'i');
+            }
+        }
+    }
+
     (function init() {
-        var key, values, value, i, len, verPos;
+        var key, values, value, i, len, verPos, mobileDetectRules = impl.mobileDetectRules;
         for (key in mobileDetectRules.props) {
             if (hasOwnProp.call(mobileDetectRules.props, key)) {
                 values = mobileDetectRules.props[key];
@@ -54,14 +69,6 @@ define(function () {
         };
     }());
 
-    function convertPropsToRegExp(object) {
-        for (var key in object) {
-            if (hasOwnProp.call(object, key)) {
-                object[key] = new RegExp(object[key], 'i');
-            }
-        }
-    }
-
     /**
      * Test userAgent string against a set of rules and find the matched key.
      * @param {Object} rules (key is String, value is RegExp)
@@ -69,7 +76,7 @@ define(function () {
      * @returns {String|null} the matched key if found, otherwise <tt>null</tt>
      * @private
      */
-    function findMatch(rules, userAgent) {
+    impl.findMatch = function(rules, userAgent) {
         for (var key in rules) {
             if (hasOwnProp.call(rules, key)) {
                 if (rules[key].test(userAgent)) {
@@ -78,7 +85,7 @@ define(function () {
             }
         }
         return null;
-    }
+    };
 
     /**
      * Check the version of the given property in the User-Agent.
@@ -88,8 +95,8 @@ define(function () {
      * @return {String} version or <tt>null</tt> if version not found
      * @private
      */
-    function getVersionStr(propertyName, userAgent) {
-        var props = mobileDetectRules.props, patterns, i, len, match;
+    impl.getVersionStr = function (propertyName, userAgent) {
+        var props = impl.mobileDetectRules.props, patterns, i, len, match;
         if (hasOwnProp.call(props, propertyName)) {
             patterns = props[propertyName];
             len = patterns.length;
@@ -101,7 +108,7 @@ define(function () {
             }
         }
         return null;
-    }
+    };
 
     /**
      * Check the version of the given property in the User-Agent.
@@ -112,10 +119,10 @@ define(function () {
      * @return {Number} version or <tt>NaN</tt> if version not found
      * @private
      */
-    function getVersion(propertyName, userAgent) {
-        var version = getVersionStr(propertyName, userAgent);
-        return version ? prepareVersionNo(version) : NaN;
-    }
+    impl.getVersion = function (propertyName, userAgent) {
+        var version = impl.getVersionStr(propertyName, userAgent);
+        return version ? impl.prepareVersionNo(version) : NaN;
+    };
 
     /**
      * Prepare the version number.
@@ -124,7 +131,7 @@ define(function () {
      * @return {Number} the version number as a floating number
      * @private
      */
-    function prepareVersionNo(version) {
+    impl.prepareVersionNo = function (version) {
         var numbers;
 
         numbers = version.split(/[a-z._ \/\-]/i);
@@ -137,32 +144,28 @@ define(function () {
             version += numbers.join('');
         }
         return Number(version);
-    }
+    };
 
-    function equalIC(a, b) {
-        return a != null && b != null && a.toLowerCase() === b.toLowerCase();
-    }
+    impl.isMobileFallback = function (userAgent) {
+        return impl.detectMobileBrowsers.fullPattern.test(userAgent) ||
+            impl.detectMobileBrowsers.shortPattern.test(userAgent.substr(0,4));
+    };
 
-    function isMobileFallback(userAgent) {
-        return detectMobileBrowsers.fullPattern.test(userAgent) ||
-            detectMobileBrowsers.shortPattern.test(userAgent.substr(0,4));
-    }
-
-    function prepareDetectionCache(cache, userAgent, maxPhoneWidth) {
+    impl.prepareDetectionCache = function (cache, userAgent, maxPhoneWidth) {
         if (cache.mobile !== undefined) {
             return;
         }
         var phone, tablet, phoneSized;
 
         // first check for stronger tablet rules, then phone (see issue#5)
-        tablet = findMatch(mobileDetectRules.tablets, userAgent);
+        tablet = impl.findMatch(impl.mobileDetectRules.tablets, userAgent);
         if (tablet) {
             cache.mobile = cache.tablet = tablet;
             cache.phone = null;
             return; // unambiguously identified as tablet
         }
 
-        phone = findMatch(mobileDetectRules.phones, userAgent);
+        phone = impl.findMatch(impl.mobileDetectRules.phones, userAgent);
         if (phone) {
             cache.mobile = cache.phone = phone;
             cache.tablet = null;
@@ -170,26 +173,26 @@ define(function () {
         }
 
         // our rules haven't found a match -> try more general fallback rules
-        if (isMobileFallback(userAgent)) {
+        if (impl.isMobileFallback(userAgent)) {
             phoneSized = MobileDetect.isPhoneSized(maxPhoneWidth);
             if (phoneSized === undefined) {
-                cache.mobile = FALLBACK_MOBILE;
+                cache.mobile = impl.FALLBACK_MOBILE;
                 cache.tablet = cache.phone = null;
             } else if (phoneSized) {
-                cache.mobile = cache.phone = FALLBACK_PHONE;
+                cache.mobile = cache.phone = impl.FALLBACK_PHONE;
                 cache.tablet = null;
             } else {
-                cache.mobile = cache.tablet = FALLBACK_TABLET;
+                cache.mobile = cache.tablet = impl.FALLBACK_TABLET;
                 cache.phone = null;
             }
         } else {
             // not mobile at all!
             cache.mobile = cache.tablet = cache.phone = null;
         }
-    }
+    };
 
     // t is a reference to a MobileDetect instance
-    function mobileGrade(t) {
+    impl.mobileGrade = function (t) {
         // impl note:
         // To keep in sync w/ Mobile_Detect.php easily, the following code is tightly aligned to the PHP version.
         // When changes are made in Mobile_Detect.php, copy this method and replace:
@@ -312,13 +315,18 @@ define(function () {
         //All older smartphone platforms and featurephones - Any device that doesn't support media queries
         //will receive the basic, C grade experience.
         return 'C';
-    }
+    };
 
-    function getDeviceSmallerSide() {
+    impl.detectOS = function (ua) {
+        return impl.findMatch(impl.mobileDetectRules.oss0, ua) ||
+            impl.findMatch(impl.mobileDetectRules.oss, ua);
+    };
+
+    impl.getDeviceSmallerSide = function () {
         return window.screen.width < window.screen.height ?
             window.screen.width :
             window.screen.height;
-    }
+    };
 
     /**
      * Constructor for MobileDetect object.
@@ -366,9 +374,13 @@ define(function () {
          * the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
          * is positive, a value of <code>UnknownPhone</code>, <code>UnknownTablet</code> or
          * <code>UnknownMobile</code> is returned.<br>
-         * When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
-         * When used server-side (node.js), there is no way to tell the difference between <code>UnknownPhone</code>
-         * and <code>UnknownTablet</code>, so you will only get <code>UnknownMobile</code>.<br>
+         * When used in browser, the decision whether phone or tablet is made based on <code>screen.width/height</code>.<br>
+         * <br>
+         * When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
+         * and <code>UnknownMobile</code>, so you will get <code>UnknownMobile</code> here.<br>
+         * Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile</code> only for:
+         * {@link MobileDetect#mobile}, not for {@link MobileDetect#phone} and {@link MobileDetect#tablet}.
+         * In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
          * <br>
          * In most cases you will use the return value just as a boolean.
          *
@@ -376,7 +388,7 @@ define(function () {
          * @function MobileDetect#mobile
          */
         mobile: function () {
-            prepareDetectionCache(this._cache, this.ua, this.maxPhoneWidth);
+            impl.prepareDetectionCache(this._cache, this.ua, this.maxPhoneWidth);
             return this._cache.mobile;
         },
 
@@ -389,9 +401,14 @@ define(function () {
          * If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
          * the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
          * is positive, a value of <code>UnknownPhone</code> or <code>UnknownMobile</code> is returned.<br>
-         * When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
-         * When used server-side (node.js), there is no way to tell the difference between <code>UnknownPhone</code>
-         * and <code>UnknownMobile</code>, so you will only get <code>UnknownMobile</code>.<br>
+         * When used in browser, the decision whether phone or tablet is made based on <code>screen.width/height</code>.<br>
+         * <br>
+         * When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
+         * and <code>UnknownMobile</code>, so you will get <code>null</code> here, while {@link MobileDetect#mobile}
+         * will return <code>UnknownMobile</code>.<br>
+         * Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile</code> only for:
+         * {@link MobileDetect#mobile}, not for {@link MobileDetect#phone} and {@link MobileDetect#tablet}.
+         * In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
          * <br>
          * In most cases you will use the return value just as a boolean.
          *
@@ -399,7 +416,7 @@ define(function () {
          * @function MobileDetect#phone
          */
         phone: function () {
-            prepareDetectionCache(this._cache, this.ua, this.maxPhoneWidth);
+            impl.prepareDetectionCache(this._cache, this.ua, this.maxPhoneWidth);
             return this._cache.phone;
         },
 
@@ -412,9 +429,14 @@ define(function () {
          * If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
          * the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
          * is positive, a value of <code>UnknownTablet</code> or <code>UnknownMobile</code> is returned.<br>
-         * When used in browser, the decision whether phone or tablet is made based on <code>screen.width</code>.<br>
+         * When used in browser, the decision whether phone or tablet is made based on <code>screen.width/height</code>.<br>
+         * <br>
          * When used server-side (node.js), there is no way to tell the difference between <code>UnknownTablet</code>
-         * and <code>UnknownMobile</code>, so you will only get <code>UnknownMobile</code>.<br>
+         * and <code>UnknownMobile</code>, so you will get <code>null</code> here, while {@link MobileDetect#mobile}
+         * will return <code>UnknownMobile</code>.<br>
+         * Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile</code> only for:
+         * {@link MobileDetect#mobile}, not for {@link MobileDetect#phone} and {@link MobileDetect#tablet}.
+         * In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
          * <br>
          * In most cases you will use the return value just as a boolean.
          *
@@ -422,7 +444,7 @@ define(function () {
          * @function MobileDetect#tablet
          */
         tablet: function () {
-            prepareDetectionCache(this._cache, this.ua, this.maxPhoneWidth);
+            impl.prepareDetectionCache(this._cache, this.ua, this.maxPhoneWidth);
             return this._cache.tablet;
         },
 
@@ -437,7 +459,7 @@ define(function () {
          */
         userAgent: function () {
             if (this._cache.userAgent === undefined) {
-                this._cache.userAgent = findMatch(mobileDetectRules.uas, this.ua);
+                this._cache.userAgent = impl.findMatch(impl.mobileDetectRules.uas, this.ua);
             }
             return this._cache.userAgent;
         },
@@ -453,8 +475,7 @@ define(function () {
          */
         os: function () {
             if (this._cache.os === undefined) {
-                this._cache.os = findMatch(mobileDetectRules.oss0, this.ua) ||
-                                 findMatch(mobileDetectRules.oss, this.ua);
+                this._cache.os = impl.detectOS(this.ua);
             }
             return this._cache.os;
         },
@@ -473,7 +494,7 @@ define(function () {
          * @function MobileDetect#version
          */
         version: function (key) {
-            return getVersion(key, this.ua);
+            return impl.getVersion(key, this.ua);
         },
 
         /**
@@ -489,7 +510,7 @@ define(function () {
          * @function MobileDetect#versionStr
          */
         versionStr: function (key) {
-            return getVersionStr(key, this.ua);
+            return impl.getVersionStr(key, this.ua);
         },
 
         /**
@@ -511,7 +532,7 @@ define(function () {
                    equalIC(key, this.os()) ||
                    equalIC(key, this.phone()) ||
                    equalIC(key, this.tablet()) ||
-                   equalIC(key, findMatch(mobileDetectRules.utils, this.ua));
+                   equalIC(key, impl.findMatch(impl.mobileDetectRules.utils, this.ua));
         },
 
         /**
@@ -551,7 +572,7 @@ define(function () {
          */
         mobileGrade: function () {
             if (this._cache.grade === undefined) {
-                this._cache.grade = mobileGrade(this);
+                this._cache.grade = impl.mobileGrade(this);
             }
             return this._cache.grade;
         }
@@ -560,11 +581,14 @@ define(function () {
     // environment-dependent
     if (typeof window !== 'undefined' && window.screen) {
         MobileDetect.isPhoneSized = function (maxPhoneWidth) {
-            return maxPhoneWidth < 0 ? undefined : getDeviceSmallerSide() <= maxPhoneWidth;
+            return maxPhoneWidth < 0 ? undefined : impl.getDeviceSmallerSide() <= maxPhoneWidth;
         };
     } else {
         MobileDetect.isPhoneSized = function () {};
     }
+
+    // should not be replaced by a completely new object - just overwrite existing methods
+    MobileDetect._impl = impl;
 
     return MobileDetect;
 }); // end of call of define()

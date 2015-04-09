@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "github.com/hgoebl/mobile-detect.js"
+        "url": "https://github.com/hgoebl/mobile-detect.js"
     },
     "homepage": "http://hgoebl.github.io/mobile-detect.js/",
     "keywords": [

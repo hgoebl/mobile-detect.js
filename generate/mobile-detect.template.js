@@ -593,10 +593,10 @@ define(function () {
     return MobileDetect;
 }); // end of call of define()
 })((function (undefined) {
-    if (typeof define === 'function' && define.amd) {
-        return define;
-    } else if (typeof module !== 'undefined' && module.exports) {
+    if (typeof module !== 'undefined' && module.exports) {
         return function (factory) { module.exports = factory(); };
+    } else if (typeof define === 'function' && define.amd) {
+        return define;
     } else if (typeof window !== 'undefined') {
         return function (factory) { window.MobileDetect = factory(); };
     } else {

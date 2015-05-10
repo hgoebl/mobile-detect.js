@@ -1,3 +1,9 @@
+v1.1.0:
+  date: 2015-05-10
+  changes:
+    - use Mobile-Detect@2.8.13 (fix #27)
+    - fix #26 webpack build error
+
 v1.0.1:
   date: 2015-04-10
   changes:

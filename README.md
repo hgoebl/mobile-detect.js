@@ -120,11 +120,11 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
 
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.1.0/mobile-detect.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.2.0/mobile-detect.min.js"></script>
 
 ## cdnjs - [cdnjs.com](https://cdnjs.com/libraries/mobile-detect)
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.1.0/mobile-detect.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.2.0/mobile-detect.min.js"></script>
    
 # Extending/Modifying Behaviour
 

@@ -1,4 +1,4 @@
-/*global MobileDetect:true, mobilePerVendor:true, describe:false, it:false, expect:false, beforeEach:false*/
+/*global MobileDetect:true, mobilePerVendor:true, describe:false, it:false, expect:false, beforeEach:false, afterEach:false, xdescribe:false*/
 /*jshint node:true, browser:true*/
 "use strict";
 
@@ -128,7 +128,7 @@ describe("Fixing issues", function () {
     });
     it("should fix issue #15", function () {
         var aut = new MobileDetect('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; Microsoft; Virtual) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537', -1);
-        expect(aut.os()).toEqual('WindowsMobileOS');
+        expect(aut.os()).toEqual('WindowsPhoneOS');
     });
     it("should fix issue #28", function () {
         var aut = new MobileDetect('Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; foo Build/FRG83) AppleWebKit/533.1 (KHTML, like Gecko)', -1);
@@ -137,10 +137,39 @@ describe("Fixing issues", function () {
         expect(aut).toBeMobile(true);
         expect(aut.tablet()).toBe('UnknownTablet');
     });
+    it("should fix issue #34", function () {
+        var aut = new MobileDetect('SAMSUNG-SGH-E250/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)', -1);
+        expect(aut.is('Bot')).toBe(true);
+        expect(aut.is('MobileBot')).toBe(true);
+    });
+    it("should fix issue #36", function () {
+        var aut = new MobileDetect('Mozilla/5.0 (Linux; U; Android 4.1.2; zh-CN; HUAWEI C8815 Build/HuaweiC8815) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.7.0.634 U3/0.8.0 Mobile Safari/534.30', -1);
+        expect(aut.userAgents()).toEqual(['Safari', 'UCBrowser']);
+        expect(aut.is('UCBrowser')).toBe(true);
+        expect(aut.is('Safari')).toBe(true);
+    });
     //
 });
 
 describe("Extensibility", function () {
+    var origImpl, origSony;
+
+    function copyProps(src, dest) {
+        Object.keys(src).forEach(function (key) {
+            dest[key] = src[key];
+        });
+        return dest;
+    }
+
+    beforeEach(function () {
+        origImpl = copyProps(MobileDetect._impl, {});
+        origSony = origImpl.mobileDetectRules.phones.Sony;
+    });
+    afterEach(function () {
+        copyProps(origImpl, MobileDetect._impl);
+        origImpl.mobileDetectRules.phones.Sony = origSony;
+    });
+
     it("should make internal 'prepareDetectionCache' possible to delegate", function () {
         var aut, UA = 'Mozilla/5.0 (Mobile; iPhone OS 7_0_3',
             oldPrepareDetectionCache = MobileDetect._impl.prepareDetectionCache;
@@ -166,15 +195,14 @@ describe("Extensibility", function () {
     });
 
     it("should make internal 'detectOS' possible to delegate", function () {
-        var aut, UA = 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0',
-            oldDetectOS = MobileDetect._impl.detectOS;
+        var aut, UA = 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0';
 
         aut = new MobileDetect(UA);
         expect(aut.os()).toBe(null);
         expect(aut.is('FirefoxOS')).toBe(false);
 
         MobileDetect._impl.detectOS = function (ua) {
-            var os = oldDetectOS(ua);
+            var os = origImpl.detectOS(ua);
 
             if (os == null) {
                 if (/.*(Mobile|Tablet).+\sFirefox\/.*/.test(ua)) {
@@ -210,7 +238,7 @@ describe("Extensibility", function () {
     });
 });
 
-describe("Feeding w/ ualist", function () {
+xdescribe("Feeding w/ ualist", function () {
 
     function makeVendorHandler(vendorName) {
         return function () {

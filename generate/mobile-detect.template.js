@@ -29,6 +29,20 @@ define(function () {
         return a != null && b != null && a.toLowerCase() === b.toLowerCase();
     }
 
+    function containsIC(array, value) {
+        var valueLC, i, len = array.length;
+        if (!len || !value) {
+            return false;
+        }
+        valueLC = value.toLowerCase();
+        for (i = 0; i < len; ++i) {
+            if (valueLC === array[i].toLowerCase()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     function convertPropsToRegExp(object) {
         for (var key in object) {
             if (hasOwnProp.call(object, key)) {
@@ -71,7 +85,7 @@ define(function () {
     }());
 
     /**
-     * Test userAgent string against a set of rules and find the matched key.
+     * Test userAgent string against a set of rules and find the first matched key.
      * @param {Object} rules (key is String, value is RegExp)
      * @param {String} userAgent the navigator.userAgent (or HTTP-Header 'User-Agent').
      * @returns {String|null} the matched key if found, otherwise <tt>null</tt>
@@ -86,6 +100,25 @@ define(function () {
             }
         }
         return null;
+    };
+
+    /**
+     * Test userAgent string against a set of rules and return an array of matched keys.
+     * @param {Object} rules (key is String, value is RegExp)
+     * @param {String} userAgent the navigator.userAgent (or HTTP-Header 'User-Agent').
+     * @returns {Array} an array of matched keys, may be empty when there is no match, but not <tt>null</tt>
+     * @private
+     */
+    impl.findMatches = function(rules, userAgent) {
+        var result = [];
+        for (var key in rules) {
+            if (hasOwnProp.call(rules, key)) {
+                if (rules[key].test(userAgent)) {
+                    result.push(key);
+                }
+            }
+        }
+        return result;
     };
 
     /**
@@ -457,10 +490,15 @@ define(function () {
         },
 
         /**
-         * Returns the detected user-agent string or <tt>null</tt>.
+         * Returns the (first) detected user-agent string or <tt>null</tt>.
          * <br>
          * The returned user-agent is one of following keys:<br>
          * <br><tt>{{{keys.uas}}}</tt><br>
+         * <br>
+         * In most cases calling {@link MobileDetect#userAgent} will be sufficient. But there are rare
+         * cases where a mobile device pretends to be more than one particular browser. You can get the
+         * list of all matches with {@link MobileDetect#userAgents} or check for a particular value by
+         * providing one of the defined keys as first argument to {@link MobileDetect#is}.
          *
          * @returns {String} the key for the detected user-agent or <tt>null</tt>
          * @function MobileDetect#userAgent
@@ -470,6 +508,27 @@ define(function () {
                 this._cache.userAgent = impl.findMatch(impl.mobileDetectRules.uas, this.ua);
             }
             return this._cache.userAgent;
+        },
+
+        /**
+         * Returns all detected user-agent strings.
+         * <br>
+         * The array is empty or contains one or more of following keys:<br>
+         * <br><tt>{{{keys.uas}}}</tt><br>
+         * <br>
+         * In most cases calling {@link MobileDetect#userAgent} will be sufficient. But there are rare
+         * cases where a mobile device pretends to be more than one particular browser. You can get the
+         * list of all matches with {@link MobileDetect#userAgents} or check for a particular value by
+         * providing one of the defined keys as first argument to {@link MobileDetect#is}.
+         *
+         * @returns {Array} the array of detected user-agent keys or <tt>[]</tt>
+         * @function MobileDetect#userAgents
+         */
+        userAgents: function () {
+            if (this._cache.userAgents === undefined) {
+                this._cache.userAgents = impl.findMatches(impl.mobileDetectRules.uas, this.ua);
+            }
+            return this._cache.userAgents;
         },
 
         /**
@@ -535,12 +594,12 @@ define(function () {
          *                    tablet or one of the listed additional keys, otherwise <tt>false</tt>
          * @function MobileDetect#is
          */
-        is: function(key) {
-            return equalIC(key, this.userAgent()) ||
+        is: function (key) {
+            return containsIC(this.userAgents(), key) ||
                    equalIC(key, this.os()) ||
                    equalIC(key, this.phone()) ||
                    equalIC(key, this.tablet()) ||
-                   equalIC(key, impl.findMatch(impl.mobileDetectRules.utils, this.ua));
+                   containsIC(impl.findMatches(impl.mobileDetectRules.utils, this.ua), key);
         },
 
         /**

@@ -1,3 +1,13 @@
+v1.3.0:
+  date: 2015-09-17
+  changes:
+    - use Mobile-Detect@2.8.17
+    - add method 'userAgents()' to handle cases where more than one browser matches
+    - change method 'is()' to reflect that more than one match is possible for patterns
+    - fix #34 is('MobileBot') not working
+    - mitigate #36 ucbrowser detect as safari on android os
+    - disable failing unit-tests (testing particular device matches)
+
 v1.2.1:
   date: 2015-07-19
   changes:

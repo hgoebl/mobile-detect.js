@@ -195,7 +195,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line627">line 627</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line661">line 661</a>
     </li></ul></dd>
     
     
@@ -345,7 +345,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line820">line 820</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line882">line 882</a>
     </li></ul></dd>
     
     
@@ -489,7 +489,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line842">line 842</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line904">line 904</a>
     </li></ul></dd>
     
     
@@ -596,7 +596,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line637">line 637</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line671">line 671</a>
     </li></ul></dd>
     
     
@@ -687,7 +687,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line871">line 871</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line933">line 933</a>
     </li></ul></dd>
     
     
@@ -782,7 +782,7 @@ iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS</tt><br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line760">line 760</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line822">line 822</a>
     </li></ul></dd>
     
     
@@ -892,7 +892,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line664">line 664</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line698">line 698</a>
     </li></ul></dd>
     
     
@@ -972,7 +972,7 @@ AudioSonicTablet, AMPETablet, SkkTablet, TecnoTablet, JXDTablet, iJoyTablet,
 FX2Tablet, XoroTablet, ViewsonicTablet, OdysTablet, CaptivaTablet,
 IconbitTablet, TeclastTablet, OndaTablet, JaytechTablet, BlaupunktTablet,
 DigmaTablet, EvolioTablet, LavaTablet, CelkonTablet, WolderTablet, MiTablet,
-NibiruTablet, NexoTablet, UbislateTablet, PocketBookTablet, Hudl,
+NibiruTablet, NexoTablet, LeaderTablet, UbislateTablet, PocketBookTablet, Hudl,
 TelstraTablet, GenericTablet</tt><br>
 <br>
 If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
@@ -1020,7 +1020,7 @@ In most cases you will use the return value just as a boolean.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line694">line 694</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line728">line 728</a>
     </li></ul></dd>
     
     
@@ -1078,12 +1078,17 @@ In most cases you will use the return value just as a boolean.
     
     
     <div class="description">
-        Returns the detected user-agent string or <tt>null</tt>.
+        Returns the (first) detected user-agent string or <tt>null</tt>.
 <br>
 The returned user-agent is one of following keys:<br>
 <br><tt>Chrome, Dolfin, Opera, Skyfire, IE, Firefox, Bolt, TeaShark, Blazer, Safari,
 Tizen, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin, Mercury,
 ObigoBrowser, NetFront, GenericBrowser</tt><br>
+<br>
+In most cases calling <a href="MobileDetect.html#userAgent">MobileDetect#userAgent</a> will be sufficient. But there are rare
+cases where a mobile device pretends to be more than one particular browser. You can get the
+list of all matches with <a href="MobileDetect.html#userAgents">MobileDetect#userAgents</a> or check for a particular value by
+providing one of the defined keys as first argument to <a href="MobileDetect.html#is">MobileDetect#is</a>.
     </div>
     
 
@@ -1116,7 +1121,7 @@ ObigoBrowser, NetFront, GenericBrowser</tt><br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line742">line 742</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line776">line 776</a>
     </li></ul></dd>
     
     
@@ -1153,6 +1158,107 @@ ObigoBrowser, NetFront, GenericBrowser</tt><br>
 	<dd>
 		
 <span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="userAgents"><span class="type-signature"></span>userAgents<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Returns all detected user-agent strings.
+<br>
+The array is empty or contains one or more of following keys:<br>
+<br><tt>Chrome, Dolfin, Opera, Skyfire, IE, Firefox, Bolt, TeaShark, Blazer, Safari,
+Tizen, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin, Mercury,
+ObigoBrowser, NetFront, GenericBrowser</tt><br>
+<br>
+In most cases calling <a href="MobileDetect.html#userAgent">MobileDetect#userAgent</a> will be sufficient. But there are rare
+cases where a mobile device pretends to be more than one particular browser. You can get the
+list of all matches with <a href="MobileDetect.html#userAgents">MobileDetect#userAgents</a> or check for a particular value by
+providing one of the defined keys as first argument to <a href="MobileDetect.html#is">MobileDetect#is</a>.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line799">line 799</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the array of detected user-agent keys or <tt>[]</tt>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Array</span>
 
 
 	</dd>
@@ -1264,7 +1370,7 @@ NT, Symbian, webOS</tt><br></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line777">line 777</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line839">line 839</a>
     </li></ul></dd>
     
     
@@ -1412,7 +1518,7 @@ NT, Symbian, webOS</tt><br></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line799">line 799</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line861">line 861</a>
     </li></ul></dd>
     
     
@@ -1481,7 +1587,7 @@ NT, Symbian, webOS</tt><br></td>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sun Jul 19 2015 21:16:27 GMT+0200 (MESZ)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Sep 18 2015 09:48:16 GMT+0200 (MESZ)
 </footer>
 
 <script> prettyPrint(); </script>

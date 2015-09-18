@@ -11,7 +11,7 @@ You can find out information about the device rendering your web page:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.15**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.17**
 
 # Live Demo
 

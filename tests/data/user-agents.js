@@ -1,5 +1,5 @@
 /* This file was generated - do not edit! */
-/* hash = 169521cbf4b919b69880fa76746cd4f78bbc99f5 */
+/* hash = 7089120218a29628a463ca0b4540b993683a28e7 */
 
 var mobilePerVendor =
 {
@@ -7336,6 +7336,18 @@ var mobilePerVendor =
             "mobile": true,
             "tablet": true,
             "nr": 1108
+        },
+        {
+            "user_agent": "Mozilla/5.0 (Linux; Android 4.4.4; SM-T533 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Safari/537.36",
+            "mobile": true,
+            "tablet": true,
+            "nr": 1109
+        },
+        {
+            "user_agent": "Mozilla/5.0 (Linux; Android 4.4.4; SM-T533 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.133 Safari/537.36",
+            "mobile": true,
+            "tablet": true,
+            "nr": 1110
         }
     ],
     "Sony": [
@@ -7343,55 +7355,55 @@ var mobilePerVendor =
             "user_agent": "SonyEricssonK800i/R1AA Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1109
+            "nr": 1111
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.1-update1; es-ar; SonyEricssonE15a Build/2.0.1.A.0.47) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17",
             "mobile": true,
             "tablet": false,
-            "nr": 1110
+            "nr": 1112
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.1-update1; pt-br; SonyEricssonU20a Build/2.1.1.A.0.6) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17",
             "mobile": true,
             "tablet": false,
-            "nr": 1111
+            "nr": 1113
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.3.3; en-au; SonyEricssonX10i Build/3.0.1.G.0.75) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1112
+            "nr": 1114
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.3.4; ru-ru; SonyEricssonST18i Build/4.0.2.A.0.62) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1113
+            "nr": 1115
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.3.4; hr-hr; SonyEricssonST15i Build/4.0.2.A.0.62) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1114
+            "nr": 1116
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.3.4; sk-sk; SonyEricssonLT15i Build/4.0.2.A.0.62) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1115
+            "nr": 1117
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.3.7; th-th; SonyEricssonST27i Build/6.0.B.3.184) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1116
+            "nr": 1118
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 2.3.7; de-de; SonyEricssonST25i Build/6.0.B.3.184) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1117
+            "nr": 1119
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.3; pt-br; Xperia Tablet S Build/TID0092) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
@@ -7403,79 +7415,79 @@ var mobilePerVendor =
                 "Webkit": "534.30",
                 "Safari": "4.0"
             },
-            "nr": 1118
+            "nr": 1120
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.3; LT18i Build/4.1.A.0.562) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
             "mobile": true,
             "tablet": false,
-            "nr": 1119
+            "nr": 1121
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.3; Sony Tablet S Build/TISU0R0110) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19",
             "mobile": true,
             "tablet": true,
-            "nr": 1120
+            "nr": 1122
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.3; es-es; Sony Tablet S Build/TISU0143) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1121
+            "nr": 1123
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; en-gb; SonyEricssonLT18i Build/4.1.B.0.587) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1122
+            "nr": 1124
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; fr-ch; SonyEricssonSK17i Build/4.1.B.0.587) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1123
+            "nr": 1125
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; SonyEricssonLT26i Build/6.1.A.2.45) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1124
+            "nr": 1126
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.4; LT22i Build/6.1.B.0.544) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
             "mobile": true,
             "tablet": false,
-            "nr": 1125
+            "nr": 1127
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; vi-vn; SonyEricssonLT22i Build/6.1.B.0.544) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1126
+            "nr": 1128
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.4; ST23i Build/11.0.A.5.5) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
             "mobile": true,
             "tablet": false,
-            "nr": 1127
+            "nr": 1129
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.4; ST23i Build/11.0.A.2.10) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
             "mobile": true,
             "tablet": false,
-            "nr": 1128
+            "nr": 1130
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.4; LT28h Build/6.1.E.3.7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.94 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1129
+            "nr": 1131
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.1; en-us; SGPT13 Build/TJDS0170) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1130
+            "nr": 1132
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; ja-jp; SonySO-03E Build/10.1.E.0.265) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
@@ -7487,13 +7499,13 @@ var mobilePerVendor =
                 "Webkit": "534.30",
                 "Safari": "4.0"
             },
-            "nr": 1131
+            "nr": 1133
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.1.2; LT26w Build/6.2.B.1.96) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.72 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1132
+            "nr": 1134
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.2.2; SGP321 Build/10.3.1.A.0.33) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.58 Safari/537.31",
@@ -7505,337 +7517,337 @@ var mobilePerVendor =
                 "Webkit": "537.31",
                 "Chrome": "26.0.1410.58"
             },
-            "nr": 1133
+            "nr": 1135
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; C5303 Build/12.1.A.1.205) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.135 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1134
+            "nr": 1136
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; XL39h Build/14.2.A.1.136) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1135
+            "nr": 1137
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; sv-se; C5503 Build/10.1.1.A.1.273) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1136
+            "nr": 1138
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; en-us; C5502 Build/10.1.1.A.1.310) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1137
+            "nr": 1139
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; SonyL39t Build/14.1.M.0.202) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1138
+            "nr": 1140
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; L39u Build/14.1.n.0.63) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1139
+            "nr": 1141
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; zh-tw; M35c Build/12.0.B.5.37) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1140
+            "nr": 1142
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.1.2; M35c Build/12.0.B.2.42) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.90 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1141
+            "nr": 1143
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; zh-CN; M35t Build/12.0.C.2.42) AppleWebKit/534.31 (KHTML, like Gecko) UCBrowser/9.3.2.349 U3/0.8.0 Mobile Safari/534.31",
             "mobile": true,
             "tablet": false,
-            "nr": 1142
+            "nr": 1144
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; D6502 Build/17.1.A.2.69) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1143
+            "nr": 1145
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; D6503 Build/17.1.A.0.504) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1144
+            "nr": 1146
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; D6543 Build/17.1.A.2.55) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1145
+            "nr": 1147
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2004 Build/20.0.A.0.29) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.94 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1146
+            "nr": 1148
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; en-gb; D2005 Build/20.0.A.1.12) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1147
+            "nr": 1149
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2104 Build/20.0.B.0.84) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1148
+            "nr": 1150
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2105 Build/20.0.B.0.74) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.170 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1149
+            "nr": 1151
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; pt-br; D2114 Build/20.0.B.0.85) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1150
+            "nr": 1152
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2302 Build/18.0.B.1.23) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.138 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1151
+            "nr": 1153
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; S50h Build/18.0.b.1.23) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.6.3.413 U3/0.8.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1152
+            "nr": 1154
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2303 Build/18.0.C.1.13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.138 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1153
+            "nr": 1155
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2305 Build/18.0.A.1.30) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.138 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1154
+            "nr": 1156
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D2306 Build/18.0.C.1.7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.136 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1155
+            "nr": 1157
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D5303 Build/19.0.1.A.0.207) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1156
+            "nr": 1158
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; D5306 Build/19.1.A.0.264) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.136 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1157
+            "nr": 1159
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; zh-CN; XM50h Build/19.0.D.0.269) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.7.6.428 U3/0.8.0 Mobile Safari/533.1",
             "mobile": true,
             "tablet": false,
-            "nr": 1158
+            "nr": 1160
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; XM50t Build/19.0.C.2.59) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1159
+            "nr": 1161
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; D5322 Build/19.0.D.0.253) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131",
             "mobile": true,
             "tablet": false,
-            "nr": 1160
+            "nr": 1162
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; M51w Build/14.2.A.1.146) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1161
+            "nr": 1163
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; M51w Build/14.2.A.1.146) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.136 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1162
+            "nr": 1164
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.1; D5102 Build/18.2.A.0.9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1163
+            "nr": 1165
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.1; D5103 Build/18.1.A.0.11) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.92 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1164
+            "nr": 1166
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.1; D5106 Build/18.1.A.0.11) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1165
+            "nr": 1167
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.3; en-gb; C6902 Build/14.2.A.1.136) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 GSA/3.2.17.1009776.arm",
             "mobile": true,
             "tablet": false,
-            "nr": 1166
+            "nr": 1168
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2.2; es-es; C6943 Build/14.1.G.2.257) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1167
+            "nr": 1169
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; C6943 Build/14.3.A.0.681) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1168
+            "nr": 1170
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.2.2; SGP412 Build/14.1.B.3.320) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1169
+            "nr": 1171
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1; en-us; SonySGP321 Build/10.2.C.0.143) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1170
+            "nr": 1172
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.1.2; SGP351 Build/10.1.1.A.1.307) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19",
             "mobile": true,
             "tablet": true,
-            "nr": 1171
+            "nr": 1173
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.3; SGP341 Build/10.4.B.0.569) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1172
+            "nr": 1174
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; SGP511 Build/17.1.A.2.36) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.122 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1173
+            "nr": 1175
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; SGP512 Build/17.1.A.2.36) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.122 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1174
+            "nr": 1176
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; fr-ch; SGP311 Build/10.1.C.0.344) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1175
+            "nr": 1177
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; en-us; SGP312 Build/10.1.C.0.344) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1176
+            "nr": 1178
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.4.2; de-de; SGP521 Build/17.1.A.2.69) AppleWebKit/537.16 (KHTML, like Gecko) Version/4.0 Safari/537.16",
             "mobile": true,
             "tablet": true,
-            "nr": 1177
+            "nr": 1179
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; SGP541 Build/17.1.A.2.36) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1178
+            "nr": 1180
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; SGP551 Build/17.1.A.2.72) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1179
+            "nr": 1181
         },
         {
             "user_agent": "SonyEricssonU5i/R2CA; Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 Profile/MIDP-2.1 Configuration/CLDC-1.1) AppleWebKit/525 (KHTML, like Gecko) Version/3.0 Safari/525",
             "mobile": true,
             "tablet": false,
-            "nr": 1180
+            "nr": 1182
         },
         {
             "user_agent": "SonyEricssonU5i/R2AA; Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 Profile/MIDP-2.1 Configuration/CLDC-1.1) AppleWebKit/525 (KHTML, like Gecko) Version/3.0 Safari/525",
             "mobile": true,
             "tablet": false,
-            "nr": 1181
+            "nr": 1183
         },
         {
             "user_agent": "Mozilla/4.0 (PDA; PalmOS/sony/model prmr/Revision:1.1.54 (en)) NetFront/3.0",
             "mobile": true,
             "tablet": false,
-            "nr": 1182
+            "nr": 1184
         },
         {
             "user_agent": "Opera/9.80 (Linux mips; U; InettvBrowser/2.2 (00014A;SonyDTV115;0002;0100) KDL40EX720; CC/BEL; en) Presto/2.7.61 Version/11.00",
             "mobile": false,
             "tablet": false,
-            "nr": 1183
+            "nr": 1185
         },
         {
             "user_agent": "Opera/9.80 (Linux armv7l; HbbTV/1.1.1 (; Sony; KDL32W650A; PKG3.211EUA; 2013;); ) Presto/2.12.362 Version/12.11",
             "mobile": false,
             "tablet": false,
-            "nr": 1184
+            "nr": 1186
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; es-ve; SonyST21a2 Build/11.0.A.6.5) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1185
+            "nr": 1187
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.2; D2533 Build/19.2.A.0.391) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1186
+            "nr": 1188
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.4.4; Xperia SP Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36",
             "mobile": true,
             "tablet": false,
-            "nr": 1187
+            "nr": 1189
         },
         {
             "user_agent": "Mozilla / 5.0 (Linux; Android 5.0.2; SOT31 Build / 28.0.D.6.71) AppleWebKit / 537.36 (KHTML, like Gecko) Chrome / 39.0.2171.93 Safari / 537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1188
+            "nr": 1190
         }
     ],
     "Avant": [
@@ -7843,19 +7855,19 @@ var mobilePerVendor =
             "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; Avant Browser; rv:11.0) like Gecko",
             "mobile": false,
             "tablet": false,
-            "nr": 1189
+            "nr": 1191
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; Avant TriCore) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36",
             "mobile": false,
             "tablet": false,
-            "nr": 1190
+            "nr": 1192
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 5.1; rv:27.0; Avant TriCore) Gecko/20100101 Firefox/27.0",
             "mobile": false,
             "tablet": false,
-            "nr": 1191
+            "nr": 1193
         }
     ],
     "Console": [
@@ -7863,37 +7875,37 @@ var mobilePerVendor =
             "user_agent": "Mozilla/5.0 (Nintendo WiiU) AppleWebKit/536.28 (KHTML, like Gecko) NX/3.0.3.12.14 NintendoBrowser/3.1.1.9577.EU",
             "mobile": false,
             "tablet": false,
-            "nr": 1192
+            "nr": 1194
         },
         {
             "user_agent": "Mozilla/5.0 (Nintendo WiiU) AppleWebKit/534.52 (KHTML, like Gecko) NX/{Version No} NintendoBrowser/{Version No}.US",
             "mobile": false,
             "tablet": false,
-            "nr": 1193
+            "nr": 1195
         },
         {
             "user_agent": "Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7567.US",
             "mobile": true,
             "tablet": false,
-            "nr": 1194
+            "nr": 1196
         },
         {
             "user_agent": "Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7498.US",
             "mobile": true,
             "tablet": false,
-            "nr": 1195
+            "nr": 1197
         },
         {
             "user_agent": "Mozilla/5.0 (PLAYSTATION 3 4.21) AppleWebKit/531.22.8 (KHTML, like Gecko)",
             "mobile": false,
             "tablet": false,
-            "nr": 1196
+            "nr": 1198
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)",
             "mobile": false,
             "tablet": false,
-            "nr": 1197
+            "nr": 1199
         }
     ],
     "Other": [
@@ -7901,19 +7913,19 @@ var mobilePerVendor =
             "user_agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SV1; [eburo v4.0]; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; InfoPath.3; .NET4.0C; .NET4.0E)",
             "mobile": false,
             "tablet": false,
-            "nr": 1198
+            "nr": 1200
         },
         {
             "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25",
             "mobile": false,
             "tablet": false,
-            "nr": 1199
+            "nr": 1201
         },
         {
             "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36",
             "mobile": false,
             "tablet": false,
-            "nr": 1200
+            "nr": 1202
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Iron/37.0.2000.0 Chrome/37.0.2000.0 Safari/537.36",
@@ -7922,157 +7934,157 @@ var mobilePerVendor =
             "version": {
                 "Iron": "37.0.2000.0"
             },
-            "nr": 1201
+            "nr": 1203
         },
         {
             "user_agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/32.0.1700.102 Chrome/32.0.1700.102 Safari/537.36",
             "mobile": false,
             "tablet": false,
-            "nr": 1202
+            "nr": 1204
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0",
             "mobile": false,
             "tablet": false,
-            "nr": 1203
+            "nr": 1205
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0 AlexaToolbar/psPCtGhf-2.2",
             "mobile": false,
             "tablet": false,
-            "nr": 1204
+            "nr": 1206
         },
         {
             "user_agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0",
             "mobile": false,
             "tablet": false,
-            "nr": 1205
+            "nr": 1207
         },
         {
             "user_agent": "Mozilla/5.0 (X11; Linux ppc; rv:17.0) Gecko/20130626 Firefox/17.0 Iceweasel/17.0.7",
             "mobile": false,
             "tablet": false,
-            "nr": 1206
+            "nr": 1208
         },
         {
             "user_agent": "Mozilla/5.0 (X11; Linux) AppleWebKit/535.22+ Midori/0.4",
             "mobile": false,
             "tablet": false,
-            "nr": 1207
+            "nr": 1209
         },
         {
             "user_agent": "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-us) AppleWebKit/535+ (KHTML, like Gecko) Version/5.0 Safari/535.20+ Midori/0.4",
             "mobile": false,
             "tablet": false,
-            "nr": 1208
+            "nr": 1210
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.20 Safari/537.36  OPR/15.0.1147.18 (Edition Next)",
             "mobile": false,
             "tablet": false,
-            "nr": 1209
+            "nr": 1211
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36",
             "mobile": false,
             "tablet": false,
-            "nr": 1210
+            "nr": 1212
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36",
             "mobile": false,
             "tablet": false,
-            "nr": 1211
+            "nr": 1213
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 5.2; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0",
             "mobile": false,
             "tablet": false,
-            "nr": 1212
+            "nr": 1214
         },
         {
             "user_agent": "Opera/9.80 (Windows NT 5.2; WOW64) Presto/2.12.388 Version/12.14",
             "mobile": false,
             "tablet": false,
-            "nr": 1213
+            "nr": 1215
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0",
             "mobile": false,
             "tablet": false,
-            "nr": 1214
+            "nr": 1216
         },
         {
             "user_agent": "Mozilla/5.0 (X11; FreeBSD amd64; rv:14.0) Gecko/20100101 Firefox/14.0.1",
             "mobile": false,
             "tablet": false,
-            "nr": 1215
+            "nr": 1217
         },
         {
             "user_agent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; Win64; x64; Trident/6.0; Touch; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Tablet PC 2.0; MASMJS)",
             "mobile": false,
             "tablet": false,
-            "nr": 1216
+            "nr": 1218
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0; MANMJS)",
             "mobile": false,
             "tablet": false,
-            "nr": 1217
+            "nr": 1219
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MASMJS)",
             "mobile": false,
             "tablet": false,
-            "nr": 1218
+            "nr": 1220
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0; Touch; MASMJS)",
             "mobile": false,
             "tablet": false,
-            "nr": 1219
+            "nr": 1221
         },
         {
             "user_agent": "Opera/9.80 (Windows NT 6.2; WOW64; MRA 8.0 (build 5784)) Presto/2.12.388 Version/12.11",
             "mobile": false,
             "tablet": false,
-            "nr": 1220
+            "nr": 1222
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)",
             "mobile": false,
             "tablet": false,
-            "nr": 1221
+            "nr": 1223
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv 11.0) like Gecko",
             "mobile": false,
             "tablet": false,
-            "nr": 1222
+            "nr": 1224
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko",
             "mobile": false,
             "tablet": false,
-            "nr": 1223
+            "nr": 1225
         },
         {
             "user_agent": "Mozilla/5.0 (Unknown; Linux armv7l) AppleWebKit/537.1+ (KHTML, like Gecko) Safari/537.1+ HbbTV/1.1.1 ( ;LGE ;NetCast 4.0 ;03.20.30 ;1.0M ;)",
             "mobile": false,
             "tablet": false,
-            "nr": 1224
+            "nr": 1226
         },
         {
             "user_agent": "HbbTV/1.1.1 (;Panasonic;VIERA 2012;1.261;0071-3103 2000-0000;)",
             "mobile": false,
             "tablet": false,
-            "nr": 1225
+            "nr": 1227
         },
         {
             "user_agent": "Opera/9.80 (Linux armv7l; HbbTV/1.1.1 (; Sony; KDL32W650A; PKG3.211EUA; 2013;); ) Presto/2.12.362 Version/12.11",
             "mobile": false,
             "tablet": false,
-            "nr": 1226
+            "nr": 1228
         }
     ],
     "Generic": [
@@ -8080,73 +8092,73 @@ var mobilePerVendor =
             "user_agent": "Mozilla/5.0 (Linux; U; Jolla; Sailfish; Mobile; rv:20.0) Gecko/20.0 Firefox/20.0 Sailfish Browser/1.0 like Safari/535.19",
             "mobile": true,
             "tablet": true,
-            "nr": 1227
+            "nr": 1229
         },
         {
             "user_agent": "Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0",
             "mobile": true,
             "tablet": false,
-            "nr": 1228
+            "nr": 1230
         },
         {
             "user_agent": "Mozilla/5.0 (Tablet; rv:26.0) Gecko/26.0 Firefox/26.0",
             "mobile": true,
             "tablet": true,
-            "nr": 1229
+            "nr": 1231
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.2.2; CT1020W Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.94 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1230
+            "nr": 1232
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.2.2; M6pro Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.141 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1231
+            "nr": 1233
         },
         {
             "user_agent": "MobileSafari/9537.53 CFNetwork/672.1.13 Darwin/13.1.0",
             "mobile": true,
             "tablet": false,
-            "nr": 1232
+            "nr": 1234
         },
         {
             "user_agent": "Appcelerator Titanium/3.2.2.GA (iPod touch/6.1.6; iPhone OS; en_US;)",
             "mobile": true,
             "tablet": false,
-            "nr": 1233
+            "nr": 1235
         },
         {
             "user_agent": "Opera Coast/3.0.3.78307 CFNetwork/672.1.15 Darwin/14.0.0",
             "mobile": true,
             "tablet": false,
-            "nr": 1234
+            "nr": 1236
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.3; ALUMIUM10 Build/IML74K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Safari/537.36",
             "mobile": true,
             "tablet": true,
-            "nr": 1235
+            "nr": 1237
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2.1; en-us; JY-G3 Build/JOP40D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1236
+            "nr": 1238
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.1; hu-hu; M758A Build/JRO03C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1237
+            "nr": 1239
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; EVOTAB Build/IMM76I) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1238
+            "nr": 1240
         },
         {
             "user_agent": "Java/1.6.0_22",
@@ -8155,193 +8167,193 @@ var mobilePerVendor =
             "version": {
                 "Java": "1.6.0_22"
             },
-            "nr": 1239
+            "nr": 1241
         },
         {
             "user_agent": "Opera/9.80 (Series 60; Opera Mini/6.5.29260/29.3417; U; ru) Presto/2.8.119 Version/11.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1240
+            "nr": 1242
         },
         {
             "user_agent": "Opera/9.80 (Android; Opera Mini/6.5.27452/29.3417; U; ru) Presto/2.8.119 Version/11.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1241
+            "nr": 1243
         },
         {
             "user_agent": "Opera/9.80 (iPhone; Opera Mini/7.1.32694/27.1407; U; en) Presto/2.8.119 Version/11.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1242
+            "nr": 1244
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.60 Safari/537.17 OPR/14.0.1025.52315",
             "mobile": false,
             "tablet": false,
-            "nr": 1243
+            "nr": 1245
         },
         {
             "user_agent": "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5",
             "mobile": true,
             "tablet": false,
-            "nr": 1244
+            "nr": 1246
         },
         {
             "user_agent": "Opera/9.80 (Android 2.3.7; Linux; Opera Mobi/46154) Presto/2.11.355 Version/12.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1245
+            "nr": 1247
         },
         {
             "user_agent": "Mozilla/5.0 (iPad; CPU OS 6_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B141 Safari/8536.25",
             "mobile": true,
             "tablet": true,
-            "nr": 1246
+            "nr": 1248
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.2; en-us; sdk Build/MASTER) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1247
+            "nr": 1249
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2; en-us; sdk Build/JB_MR1) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1248
+            "nr": 1250
         },
         {
             "user_agent": "Mozilla/5.0 (Android; Mobile; rv:18.0) Gecko/18.0 Firefox/18.0",
             "mobile": true,
             "tablet": false,
-            "nr": 1249
+            "nr": 1251
         },
         {
             "user_agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.12 (KHTML, like Gecko) Maxthon/3.0 Chrome/18.0.966.0 Safari/535.12",
             "mobile": false,
             "tablet": false,
-            "nr": 1250
+            "nr": 1252
         },
         {
             "user_agent": "Opera/9.80 (Windows NT 5.1; U; Edition Yx; ru) Presto/2.10.289 Version/12.02",
             "mobile": false,
             "tablet": false,
-            "nr": 1251
+            "nr": 1253
         },
         {
             "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Windows Phone 6.5.3.5)",
             "mobile": true,
             "tablet": false,
-            "nr": 1252
+            "nr": 1254
         },
         {
             "user_agent": "PalmCentro/v0001 Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; PalmSource/Palm-D061; Blazer/4.5) 16;320x320",
             "mobile": true,
             "tablet": false,
-            "nr": 1253
+            "nr": 1255
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)",
             "mobile": true,
             "tablet": false,
-            "nr": 1254
+            "nr": 1256
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; Microsoft; XDeviceEmulator)",
             "mobile": true,
             "tablet": false,
-            "nr": 1255
+            "nr": 1257
         },
         {
             "user_agent": "Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; MAL; N880E; China Telecom)",
             "mobile": true,
             "tablet": false,
-            "nr": 1256
+            "nr": 1258
         },
         {
             "user_agent": "Opera/9.80 (Series 60; Opera Mini/7.0.29482/28.2859; U; ru) Presto/2.8.119 Version/11.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1257
+            "nr": 1259
         },
         {
             "user_agent": "Opera/9.80 (S60; SymbOS; Opera Mobi/SYB-1202242143; U; en-GB) Presto/2.10.254 Version/12.00",
             "mobile": true,
             "tablet": false,
-            "nr": 1258
+            "nr": 1260
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-au; 97D Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1259
+            "nr": 1261
         },
         {
             "user_agent": "Opera/9.80 (Android; Opera Mini/7.0.29952/28.2647; U; ru) Presto/2.8.119 Version/11.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1260
+            "nr": 1262
         },
         {
             "user_agent": "Opera/9.80 (Android; Opera Mini/6.1.25375/28.2555; U; en) Presto/2.8.119 Version/11.10",
             "mobile": true,
             "tablet": false,
-            "nr": 1261
+            "nr": 1263
         },
         {
             "user_agent": "Opera/9.80 (Mac OS X; Opera Tablet/35779; U; en) Presto/2.10.254 Version/12.00",
             "mobile": true,
             "tablet": true,
-            "nr": 1262
+            "nr": 1264
         },
         {
             "user_agent": "Mozilla/5.0 (Android; Tablet; rv:10.0.4) Gecko/10.0.4 Firefox/10.0.4 Fennec/10.0.4",
             "mobile": true,
             "tablet": true,
-            "nr": 1263
+            "nr": 1265
         },
         {
             "user_agent": "Mozilla/5.0 (Android; Tablet; rv:18.0) Gecko/18.0 Firefox/18.0",
             "mobile": true,
             "tablet": true,
-            "nr": 1264
+            "nr": 1266
         },
         {
             "user_agent": "Opera/9.80 (Linux armv7l; Maemo; Opera Mobi/14; U; en) Presto/2.9.201 Version/11.50",
             "mobile": true,
             "tablet": false,
-            "nr": 1265
+            "nr": 1267
         },
         {
             "user_agent": "Opera/9.80 (Android 2.2.1; Linux; Opera Mobi/ADR-1207201819; U; en) Presto/2.10.254 Version/12.00",
             "mobile": true,
             "tablet": false,
-            "nr": 1266
+            "nr": 1268
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.1; en-us; sdk Build/JRO03E) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
             "mobile": true,
             "tablet": false,
-            "nr": 1267
+            "nr": 1269
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2.2; de-de; Endeavour 1010 Build/ONDA_MID) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1268
+            "nr": 1270
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; de-de; Tablet-PC-4 Build/ICS.g08refem618.20121102) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1269
+            "nr": 1271
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.2.2; de-de; Tagi Tab S10 Build/8089) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1270
+            "nr": 1272
         }
     ],
     "Bot": [
@@ -8349,55 +8361,55 @@ var mobilePerVendor =
             "user_agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
             "mobile": false,
             "tablet": false,
-            "nr": 1271
+            "nr": 1273
         },
         {
             "user_agent": "grub-client-1.5.3; (grub-client-1.5.3; Crawl your own stuff with http://grub.org)",
             "mobile": false,
             "tablet": false,
-            "nr": 1272
+            "nr": 1274
         },
         {
             "user_agent": "Googlebot-Image/1.0",
             "mobile": false,
             "tablet": false,
-            "nr": 1273
+            "nr": 1275
         },
         {
             "user_agent": "Python-urllib/2.5",
             "mobile": false,
             "tablet": false,
-            "nr": 1274
+            "nr": 1276
         },
         {
             "user_agent": "facebookexternalhit/1.0 (+http://www.facebook.com/externalhit_uatext.php)",
             "mobile": false,
             "tablet": false,
-            "nr": 1275
+            "nr": 1277
         },
         {
             "user_agent": "AdsBot-Google (+http://www.google.com/adsbot.html)",
             "mobile": false,
             "tablet": false,
-            "nr": 1276
+            "nr": 1278
         },
         {
             "user_agent": "AdsBot-Google-Mobile (+http://www.google.com/mobile/adsbot.html) Mozilla (iPhone; U; CPU iPhone OS 3 0 like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile Safari",
             "mobile": true,
             "tablet": false,
-            "nr": 1277
+            "nr": 1279
         },
         {
             "user_agent": "Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/534.16 (KHTML, like Gecko, Google Keyword Suggestion) Chrome/10.0.648.127 Safari/534.16",
             "mobile": false,
             "tablet": false,
-            "nr": 1278
+            "nr": 1280
         },
         {
             "user_agent": "Facebot",
             "mobile": false,
             "tablet": false,
-            "nr": 1279
+            "nr": 1281
         }
     ],
     "Vodafone": [
@@ -8405,25 +8417,25 @@ var mobilePerVendor =
             "user_agent": "Mozilla/5.0 (Linux; U; Android 3.2; hu-hu; SmartTab10-MSM8260-V02d-Dec022011-Vodafone-HU) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0",
             "mobile": true,
             "tablet": true,
-            "nr": 1280
+            "nr": 1282
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; Android 4.0.3; SmartTabII10 Build/IML74K) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19",
             "mobile": true,
             "tablet": true,
-            "nr": 1281
+            "nr": 1283
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.1.1; fr-fr; SmartTAB 1002 Build/JRO03H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1282
+            "nr": 1284
         },
         {
             "user_agent": "Mozilla/5.0 (Linux; U; Android 4.0.4; de-de, SmartTabII7 Build/A2107A_A404_107_055_130124_VODA) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
             "mobile": true,
             "tablet": true,
-            "nr": 1283
+            "nr": 1285
         }
     ]
 };

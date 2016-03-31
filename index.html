@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="mobile-detectjs" class="anchor" href="#mobile-detectjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>mobile-detect.js</h1>
+<a id="mobile-detectjs" class="anchor" href="#mobile-detectjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mobile-detect.js</h1>
 
 <p>A loose port of <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> to JavaScript.</p>
 
@@ -47,10 +47,10 @@ You can find out information about the device rendering your web page:</p>
 <li>specific versions (e.g. WebKit)</li>
 </ul>
 
-<p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.19</strong></p>
+<p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.20</strong></p>
 
 <h1>
-<a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Demo</h1>
+<a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Live Demo</h1>
 
 <p><a href="https://github.com/zeno">@zeno</a> created a very nice <a href="https://github.com/zeno/mobile-detect-demo">live-demo</a>.
 See it in action with your device:</p>
@@ -60,7 +60,7 @@ See it in action with your device:</p>
 <p>Another Demo/check (though without any styling) can be found <a href="http://hgoebl.github.io/mobile-detect.js/check/">here</a>.</p>
 
 <h1>
-<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Warning</h1>
+<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Warning</h1>
 
 <p>As mentioned later, "User-Agent" based detection is not a reliable solution in most cases, because:</p>
 
@@ -90,26 +90,26 @@ reasonable from new users' point of view. I hope you show understanding.</p>
 <p>At least there is a way to monkey-patch the library (see "Extending" below).</p>
 
 <h1>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
 
 <h2>
-<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h2>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser</h2>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>mobile-detect.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 <span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
-<span class="pl-s1">    <span class="pl-k">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(<span class="pl-smi">window</span>.<span class="pl-smi">navigator</span>.<span class="pl-c1">userAgent</span>);</span>
+<span class="pl-s1">    <span class="pl-k">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(<span class="pl-c1">window</span>.<span class="pl-smi">navigator</span>.<span class="pl-c1">userAgent</span>);</span>
 <span class="pl-s1">    <span class="pl-c">// ... see below</span></span>
 <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h2>
-<a id="nodejs--express" class="anchor" href="#nodejs--express" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js / Express</h2>
+<a id="nodejs--express" class="anchor" href="#nodejs--express" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js / Express</h2>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> MobileDetect <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>mobile-detect<span class="pl-pds">'</span></span>),
     md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(<span class="pl-smi">req</span>.<span class="pl-c1">headers</span>[<span class="pl-s"><span class="pl-pds">'</span>user-agent<span class="pl-pds">'</span></span>]);
 <span class="pl-c">// ... see below</span></pre></div>
 
 <h2>
-<a id="general" class="anchor" href="#general" aria-hidden="true"><span class="octicon octicon-link"></span></a>General</h2>
+<a id="general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h2>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> md <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MobileDetect</span>(
     <span class="pl-s"><span class="pl-pds">'</span>Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i<span class="pl-pds">'</span></span> <span class="pl-k">+</span>
@@ -131,19 +131,19 @@ reasonable from new users' point of view. I hope you show understanding.</p>
 <span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">md</span>.<span class="pl-c1">match</span>(<span class="pl-s"><span class="pl-pds">'</span>playstation|xbox<span class="pl-pds">'</span></span>) ); <span class="pl-c">// false</span></pre></div>
 
 <h2>
-<a id="more-info-" class="anchor" href="#more-info-" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Info ...</h2>
+<a id="more-info-" class="anchor" href="#more-info-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More Info ...</h2>
 
 <p>There is some documentation generated by JSDoc:</p>
 
 <p><a href="http://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html">http://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html</a></p>
 
 <h2>
-<a id="side-effects" class="anchor" href="#side-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Side Effects</h2>
+<a id="side-effects" class="anchor" href="#side-effects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Side Effects</h2>
 
 <p>Script creates the global property <code>MobileDetect</code>.</p>
 
 <h2>
-<a id="modernizr-extension" class="anchor" href="#modernizr-extension" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modernizr Extension</h2>
+<a id="modernizr-extension" class="anchor" href="#modernizr-extension" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modernizr Extension</h2>
 
 <p>When using <a href="http://modernizr.com/">Modernizr</a>, you can include <code>mobile-detect-modernizr.js</code>.
 It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>tablet</code> and <code>mobilegradea</code> if applicable.</p>
@@ -151,45 +151,45 @@ It will add the CSS classes <code>mobile</code>, <code>phone</code>, <code>table
 <p>You can easily extend it, e.g. <code>android</code>, <code>iphone</code>, etc.</p>
 
 <h2>
-<a id="size-bytes" class="anchor" href="#size-bytes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Size (bytes)</h2>
+<a id="size-bytes" class="anchor" href="#size-bytes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Size (bytes)</h2>
 
 <ul>
-<li>development: 66204</li>
-<li>minified: 36569</li>
-<li>minified + gzipped: 15248 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
+<li>development: 66612</li>
+<li>minified: 36952</li>
+<li>minified + gzipped: 15392 (<code>cat mobile-detect.min.js | gzip -9f | wc -c</code>)</li>
 </ul>
 
 <h1>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
 
 <h2>
-<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bower</h2>
+<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bower</h2>
 
 <pre><code>$ bower install hgoebl/mobile-detect.js --save
 </code></pre>
 
 <h2>
-<a id="nodejs--npm" class="anchor" href="#nodejs--npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js / npm</h2>
+<a id="nodejs--npm" class="anchor" href="#nodejs--npm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js / npm</h2>
 
 <pre><code>$ npm install mobile-detect --save
 </code></pre>
 
 <h2>
-<a id="cdn---jsdelivr" class="anchor" href="#cdn---jsdelivr" aria-hidden="true"><span class="octicon octicon-link"></span></a>CDN - <a href="http://www.jsdelivr.com/#!mobile-detect.js">jsDelivr</a>
+<a id="cdn---jsdelivr" class="anchor" href="#cdn---jsdelivr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CDN - <a href="http://www.jsdelivr.com/#!mobile-detect.js">jsDelivr</a>
 </h2>
 
-<pre><code>&lt;script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.1/mobile-detect.min.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.2/mobile-detect.min.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <h2>
-<a id="cdnjs---cdnjscom" class="anchor" href="#cdnjs---cdnjscom" aria-hidden="true"><span class="octicon octicon-link"></span></a>cdnjs - <a href="https://cdnjs.com/libraries/mobile-detect">cdnjs.com</a>
+<a id="cdnjs---cdnjscom" class="anchor" href="#cdnjs---cdnjscom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cdnjs - <a href="https://cdnjs.com/libraries/mobile-detect">cdnjs.com</a>
 </h2>
 
-<pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.1/mobile-detect.min.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.2/mobile-detect.min.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <h1>
-<a id="extendingmodifying-behaviour" class="anchor" href="#extendingmodifying-behaviour" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extending/Modifying Behaviour</h1>
+<a id="extendingmodifying-behaviour" class="anchor" href="#extendingmodifying-behaviour" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extending/Modifying Behaviour</h1>
 
 <p>Though it is not recommended to rely on internal methods or structures of MobileDetect, you can alter
 the behaviour by replacing particular internal methods with your own implementations.
@@ -197,7 +197,7 @@ If you feel like this is the only possibility, then go ahead and have a look at 
 examples in tests/spec/MobileDetectSpec.js (search for "Extensibility").</p>
 
 <h1>
-<a id="alternatives--infos" class="anchor" href="#alternatives--infos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternatives / Infos</h1>
+<a id="alternatives--infos" class="anchor" href="#alternatives--infos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Alternatives / Infos</h1>
 
 <p>Often device detection is the first solution in your mind. Please consider looking for other solutions
 like media queries and feature detection (e.g. w/ Modernizr). Maybe there are better (simpler, smaller,
@@ -245,19 +245,19 @@ Lightweight JavaScript-based User-Agent String Parser</li>
 </ul>
 
 <h2>
-<a id="mobile-usage-statistics" class="anchor" href="#mobile-usage-statistics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mobile-Usage Statistics</h2>
+<a id="mobile-usage-statistics" class="anchor" href="#mobile-usage-statistics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mobile-Usage Statistics</h2>
 
 <p>If you have to provide statistics about how many and which mobile devices are hitting your web-site, you can
 generate statistics (data and views) with <a href="https://github.com/hgoebl/mobile-usage">hgoebl/mobile-usage</a>.
 There are many hooks to customize statistical calculation to your needs.</p>
 
 <h1>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
 
 <p>MIT-License (see LICENSE file).</p>
 
 <h1>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h1>
 
 <p>Your contribution is welcome.
 If you want new devices to be supported, please contribute to
@@ -280,15 +280,15 @@ as a sibling directory to mobile-detect.js/.
 </ul>
 
 <h2>
-<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
 
 <h3>
-<a id="browser-1" class="anchor" href="#browser-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h3>
+<a id="browser-1" class="anchor" href="#browser-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser</h3>
 
 <p>Open <code>tests/SpecRunner.html</code> in different browsers.</p>
 
 <h3>
-<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js</h3>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js</h3>
 
 <pre><code>$ npm test
 $ # or
@@ -296,12 +296,12 @@ $ grunt jasmine_node
 </code></pre>
 
 <h1>
-<a id="donations" class="anchor" href="#donations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donations</h1>
+<a id="donations" class="anchor" href="#donations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Donations</h1>
 
 <p>If you want, you can donate to <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a>.</p>
 
 <h1>
-<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h1>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h1>
 
 <ul>
 <li>Extend RegEx patterns so that test passes</li>

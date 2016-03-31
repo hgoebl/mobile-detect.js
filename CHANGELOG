@@ -1,3 +1,10 @@
+v1.3.2:
+  date: 2016-03-31
+  changes:
+    - use Mobile-Detect@2.8.20
+    - exclude tests from npm package
+    - fix #42 (wrong version number in .min.js)
+
 v1.3.1:
   date: 2015-12-28
   changes:

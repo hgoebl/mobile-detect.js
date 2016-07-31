@@ -22,6 +22,7 @@ app.controller('MainCtrl', function($scope, MobileDetect) {
         outcome.push({key: 'userAgent()', val: md.userAgent()});
         outcome.push({key: 'mobileGrade()', val: md.mobileGrade()});
         outcome.push({key: 'smaller side', val: MobileDetect._impl.getDeviceSmallerSide()});
+        outcome.push({key: '_version', val: MobileDetect.version || '(<1.3.3)'});
 
         ['tablets', 'phones', 'oss', 'uas', 'utils'].forEach(function (section) {
             Object.keys(rules[section]).filter(function (key) {

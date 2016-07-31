@@ -1,3 +1,11 @@
+v1.3.3:
+  date: 2016-07-31
+  changes:
+    - use Mobile-Detect@2.8.22
+    - update dev dependencies (no impact on code)
+    - add licence to source
+    - add runtime version info
+
 v1.3.2:
   date: 2016-03-31
   changes:

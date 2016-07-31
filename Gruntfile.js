@@ -5,9 +5,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-            '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-            '<%= pkg.repository.url%> */',
 
         // Task configuration.
         exec: {
@@ -32,7 +29,8 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '<%= banner %>'
+                preserveComments: 'some',
+                screwIE8: false
             },
             dist: {
                 src: 'mobile-detect.js',

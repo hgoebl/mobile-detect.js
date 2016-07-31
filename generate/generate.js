@@ -5,7 +5,18 @@ var childProcess = require('child_process'),
     mote = require('mote'),
     wordwrap = require('wordwrap'),
     path = require('path'),
+    moment = require('moment'),
     php = 'php'; // on windows something like 'C:\\xampp\\php\\php.exe'
+
+function generateLicenseAndVersionInfo() {
+    var pkg = require(path.join(__dirname, '..', 'package.json'));
+    var today = moment().format('YYYY-MM-DD');
+    return {
+        licenceComment: '/*!' + pkg.name + ' v' + pkg.version + ' ' + today + '*/\n',
+        versionInfo: pkg.version + ' ' + today
+    };
+}
+
 
 function generateCode() {
     var phpScript = path.join(__dirname, 'export-config.php');
@@ -20,13 +31,16 @@ function generateCode() {
         var template = fs.readFileSync(path.join(__dirname, 'mobile-detect.template.js'), 'utf8'),
             replaceToken = '{/*rules*/}',
             tokenPos = template.indexOf(replaceToken),
-            jsCode;
+            jsCode,
+            licenceAndVersion = generateLicenseAndVersionInfo();
 
         jsCode = template.substring(0, tokenPos) + stdout + template.substring(tokenPos + replaceToken.length);
 
         jsCode = addComments(jsCode, stdout);
 
-        jsCode = '// THIS FILE IS GENERATED - DO NOT EDIT!\n' + jsCode;
+        jsCode = '// THIS FILE IS GENERATED - DO NOT EDIT!\n' + licenceAndVersion.licenceComment + jsCode;
+
+        jsCode = jsCode.replace(/MOBILE_DETECT_VERSION/, licenceAndVersion.versionInfo);
 
         fs.writeFileSync(path.join(__dirname, '..', 'mobile-detect.js'), jsCode, 'utf-8');
     });

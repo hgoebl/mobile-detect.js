@@ -11,7 +11,7 @@ You can find out information about the device rendering your web page:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.20**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.22**
 
 # Live Demo
 
@@ -104,9 +104,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 66612
- * minified: 36952
- * minified + gzipped: 15392 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 67441
+ * minified: 37409
+ * minified + gzipped: 15615 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
@@ -120,11 +120,11 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
 
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.2/mobile-detect.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.3/mobile-detect.min.js"></script>
 
 ## cdnjs - [cdnjs.com](https://cdnjs.com/libraries/mobile-detect)
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.2/mobile-detect.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.3/mobile-detect.min.js"></script>
    
 # Extending/Modifying Behaviour
 

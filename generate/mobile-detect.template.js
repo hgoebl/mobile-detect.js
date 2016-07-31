@@ -1,5 +1,5 @@
 /*global module:false, define:false*/
-
+/*!@license Copyright 2013, Heinrich Goebl, License: MIT, see https://github.com/hgoebl/mobile-detect.js*/
 (function (define, undefined) {
 define(function () {
     'use strict';
@@ -656,6 +656,8 @@ define(function () {
 
     // should not be replaced by a completely new object - just overwrite existing methods
     MobileDetect._impl = impl;
+    
+    MobileDetect.version = 'MOBILE_DETECT_VERSION';
 
     return MobileDetect;
 }); // end of call of define()

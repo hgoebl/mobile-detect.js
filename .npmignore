@@ -2,3 +2,7 @@
 *.iml
 node_modules
 tests
+.npmignore
+.jshintrc
+Gruntfile.js
+bower.json

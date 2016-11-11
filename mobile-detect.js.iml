@@ -7,7 +7,5 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Node.js Dependencies for mobile-detect.js" level="project" />
   </component>
 </module>
-

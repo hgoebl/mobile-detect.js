@@ -1,4 +1,5 @@
 /*global module:false, define:false*/
+/*jshint latedef:false*/
 /*!@license Copyright 2013, Heinrich Goebl, License: MIT, see https://github.com/hgoebl/mobile-detect.js*/
 (function (define, undefined) {
 define(function () {

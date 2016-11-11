@@ -6,3 +6,4 @@ tests
 .jshintrc
 Gruntfile.js
 bower.json
+generate

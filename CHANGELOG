@@ -1,3 +1,9 @@
+v1.3.4:
+  date: 2016-11-11
+  changes:
+    - use Mobile-Detect@2.8.23
+    - add typings for TypeScript
+
 v1.3.3:
   date: 2016-07-31
   changes:

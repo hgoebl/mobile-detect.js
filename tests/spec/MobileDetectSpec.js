@@ -1,5 +1,5 @@
-/*global MobileDetect:true, mobilePerVendor:true, describe:false, it:false, expect:false, beforeEach:false, afterEach:false, xdescribe:false*/
-/*jshint node:true, browser:true*/
+/*global describe:false, it:false, expect:false, beforeEach:false, afterEach:false, xdescribe:false*/
+/*jshint node:true, browser:true, latedef:false*/
 "use strict";
 
 // handle stand-alone node tests

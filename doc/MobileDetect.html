@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Class: MobileDetect</title>
-    
+
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -16,84 +16,86 @@
 <body>
 
 <div id="main">
-    
+
     <h1 class="page-title">Class: MobileDetect</h1>
+
     
-    
+
 
 
 
 <section>
-    
+
 <header>
-    <h2>
-    MobileDetect
-    </h2>
     
-</header>  
+        <h2>MobileDetect</h2>
+        
+    
+</header>
 
 <article>
     <div class="container-overview">
     
-    
-    
         
-<dt>
-    <h4 class="name" id="MobileDetect"><span class="type-signature"></span>new MobileDetect<span class="signature">(userAgent, <span class="optional">maxPhoneWidth</span>)</span><span class="type-signature"></span></h4>
+
     
+
+    <h4 class="name" id="MobileDetect"><span class="type-signature"></span>new MobileDetect<span class="signature">(userAgent, maxPhoneWidth<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
     
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Constructor for MobileDetect object.
+
+
+
+<div class="description">
+    Constructor for MobileDetect object.
 <br>
 Such an object will keep a reference to the given user-agent string and cache most of the detect queries.<br>
 <div style="background-color: #d9edf7; border: 1px solid #bce8f1; color: #3a87ad; padding: 14px; border-radius: 2px; margin-top: 20px">
     <strong>Find information how to download and install:</strong>
     <a href="https://github.com/hgoebl/mobile-detect.js/">github.com/hgoebl/mobile-detect.js/</a>
 </div>
-    </div>
-    
+</div>
 
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		<th>Argument</th>
-		
-		
-		
-		<th>Default</th>
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
         <tr>
             
                 <td class="name"><code>userAgent</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -102,33 +104,33 @@ Such an object will keep a reference to the given user-agent string and cache mo
 
             
             </td>
-            
+
             
                 <td class="attributes">
                 
-                    
+
                 
-                    
+
                 
                 </td>
             
-            
+
             
                 <td class="default">
                 
                 </td>
             
-            
+
             <td class="description last">typically taken from window.navigator.userAgent or http_header['User-Agent']</td>
         </tr>
-	
-	
-	
+
+    
+
         <tr>
             
                 <td class="name"><code>maxPhoneWidth</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -137,19 +139,19 @@ Such an object will keep a reference to the given user-agent string and cache mo
 
             
             </td>
-            
+
             
                 <td class="attributes">
                 
                     &lt;optional><br>
                 
-                    
+
                 
-                    
+
                 
                 </td>
             
-            
+
             
                 <td class="default">
                 
@@ -157,7 +159,7 @@ Such an object will keep a reference to the given user-agent string and cache mo
                 
                 </td>
             
-            
+
             <td class="description last"><strong>only for browsers</strong> specify a value for the maximum
        width of smallest device side (in logical "CSS" pixels) until a device detected as mobile will be handled
        as phone.
@@ -166,136 +168,150 @@ Such an object will keep a reference to the given user-agent string and cache mo
        for Android</a>.<br>
        If you provide a value < 0, then this "fuzzy" check is disabled.</td>
         </tr>
-	
-	
-	</tbody>
+
+    
+    </tbody>
 </table>
-    
-    
-    
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line673">line 673</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line677">line 677</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code> <pre>
+    <pre class="prettyprint"><code>&lt;pre>
     var md = new MobileDetect(window.navigator.userAgent);
     if (md.mobile()) {
         location.href = (md.mobileGrade() === 'A') ? '/mobile/' : '/lynx/';
     }
-</pre></code></pre>
+&lt;/pre></code></pre>
 
-    
-</dd>
+
 
     
     </div>
+
     
+
     
+
     
+
+     
+
     
+
     
-    
-    
-    
-    
-    
-    
-    
-    
+
     
         <h3 class="subsection-title">Methods</h3>
+
         
-        <dl>
             
-<dt>
-    <h4 class="name" id="is"><span class="type-signature"></span>is<span class="signature">(key)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Global test key against userAgent, os, phone, tablet and some other properties of userAgent string.
-    </div>
-    
 
     
+
+    <h4 class="name" id="is"><span class="type-signature"></span>is<span class="signature">(key)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
     
+
+
+
+<div class="description">
+    Global test key against userAgent, os, phone, tablet and some other properties of userAgent string.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-    
-    
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
         <tr>
             
                 <td class="name"><code>key</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -304,11 +320,11 @@ Such an object will keep a reference to the given user-agent string and cache mo
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">the key (case-insensitive) of a userAgent, an operating system, phone or
        tablet family.<br>
        For a complete list of possible values, see <a href="MobileDetect.html#userAgent">MobileDetect#userAgent</a>,
@@ -316,59 +332,71 @@ Such an object will keep a reference to the given user-agent string and cache mo
        Additionally you have following keys:<br>
 <br><tt>Bot, MobileBot, DesktopMode, TV, WebKit, Console, Watch</tt><br></td>
         </tr>
-	
-	
-	</tbody>
+
+    
+    </tbody>
 </table>
-    
-    
-    
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line895">line 895</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line899">line 899</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     <tt>true</tt> when the given key is one of the defined keys of userAgent, os, phone,
                    tablet or one of the listed additional keys, otherwise <tt>false</tt>
@@ -377,70 +405,72 @@ Such an object will keep a reference to the given user-agent string and cache mo
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">boolean</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="match"><span class="type-signature"></span>match<span class="signature">(pattern)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Do a quick test against navigator::userAgent.
-    </div>
-    
 
     
+
+    <h4 class="name" id="match"><span class="type-signature"></span>match<span class="signature">(pattern)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
     
+
+
+
+<div class="description">
+    Do a quick test against navigator::userAgent.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-    
-    
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
         <tr>
             
                 <td class="name"><code>pattern</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -452,67 +482,79 @@ Such an object will keep a reference to the given user-agent string and cache mo
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">the pattern, either as String or RegExp
                        (a string will be converted to a case-insensitive RegExp).</td>
         </tr>
-	
-	
-	</tbody>
+
+    
+    </tbody>
 </table>
-    
-    
-    
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line917">line 917</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line921">line 921</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     <tt>true</tt> when the pattern matches, otherwise <tt>false</tt>
 </div>
@@ -520,34 +562,34 @@ Such an object will keep a reference to the given user-agent string and cache mo
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">boolean</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="mobile"><span class="type-signature"></span>mobile<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns the detected phone or tablet type or <tt>null</tt> if it is not a mobile device.
+
+
+
+<div class="description">
+    Returns the detected phone or tablet type or <tt>null</tt> if it is not a mobile device.
 <br>
 For a list of possible return values see <a href="MobileDetect.html#phone">MobileDetect#phone</a> and <a href="MobileDetect.html#tablet">MobileDetect#tablet</a>.<br>
 <br>
@@ -564,62 +606,75 @@ Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile
 In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
 <br>
 In most cases you will use the return value just as a boolean.
-    </div>
-    
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line683">line 683</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line687">line 687</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the key for the phone family or tablet family, e.g. "Nexus".
 </div>
@@ -627,90 +682,103 @@ In most cases you will use the return value just as a boolean.
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="mobileGrade"><span class="type-signature"></span>mobileGrade<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns the mobile grade ('A', 'B', 'C').
-    </div>
-    
 
     
-    
-    
-    
-    
-    
-    
+
+
+
+<div class="description">
+    Returns the mobile grade ('A', 'B', 'C').
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line946">line 946</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line950">line 950</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     one of the mobile grades ('A', 'B', 'C').
 </div>
@@ -718,94 +786,107 @@ In most cases you will use the return value just as a boolean.
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="os"><span class="type-signature"></span>os<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns the detected operating system string or <tt>null</tt>.
+
+
+
+<div class="description">
+    Returns the detected operating system string or <tt>null</tt>.
 <br>
 The operating system is one of following keys:<br>
 <br><tt>AndroidOS, BlackBerryOS, PalmOS, SymbianOS, WindowsMobileOS, WindowsPhoneOS,
 iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS</tt><br>
-    </div>
-    
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line835">line 835</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line839">line 839</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the key for the detected operating system.
 </div>
@@ -813,34 +894,34 @@ iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS</tt><br>
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="phone"><span class="type-signature"></span>phone<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns the detected phone type/family string or <tt>null</tt>.
+
+
+
+<div class="description">
+    Returns the detected phone type/family string or <tt>null</tt>.
 <br>
 The returned tablet (family or producer) is one of following keys:<br>
 <br><tt>iPhone, BlackBerry, HTC, Nexus, Dell, Motorola, Samsung, LG, Sony, Asus,
@@ -860,62 +941,75 @@ Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile
 In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
 <br>
 In most cases you will use the return value just as a boolean.
-    </div>
-    
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line710">line 710</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line714">line 714</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the key of the phone family or producer, e.g. "iPhone"
 </div>
@@ -923,34 +1017,34 @@ In most cases you will use the return value just as a boolean.
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="tablet"><span class="type-signature"></span>tablet<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns the detected tablet type/family string or <tt>null</tt>.
+
+
+
+<div class="description">
+    Returns the detected tablet type/family string or <tt>null</tt>.
 <br>
 The returned tablet (family or producer) is one of following keys:<br>
 <br><tt>iPad, NexusTablet, SamsungTablet, Kindle, SurfaceTablet, HPTablet, AsusTablet,
@@ -989,62 +1083,75 @@ Be aware that since v1.0.0 in this special case you will get <code>UnknownMobile
 In versions before v1.0.0 all 3 methods returned <code>UnknownMobile</code> which was tedious to use.
 <br>
 In most cases you will use the return value just as a boolean.
-    </div>
-    
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line740">line 740</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line744">line 744</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the key of the tablet family or producer, e.g. "SamsungTablet"
 </div>
@@ -1052,100 +1159,113 @@ In most cases you will use the return value just as a boolean.
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="userAgent"><span class="type-signature"></span>userAgent<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns the (first) detected user-agent string or <tt>null</tt>.
+
+
+
+<div class="description">
+    Returns the (first) detected user-agent string or <tt>null</tt>.
 <br>
 The returned user-agent is one of following keys:<br>
 <br><tt>Vivaldi, Chrome, Dolfin, Opera, Skyfire, Edge, IE, Firefox, Bolt, TeaShark,
-Blazer, Safari, Tizen, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser,
-Puffin, Mercury, ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
+Blazer, Safari, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin,
+Mercury, ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
 <br>
 In most cases calling <a href="MobileDetect.html#userAgent">MobileDetect#userAgent</a> will be sufficient. But there are rare
 cases where a mobile device pretends to be more than one particular browser. You can get the
 list of all matches with <a href="MobileDetect.html#userAgents">MobileDetect#userAgents</a> or check for a particular value by
 providing one of the defined keys as first argument to <a href="MobileDetect.html#is">MobileDetect#is</a>.
-    </div>
-    
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line789">line 789</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line793">line 793</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the key for the detected user-agent or <tt>null</tt>
 </div>
@@ -1153,100 +1273,113 @@ providing one of the defined keys as first argument to <a href="MobileDetect.htm
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
+
+    
+
     <h4 class="name" id="userAgents"><span class="type-signature"></span>userAgents<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns all detected user-agent strings.
+
+
+
+<div class="description">
+    Returns all detected user-agent strings.
 <br>
 The array is empty or contains one or more of following keys:<br>
 <br><tt>Vivaldi, Chrome, Dolfin, Opera, Skyfire, Edge, IE, Firefox, Bolt, TeaShark,
-Blazer, Safari, Tizen, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser,
-Puffin, Mercury, ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
+Blazer, Safari, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin,
+Mercury, ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
 <br>
 In most cases calling <a href="MobileDetect.html#userAgent">MobileDetect#userAgent</a> will be sufficient. But there are rare
 cases where a mobile device pretends to be more than one particular browser. You can get the
 list of all matches with <a href="MobileDetect.html#userAgents">MobileDetect#userAgents</a> or check for a particular value by
 providing one of the defined keys as first argument to <a href="MobileDetect.html#is">MobileDetect#is</a>.
-    </div>
-    
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line812">line 812</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line816">line 816</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the array of detected user-agent keys or <tt>[]</tt>
 </div>
@@ -1254,72 +1387,74 @@ providing one of the defined keys as first argument to <a href="MobileDetect.htm
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Array</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="version"><span class="type-signature"></span>version<span class="signature">(key)</span><span class="type-signature"> &rarr; {Number}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Get the version (as Number) of the given property in the User-Agent.
-<br>
-Will return a float number. (eg. 2_0 will return 2.0, 4.3.1 will return 4.31)
-    </div>
-    
 
     
+
+    <h4 class="name" id="version"><span class="type-signature"></span>version<span class="signature">(key)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
     
+
+
+
+<div class="description">
+    Get the version (as Number) of the given property in the User-Agent.
+<br>
+Will return a float number. (eg. 2_0 will return 2.0, 4.3.1 will return 4.31)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-    
-    
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
         <tr>
             
                 <td class="name"><code>key</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -1328,73 +1463,85 @@ Will return a float number. (eg. 2_0 will return 2.0, 4.3.1 will return 4.31)
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">a key defining a thing which has a version.<br>
        You can use one of following keys:<br>
 <br><tt>Mobile, Build, Version, VendorID, iPad, iPhone, iPod, Kindle, Chrome, Coast,
 Dolfin, Firefox, Fennec, Edge, IE, NetFront, NokiaBrowser, Opera, Opera Mini,
 Opera Mobi, UC Browser, MQQBrowser, MicroMessenger, baiduboxapp, baidubrowser,
-Iron, Safari, Skyfire, Tizen, Webkit, PaleMoon, Gecko, Trident, Presto, Goanna,
-iOS, Android, BlackBerry, BREW, Java, Windows Phone OS, Windows Phone, Windows
-CE, Windows NT, Symbian, webOS</tt><br></td>
+SamsungBrowser, Iron, Safari, Skyfire, Tizen, Webkit, PaleMoon, Gecko, Trident,
+Presto, Goanna, iOS, Android, BlackBerry, BREW, Java, Windows Phone OS, Windows
+Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
         </tr>
-	
-	
-	</tbody>
+
+    
+    </tbody>
 </table>
-    
-    
-    
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line852">line 852</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line856">line 856</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the version as float or <tt>NaN</tt> if User-Agent doesn't contain this version.
          Be careful when comparing this value with '==' operator!
@@ -1403,71 +1550,73 @@ CE, Windows NT, Symbian, webOS</tt><br></td>
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Number</span>
 
 
-	</dd>
+    </dd>
 </dl>
 
-        
     
-    
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="versionStr"><span class="type-signature"></span>versionStr<span class="signature">(key)</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Get the version (as String) of the given property in the User-Agent.
-<br>
-    </div>
-    
 
     
+
+    <h4 class="name" id="versionStr"><span class="type-signature"></span>versionStr<span class="signature">(key)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
     
+
+
+
+<div class="description">
+    Get the version (as String) of the given property in the User-Agent.
+<br>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-    
-    
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
         <tr>
             
                 <td class="name"><code>key</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -1476,73 +1625,85 @@ CE, Windows NT, Symbian, webOS</tt><br></td>
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">a key defining a thing which has a version.<br>
        You can use one of following keys:<br>
 <br><tt>Mobile, Build, Version, VendorID, iPad, iPhone, iPod, Kindle, Chrome, Coast,
 Dolfin, Firefox, Fennec, Edge, IE, NetFront, NokiaBrowser, Opera, Opera Mini,
 Opera Mobi, UC Browser, MQQBrowser, MicroMessenger, baiduboxapp, baidubrowser,
-Iron, Safari, Skyfire, Tizen, Webkit, PaleMoon, Gecko, Trident, Presto, Goanna,
-iOS, Android, BlackBerry, BREW, Java, Windows Phone OS, Windows Phone, Windows
-CE, Windows NT, Symbian, webOS</tt><br></td>
+SamsungBrowser, Iron, Safari, Skyfire, Tizen, Webkit, PaleMoon, Gecko, Trident,
+Presto, Goanna, iOS, Android, BlackBerry, BREW, Java, Windows Phone OS, Windows
+Phone, Windows CE, Windows NT, Symbian, webOS</tt><br></td>
         </tr>
-	
-	
-	</tbody>
+
+    
+    </tbody>
 </table>
-    
-    
-    
+
+
+
+
+
+
 <dl class="details">
-    
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line874">line 874</a>
+        <a href="mobile-detect.js.html">mobile-detect.js</a>, <a href="mobile-detect.js.html#line878">line 878</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
-    
-    
 
-    
 
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the "raw" version as String or <tt>null</tt> if User-Agent doesn't contain this version.
 </div>
@@ -1550,31 +1711,30 @@ CE, Windows NT, Symbian, webOS</tt><br></td>
 
 
 <dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">String</span>
 
 
-	</dd>
+    </dd>
 </dl>
+
+    
+
+
 
         
     
-    
-</dd>
 
-        </dl>
     
-    
-    
-    
+
     
 </article>
 
-</section>  
+</section>
 
 
 
@@ -1582,13 +1742,13 @@ CE, Windows NT, Symbian, webOS</tt><br></td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="MobileDetect.html">MobileDetect</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MobileDetect.html">MobileDetect</a></li></ul>
 </nav>
 
-<br clear="both">
+<br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sun Jul 31 2016 10:00:23 GMT+0200 (MESZ)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Nov 11 2016 10:19:30 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>

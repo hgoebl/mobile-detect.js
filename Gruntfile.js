@@ -16,10 +16,12 @@ module.exports = function (grunt) {
             }
         },
         jasmine_node: {
-            specNameMatcher: "spec", // load only specs containing specNameMatcher
-            projectRoot: ".",
-            requirejs: false,
-            forceExit: true,
+            options: {
+                specNameMatcher: "spec", // load only specs containing specNameMatcher
+                projectRoot: ".",
+                requirejs: false,
+                forceExit: true
+            },
             jUnit: {
                 report: false,
                 savePath: "./build/reports/jasmine/",

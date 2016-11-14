@@ -1,5 +1,5 @@
 // THIS FILE IS GENERATED - DO NOT EDIT!
-/*!mobile-detect v1.3.4 2016-11-11*/
+/*!mobile-detect v1.3.5 2016-11-14*/
 /*global module:false, define:false*/
 /*jshint latedef:false*/
 /*!@license Copyright 2013, Heinrich Goebl, License: MIT, see https://github.com/hgoebl/mobile-detect.js*/
@@ -44,7 +44,7 @@ define(function () {
         "Kindle": "Kindle|Silk.*Accelerated|Android.*\\b(KFOT|KFTT|KFJWI|KFJWA|KFOTE|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|WFJWAE|KFSAWA|KFSAWI|KFASWI|KFARWI)\\b",
         "SurfaceTablet": "Windows NT [0-9.]+; ARM;.*(Tablet|ARMBJS)",
         "HPTablet": "HP Slate (7|8|10)|HP ElitePad 900|hp-tablet|EliteBook.*Touch|HP 8|Slate 21|HP SlateBook 10",
-        "AsusTablet": "^.*PadFone((?!Mobile).)*$|Transformer|TF101|TF101G|TF300T|TF300TG|TF300TL|TF700T|TF700KL|TF701T|TF810C|ME171|ME301T|ME302C|ME371MG|ME370T|ME372MG|ME172V|ME173X|ME400C|Slider SL101|\\bK00F\\b|\\bK00C\\b|\\bK00E\\b|\\bK00L\\b|TX201LA|ME176C|ME102A|\\bM80TA\\b|ME372CL|ME560CG|ME372CG|ME302KL| K010 | K011 | K017 | K01E |ME572C|ME103K|ME170C|ME171C|\\bME70C\\b|ME581C|ME581CL|ME8510C|ME181C|P01Y|PO1MA",
+        "AsusTablet": "^.*PadFone((?!Mobile).)*$|Transformer|TF101|TF101G|TF300T|TF300TG|TF300TL|TF700T|TF700KL|TF701T|TF810C|ME171|ME301T|ME302C|ME371MG|ME370T|ME372MG|ME172V|ME173X|ME400C|Slider SL101|\\bK00F\\b|\\bK00C\\b|\\bK00E\\b|\\bK00L\\b|TX201LA|ME176C|ME102A|\\bM80TA\\b|ME372CL|ME560CG|ME372CG|ME302KL| K010 | K011 | K017 | K01E |ME572C|ME103K|ME170C|ME171C|\\bME70C\\b|ME581C|ME581CL|ME8510C|ME181C|P01Y|PO1MA|P01Z",
         "BlackBerryTablet": "PlayBook|RIM Tablet",
         "HTCtablet": "HTC_Flyer_P512|HTC Flyer|HTC Jetstream|HTC-P715a|HTC EVO View 4G|PG41200|PG09410",
         "MotorolaTablet": "xoom|sholest|MZ615|MZ605|MZ505|MZ601|MZ602|MZ603|MZ604|MZ606|MZ607|MZ608|MZ609|MZ615|MZ616|MZ617",
@@ -149,6 +149,7 @@ define(function () {
         "UbislateTablet": "UbiSlate[\\s]?7C",
         "PocketBookTablet": "Pocketbook",
         "KocasoTablet": "\\b(TB-1207)\\b",
+        "HisenseTablet": "\\b(F5281|E2371)\\b",
         "Hudl": "Hudl HT7S3|Hudl 2",
         "TelstraTablet": "T-Hub2",
         "GenericTablet": "Android.*\\b97D\\b|Tablet(?!.*PC)|BNTV250A|MID-WCDMA|LogicPD Zoom2|\\bA7EB\\b|CatNova8|A1_07|CT704|CT1002|\\bM721\\b|rk30sdk|\\bEVOTAB\\b|M758A|ET904|ALUMIUM10|Smartfren Tab|Endeavour 1010|Tablet-PC-4|Tagi Tab|\\bM6pro\\b|CT1020W|arc 10HD|\\bTP750\\b"
@@ -169,7 +170,6 @@ define(function () {
         "BREWOS": "BREW"
     },
     "uas": {
-        "Vivaldi": "Vivaldi",
         "Chrome": "\\bCrMo\\b|CriOS|Android.*Chrome\/[.0-9]* (Mobile)?",
         "Dolfin": "\\bDolfin\\b",
         "Opera": "Opera.*Mini|Opera.*Mobi|Android.*Opera|Mobile.*OPR\/[0-9.]+|Coast\/[0-9.]+",
@@ -765,8 +765,8 @@ define(function () {
          * OdysTablet, CaptivaTablet, IconbitTablet, TeclastTablet, OndaTablet,
          * JaytechTablet, BlaupunktTablet, DigmaTablet, EvolioTablet, LavaTablet,
          * AocTablet, MpmanTablet, CelkonTablet, WolderTablet, MiTablet, NibiruTablet,
-         * NexoTablet, LeaderTablet, UbislateTablet, PocketBookTablet, KocasoTablet, Hudl,
-         * TelstraTablet, GenericTablet</tt><br>
+         * NexoTablet, LeaderTablet, UbislateTablet, PocketBookTablet, KocasoTablet,
+         * HisenseTablet, Hudl, TelstraTablet, GenericTablet</tt><br>
          * <br>
          * If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
          * the patterns of <a href="http://detectmobilebrowsers.com/">detectmobilebrowsers.com</a>. If this test
@@ -794,9 +794,9 @@ define(function () {
          * Returns the (first) detected user-agent string or <tt>null</tt>.
          * <br>
          * The returned user-agent is one of following keys:<br>
-         * <br><tt>Vivaldi, Chrome, Dolfin, Opera, Skyfire, Edge, IE, Firefox, Bolt, TeaShark,
-         * Blazer, Safari, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin,
-         * Mercury, ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
+         * <br><tt>Chrome, Dolfin, Opera, Skyfire, Edge, IE, Firefox, Bolt, TeaShark, Blazer,
+         * Safari, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin, Mercury,
+         * ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
          * <br>
          * In most cases calling {@link MobileDetect#userAgent} will be sufficient. But there are rare
          * cases where a mobile device pretends to be more than one particular browser. You can get the
@@ -817,9 +817,9 @@ define(function () {
          * Returns all detected user-agent strings.
          * <br>
          * The array is empty or contains one or more of following keys:<br>
-         * <br><tt>Vivaldi, Chrome, Dolfin, Opera, Skyfire, Edge, IE, Firefox, Bolt, TeaShark,
-         * Blazer, Safari, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin,
-         * Mercury, ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
+         * <br><tt>Chrome, Dolfin, Opera, Skyfire, Edge, IE, Firefox, Bolt, TeaShark, Blazer,
+         * Safari, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin, Mercury,
+         * ObigoBrowser, NetFront, GenericBrowser, PaleMoon</tt><br>
          * <br>
          * In most cases calling {@link MobileDetect#userAgent} will be sufficient. But there are rare
          * cases where a mobile device pretends to be more than one particular browser. You can get the
@@ -973,7 +973,7 @@ define(function () {
     // should not be replaced by a completely new object - just overwrite existing methods
     MobileDetect._impl = impl;
     
-    MobileDetect.version = '1.3.4 2016-11-11';
+    MobileDetect.version = '1.3.5 2016-11-14';
 
     return MobileDetect;
 }); // end of call of define()

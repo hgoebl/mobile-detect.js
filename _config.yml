@@ -1,0 +1,8 @@
+title: mobile-detect.js
+description: Device detection (phone, tablet, desktop, mobile grade, os, versions)
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions

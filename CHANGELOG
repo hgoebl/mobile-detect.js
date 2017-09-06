@@ -1,3 +1,8 @@
+v1.3.7:
+  date: 2017-09-06
+  changes:
+    - use Mobile-Detect@2.8.26
+
 v1.3.6:
   date: 2017-04-05
   changes:

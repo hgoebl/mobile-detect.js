@@ -52,6 +52,10 @@ define(function () {
         }
     }
 
+    function prepareUserAgent(userAgent) {
+        return (userAgent || '').substr(0, 500); // mitigate vulnerable to ReDoS
+    }
+
     (function init() {
         var key, values, value, i, len, verPos, mobileDetectRules = impl.mobileDetectRules;
         for (key in mobileDetectRules.props) {
@@ -398,7 +402,7 @@ define(function () {
      * @global
      */
     function MobileDetect(userAgent, maxPhoneWidth) {
-        this.ua = userAgent || '';
+        this.ua = prepareUserAgent(userAgent);
         this._cache = {};
         //600dp is typical 7" tablet minimum width
         this.maxPhoneWidth = maxPhoneWidth || 600;

@@ -1,3 +1,9 @@
+v1.4.0:
+  date: 2017-12-09
+  changes:
+    - use Mobile-Detect@2.8.28
+    - fix #67 (vulnerable to ReDoS)
+
 v1.3.7:
   date: 2017-09-06
   changes:

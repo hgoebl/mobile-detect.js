@@ -1,6 +1,6 @@
 {
   "name": "mobile-detect",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
   "main": "mobile-detect.js",
   "typings": "mobile-detect",
@@ -35,7 +35,6 @@
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-contrib-concat": "~1.0.1",
-    "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-jshint": "~1.0.0",
     "grunt-contrib-uglify": "~2.0.0",
     "grunt-contrib-watch": "~1.0.0",

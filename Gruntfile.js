@@ -13,6 +13,9 @@ module.exports = function (grunt) {
             },
             gzSize: {
                 cmd: 'cat mobile-detect.min.js | gzip -9f | wc -c'
+            },
+            cpReadme: {
+                cmd: 'cp README.md ../mobile-detect.js@gh-pages/index.md'
             }
         },
         jasmine_node: {
@@ -71,21 +74,6 @@ module.exports = function (grunt) {
                 files: '<%= jshint.lib_test.src %>',
                 tasks: ['jshint:lib_test', 'jasmine_node']
             }
-        },
-        copy: {
-            jsdelivr: {
-                files: [
-                    {
-                        expand: true,
-                        src: [
-                            'mobile-detect.min.js',
-                            'mobile-detect.js',
-                            'mobile-detect-modernizr.js'
-                        ],
-                        dest: '../jsdelivr/files/mobile-detect.js/<%= pkg.version %>/'
-                    }
-                ]
-            }
         }
     });
 
@@ -96,12 +84,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-exec');
     grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-jasmine-node');
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
     grunt.registerTask('default',  ['jshint', 'exec:generate', 'jasmine_node', 'uglify', 'exec:gzSize']);
     grunt.registerTask('skip-tests',  ['jshint', 'exec:generate', 'uglify', 'exec:gzSize']);
     grunt.registerTask('dev',      ['jshint']);
-    grunt.registerTask('gh-pages', ['jshint', 'exec:generate', 'jsdoc']);
-    grunt.registerTask('jsdelivr', ['copy:jsdelivr']);
+    grunt.registerTask('gh-pages', ['jshint', 'exec:generate', 'jsdoc', 'exec:cpReadme']);
 };

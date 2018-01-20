@@ -53,7 +53,7 @@ define(function () {
     }
 
     function prepareUserAgent(userAgent) {
-        return (userAgent || '').substr(0, 500); // mitigate vulnerable to ReDoS
+        return (userAgent || '').substring(0, 500); // mitigate vulnerable to ReDoS
     }
 
     (function init() {
@@ -187,7 +187,7 @@ define(function () {
 
     impl.isMobileFallback = function (userAgent) {
         return impl.detectMobileBrowsers.fullPattern.test(userAgent) ||
-            impl.detectMobileBrowsers.shortPattern.test(userAgent.substr(0,4));
+            impl.detectMobileBrowsers.shortPattern.test(userAgent.substring(0,4));
     };
 
     impl.isTabletFallback = function (userAgent) {

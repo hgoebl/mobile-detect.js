@@ -11,7 +11,7 @@ You can find out information about the device rendering your web page:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.32**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.33**
 
 # Live Demo
 
@@ -104,9 +104,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 68711
- * minified: 38333
- * minified + gzipped: 16040 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 68842
+ * minified: 38436
+ * minified + gzipped: 16091 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
@@ -118,13 +118,15 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
     $ npm install mobile-detect --save
 
-## CDN - [jsDelivr](http://www.jsdelivr.com/#!mobile-detect.js)
+## CDN - [jsDelivr](https://www.jsdelivr.com/#!mobile-detect.js)
 
-    <script src="//cdn.jsdelivr.net/npm/mobile-detect@1.4.2/mobile-detect.min.js"></script>
+[![](https://data.jsdelivr.com/v1/package/npm/mobile-detect/badge)](https://www.jsdelivr.com/package/npm/mobile-detect)
+
+    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js"></script>
 
 ## cdnjs - [cdnjs.com](https://cdnjs.com/libraries/mobile-detect)
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.2/mobile-detect.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
    
 # Extending/Modifying Behaviour
 

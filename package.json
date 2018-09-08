@@ -1,6 +1,6 @@
 {
   "name": "mobile-detect",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
   "main": "mobile-detect.js",
   "typings": "mobile-detect",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/hgoebl/mobile-detect.js"
   },
-  "homepage": "http://hgoebl.github.io/mobile-detect.js/",
+  "homepage": "https://hgoebl.github.io/mobile-detect.js/",
   "keywords": [
     "useragent",
     "mobile",
@@ -27,7 +27,7 @@
   "author": {
     "name": "Heinrich Goebl",
     "email": "hgoebl@goebl.com",
-    "url": "http://www.goebl.com/"
+    "url": "https://www.goebl.com/"
   },
   "license": "MIT",
   "readmeFilename": "README.md",

@@ -194,7 +194,9 @@ define(function () {
         "ObigoBrowser": "Obigo",
         "NetFront": "NF-Browser",
         "GenericBrowser": "NokiaBrowser|OviBrowser|OneBrowser|TwonkyBeamBrowser|SEMC.*Browser|FlyFlow|Minimo|NetFront|Novarra-Vision|MQQBrowser|MicroMessenger",
-        "PaleMoon": "Android.*PaleMoon|Mobile.*PaleMoon"
+        "PaleMoon": "Android.*PaleMoon|Mobile.*PaleMoon",
+        "YaBrowser": "YaBrowser",
+        "SamsungBrowser": "SamsungBrowser",
     },
     "props": {
         "Mobile": "Mobile\/[VER]",

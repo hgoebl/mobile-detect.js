@@ -1,3 +1,8 @@
+v1.4.4:
+  date: 2019-09-21
+  changes:
+    - use Mobile-Detect@2.8.34
+
 v1.4.3:
   date: 2018-09-08
   changes:

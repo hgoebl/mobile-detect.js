@@ -8,23 +8,20 @@ You can find out information about the device rendering your web page:
   * mobile or not
   * if mobile, whether phone or tablet
   * operating system
-  * [Mobile Grade (A, B, C)](https://jquerymobile.com/browser-support/)
+  * [Mobile Grade (A, B, C)](https://jquerymobile.com/browser-support/) **REMARK: this is completely outdated: all current devices will return an 'A', so it's useless nowadays**
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.33**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.34**
 
 # Live Demo
 
-[@zeno](https://github.com/zeno) created a very nice [live-demo](https://github.com/zeno/mobile-detect-demo).
-See it in action with your device:
-
-**[Demo](https://zeno.github.io/mobile-detect-demo/)**
-
-Another Demo/check (though without any styling) can be found [here](https://hgoebl.github.io/mobile-detect.js/check/).
+Demo/check (sorry about the missing styling) can be found [here](https://hgoebl.github.io/mobile-detect.js/check/).
 
 # Warning
 
-As mentioned later, "User-Agent" based detection is not a reliable solution in most cases, because:
+**TL;DR: you should not use this library in your HTML page and it's less reliable when used server-side (Node.js)**
+
+As mentioned later, "User-Agent" based detection is **not a reliable solution** in most cases, because:
 
   * The rules (regular expressions) are constantly out-dated and incomplete
   * You have to update the detection code continuously
@@ -104,13 +101,13 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 68842
- * minified: 38436
- * minified + gzipped: 16091 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * development: 69361
+ * minified: 38942
+ * minified + gzipped: 16288 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
-## Bower
+## Bower (which you should not use for new projects)
 
     $ bower install hgoebl/mobile-detect.js --save
 
@@ -122,11 +119,11 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 [![](https://data.jsdelivr.com/v1/package/npm/mobile-detect/badge)](https://www.jsdelivr.com/package/npm/mobile-detect)
 
-    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.4/mobile-detect.min.js"></script>
 
 ## cdnjs - [cdnjs.com](https://cdnjs.com/libraries/mobile-detect)
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
    
 # Extending/Modifying Behaviour
 
@@ -141,6 +138,7 @@ Often device detection is the first solution in your mind. Please consider looki
 like media queries and feature detection (e.g. w/ Modernizr). Maybe there are better (simpler, smaller,
 faster) device detection libraries, so here you have a list (order has no meaning apart from first element):
 
+  * REMARK: this list might be outdated - please tell me about alternatives!
   * [Modernizr](https://modernizr.com/)
     In most cases the better solution: don't use knowledge about device and version, but detect features
     (touch, canvas, ...)
@@ -223,3 +221,5 @@ If you want, you can donate to [Mobile-Detect](https://github.com/serbanghita/Mo
 # TODO
 
   * Extend RegEx patterns so that test passes
+  * support ES6 modules
+

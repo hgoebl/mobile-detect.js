@@ -1,15 +1,15 @@
-# mobile-detect.js
+# Mobile-Detect.js
 
 A loose port of [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect) to JavaScript.
 
 This script will detect the device by comparing patterns against a given User-Agent string.
 You can find out information about the device rendering your web page:
 
-  * mobile or not
-  * if mobile, whether phone or tablet
-  * operating system
+  * Mobile or not
+  * If mobile, whether phone or tablet
+  * Operating System
   * [Mobile Grade (A, B, C)](https://jquerymobile.com/browser-support/) **REMARK: this is completely outdated: all current devices will return an 'A', so it's useless nowadays**
-  * specific versions (e.g. WebKit)
+  * Specific versions (e.g. WebKit)
 
 Current `master` branch is using detection logic from **Mobile-Detect@2.8.34**
 
@@ -26,7 +26,7 @@ As mentioned later, "User-Agent" based detection is **not a reliable solution** 
   * The rules (regular expressions) are constantly out-dated and incomplete
   * You have to update the detection code continuously
   * There are other ways to detect how your web application should behave:
-    * feature detection, e.g. [Modernizr](https://modernizr.com/)
+    * Feature detection, e.g. [Modernizr](https://modernizr.com/)
     * [Media Queries](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries), examples at <https://mediaqueri.es/>
   * Maybe there are some libraries out there (which are probably not free) doing a more reliable job
 
@@ -101,9 +101,9 @@ You can easily extend it, e.g. `android`, `iphone`, etc.
 
 ## Size (bytes)
 
- * development: 69361
- * minified: 38942
- * minified + gzipped: 16288 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
+ * Development: 69361
+ * Minified: 38942
+ * Minified + gzipped: 16288 (`cat mobile-detect.min.js | gzip -9f | wc -c`)
 
 # Installation
 
@@ -191,14 +191,14 @@ To run generate-script it is necessary to have [Mobile-Detect](https://github.co
 as a sibling directory to mobile-detect.js/.
 (I tried to use `git subtree` but had some problems on Mac OS X - probably my fault...)
 
-  * fork or clone serbanghita/Mobile-Detect
-  * fork hgoebl/mobile-detect.js
-  * run `npm install`
-  * create branch
-  * make changes and run `grunt` (needs PHP >= 5.4 in your path)
-  * run browser test (tests/SpecRunner.html)
-  * commit, push to your branch
-  * create pull request
+  * Fork or clone serbanghita/Mobile-Detect
+  * Fork hgoebl/mobile-detect.js
+  * Run `npm install`
+  * Create branch
+  * Make changes and run `grunt` (needs PHP >= 5.4 in your path)
+  * Run browser test (tests/SpecRunner.html)
+  * Commit, push to your branch
+  * Create pull request
 
 ## Testing
 
@@ -221,5 +221,5 @@ If you want, you can donate to [Mobile-Detect](https://github.com/serbanghita/Mo
 # TODO
 
   * Extend RegEx patterns so that test passes
-  * support ES6 modules
+  * Support ES6 modules
 

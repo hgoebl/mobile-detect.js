@@ -7,9 +7,9 @@ declare class MobileDetect {
 
 	constructor(userAgent: string, maxPhoneWidth?: number);
 
-	mobile(): string;
-	phone(): string;
-	tablet(): string;
+	mobile(): string|null;
+	phone(): string|null;
+	tablet(): string|null;
 
 	userAgent(): string;
 	userAgents(): string[];

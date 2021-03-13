@@ -759,6 +759,16 @@ define(function () {
         },
 
         /**
+         * Only working on Webkit! And only tested on Android
+         * If we got the phone from the above function the string between phone and the 'Build' number returns the phone type
+         */
+        phoneType: function() {
+            if(this.version('Webkit') && this.os() === 'AndroidOS') {
+                return this.ua.substring(this.ua.indexOf(this.phone()), this.ua.indexOf('Build') -1);
+            }
+        },
+
+        /**
          * Returns the detected tablet type/family string or <tt>null</tt>.
          * <br>
          * The returned tablet (family or producer) is one of following keys:<br>

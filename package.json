@@ -1,6 +1,6 @@
 {
   "name": "mobile-detect",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
   "main": "mobile-detect.js",
   "typings": "mobile-detect",
